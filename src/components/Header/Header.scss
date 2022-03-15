@@ -1,4 +1,7 @@
-@use '../../';
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
+
 
 .nav {
     background-color: $nav-background-color;
