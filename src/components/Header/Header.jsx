@@ -1,5 +1,5 @@
 import './Header.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import InStockLogo from '../../assets/Logo/InStock-Logo_2x.png';
 
 
@@ -7,16 +7,16 @@ function Header() {
     return (
         <nav className='nav'>
             <div className='nav__container'>
-                <Link className='nav__logo-link' to='/'>
+                <NavLink className='nav__logo-link' to='/' exact>
                     <img className='nav__logo-img' src={InStockLogo} alt='InStock logo' />
-                </Link>
+                </NavLink>
                 <div className='nav__list'>
-                    <Link className='nav__list-link--warehouses' to='/'>
-                        <h3 className='nav__list-text--warehouses'>Warehouses</h3>
-                    </Link>
-                    <Link className='nav__list-link--inventory' to='/Inventory'>
-                        <h3 className='nav__list-text--inventory'>Inventory</h3>
-                    </Link>
+                    <NavLink className='nav__list-link' activeClassName='nav__list-link--active' to='/' exact>
+                        <h3 className='nav__list-text'>Warehouses</h3>
+                    </NavLink>
+                    <NavLink className='nav__list-link' activeClassName='nav__list-link--active' to='/Inventory'>
+                        <h3 className='nav__list-text'>Inventory</h3>
+                    </NavLink>
                 </div>
             </div>
         </nav>

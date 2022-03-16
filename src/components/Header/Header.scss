@@ -52,7 +52,7 @@
         }
 
 
-        &-link--warehouses {
+        &-link {
             // background-color: $global-text-color;
             color: $global-white-color;
             text-decoration: none;
@@ -62,7 +62,7 @@
             
             @include tablet {
                 // width: 8.625rem;
-                padding: .75rem 1rem;
+                padding: .75rem 1.125rem;
                 border-radius: 1.65rem;
                 
             }
@@ -71,46 +71,18 @@
                 text-decoration: underline;
             }
 
-            &:focus {
-                background-color: $global-text-color;
-            }
+            // &:focus {
+            //     background-color: $global-text-color;
+            // }
 
-            &:active {
+            &--active {
                 background-color: $global-text-color;
             }
     
             
         }
 
-        &-link--inventory {
-            color: $global-white-color;
-            text-decoration: none;
-            padding: 0.875rem 0;
-            border-radius: 1.2rem;
-            width: 100%;
-            
-            @include tablet {
-                // width: 8.625rem;
-                padding: .75rem 1rem;
-                border-radius: 1.65rem;
-            }
-            
-            &:hover {
-                text-decoration: underline;
-            }
-
-            &:focus {
-                background-color: $global-text-color;
-            }
-
-            &:active {
-                background-color: $global-text-color;
-            }
-            
-        }
-
-        &-text--warehouses,
-        &-text--inventory {
+        &-text {
             text-align: center;
         }
     }
