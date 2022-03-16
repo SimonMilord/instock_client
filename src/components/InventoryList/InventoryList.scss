@@ -1,2 +1,114 @@
-@import '../../styles/partials/mixins';
-@import '../../styles/partials/variables';
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/fonts";
+
+.header {
+  width: 100%;
+  height: 12.5rem;
+  background-color: $nav-background-color;
+}
+
+.inventory {
+  &__container {
+    margin: -4rem 1rem 1.5rem 1rem;
+    background-color: $global-white-color;
+    border-radius: 0.1875rem 0.1875rem 0 0;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+    @include tablet {
+      margin: -5.875rem 2rem 2rem 2rem;
+      box-shadow: none;
+    }
+  }
+
+  &__section {
+    margin: 0rem 1.5rem 1.5rem 1.5rem;
+
+    @include tablet {
+      @include display-flex(row, space-between, none);
+      margin: 0rem 2rem 0rem 2rem;
+    }
+  }
+
+  &__title {
+    color: global-text-color;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      padding-top: 2rem;
+      padding-bottom: 1.375rem;
+    }
+  }
+
+  &__actions {
+    @include tablet {
+      @include display-flex(row, flex-end, none);
+      gap: 1rem;
+    }
+
+    &-search {
+      width: 100%;
+      height: 2.25rem;
+      border: 1px solid $secondary-grey;
+      border-radius: 1.25rem;
+      padding-left: 1rem;
+      background-image: url("../../assets/Icons/search-24px.svg");
+      background-repeat: no-repeat;
+      background-position: 12.5rem 0.35rem;
+      margin-bottom: 1rem;
+
+      @include tablet {
+        width: 11.5625rem;
+        margin-top: 2rem;
+        background-position: 9.125rem 0.35rem;
+      }
+
+      ::placeholder {
+        // font-family: ;
+      }
+    }
+
+    &-btn {
+      width: 100%;
+      height: 2.25rem;
+      background-color: $interactive-color;
+      color: $global-white-color;
+      border-radius: 1.25rem;
+      border-style: none;
+      margin-bottom: 1.5rem;
+
+      @include tablet {
+        width: 8rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include tablet {
+      @include display-flex(row, space-between, none);
+      background-color: $page-background-color;
+      opacity: 0.7;
+      padding: 0rem 2rem 0rem 2rem;
+    }
+
+    &-item {
+      background-image: url("../../assets/Icons/sort-24px.svg");
+      background-repeat: no-repeat;
+      // padding: 0.5rem
+    }
+  }
+
+  &__icon-1 {
+      @include tablet {
+        padding: .725rem 2rem .825rem 0;
+        background-position: 6.25rem 0.775rem;
+        background-size: 15%;
+      }
+
+        
+  }
+}
