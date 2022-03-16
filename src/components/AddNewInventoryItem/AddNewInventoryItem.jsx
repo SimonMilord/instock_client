@@ -1,78 +1,79 @@
 import { Component } from "react";
 import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
+import addIcon from "../../assets/Icons/"
 import "./AddNewInventoryItem.scss";
 
 class AddNewInventoryItem extends Component{
     
     render(){
         return(
-            <div>
-                <div>
-                    <img className="header__bar--icon" src={arrowBack} alt="arrow back"></img>
-                    <h2 className="header__bar--heading">Add New Inventory Item</h2>
+            <div className="addInventory">
+                <div className="addInventory__header">
+                    <img className="addInventory__header--icon" src={arrowBack} alt="arrow back"></img>
+                    <h1 className="addInventory__header--heading">Add New Inventory Item</h1>
                 </div>
-                <form>
-                    <div>
-                        <div>
-                            <h3>Item Details</h3>
-                            <label>Item Name</label>
+                <form className="addInventory__form">
+                    <div className="inventoryform__box1">
+                        <div className="itemDetails">
+                            <h2 className="itemDetails__heading">Item Details</h2>
+                            <label className="itemDetails__labels">Item Name</label>
                             <input
-                                className=""
+                                className="itemDetails__input"
                                 type="text"
                                 name="ItemName"
                                 placeholder="Item Name"
                             />
-                            <label>description</label>
+                            <label className="itemDetails__labels">description</label>
                             <input
-                                className=""
+                                className="itemDetails__input"
                                 type="textarea"
                                 name="description"
                                 placeholder="Please enter a brief item description"
                             />
-                              <label>Category</label>
-                                <Select className="" name="category" id="" placeholder="Please select">
-                                    <option value="1">Electronics</option>
-                                    <option value="2">Gear</option>
-                                    <option value="3">Apparel</option>
-                                    <option value="4">Accessories</option>
-                                    <option value="5">Health</option>
+                              <label className="itemDetails__labels">Category</label>
+                                <Select className="itemDetails__select" name="category" id="" placeholder="Please select">
+                                    <option className="itemDetails__select--option" value="1">Electronics</option>
+                                    <option className="itemDetails__select--option" value="2">Gear</option>
+                                    <option className="itemDetails__select--option" value="3">Apparel</option>
+                                    <option className="itemDetails__select--option" value="4">Accessories</option>
+                                    <option className="itemDetails__select--option" value="5">Health</option>
                                 </Select>
                         </div>
-                        <div>
-                            <h3>Item Availability</h3>
-                            <p>Status</p>
-                            <div>
-                                <input type="radio" id="" name="stock_status" value="HTML"/>
-                                <label for="html">In Stock</label>
-                                <input type="radio" id="" name="stock_status" value="CSS"/>
-                                <label for="css">Out Of Stock</label>
+                        <div className="itemDetails">
+                            <h2 className="itemDetails__heading">Item Availability</h2>
+                            <p className="itemDetails__labels">Status</p>
+                            <div className="itemDetails__status">
+                                <input className="itemDetails__status--radio" type="radio" id="" name="stock_status" value="HTML"/>
+                                <label className="itemDetails__labels">In Stock</label>
+                                <input className="itemDetails__status--radio" type="radio" id="" name="stock_status" value="CSS"/>
+                                <label className="itemDetails__labels">Out Of Stock</label>
                             </div>
 
-                            <label>Quantity</label>
+                            <label className="itemDetails__labels">Quantity</label>
                                 <input
-                                    className=""
+                                    className="itemDetails__input"
                                     type="number"
                                     name="quantity"
                                     placeholder="0"
                                 />
-                            <label>Warehouse</label>
-                            <Select className="" name="Please select" id="">
-                                <option value="1">Manhattan</option>
-                                <option value="2">Washington</option>
-                                <option value="3">Jersey</option>
-                                <option value="4">San Fran</option>
-                                <option value="5">Santa Monica</option>
-                                <option value="5">Seattle</option>
-                                <option value="5">Miami</option>
+                            <label className="itemDetails__labels">Warehouse</label>
+                            <Select className="itemDetails__select" name="Please select" id="">
+                                <option className="itemDetails__select--option" value="1">Manhattan</option>
+                                <option className="itemDetails__select--option" value="2">Washington</option>
+                                <option className="itemDetails__select--option" value="3">Jersey</option>
+                                <option className="itemDetails__select--option" value="4">San Fran</option>
+                                <option className="itemDetails__select--option" value="5">Santa Monica</option>
+                                <option className="itemDetails__select--option" value="5">Seattle</option>
+                                <option className="itemDetails__select--option" value="5">Miami</option>
                             </Select>
                         </div>
                     </div>
-                    <div>
-                        <button>
+                    <div className="inventoryForm__box2">
+                        <button className="inventoryForm__box2--cancel">
                             Cancel
                         </button>
-                        <button>
-                            Add Item
+                        <button className="inventoryForm__box2--cancel">
+                           + Add Item
                         </button>
                     </div>
                 </form>
