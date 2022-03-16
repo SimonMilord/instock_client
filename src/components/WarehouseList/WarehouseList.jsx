@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./WarehouseList.scss";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import trashCan from "../../assets/Icons/delete_outline-24px.svg";
@@ -15,7 +15,9 @@ class WarehouseList extends Component {
               <div className='whLi__item whLi__item--link'>
                 <h4 className='whLi__label'>Warehouse</h4>
                 <div className='whLi__link-box'>
-                  <p2 className='whLi__link'>Manhattan</p2>
+                  <Link to="/warehouse/:id">
+                    <p2 className='whLi__link'>Manhattan</p2>
+                  </Link>
                   <img className='whLi__link-icon' src={chevron} alt="chevron"></img>
                 </div>
               </div>
@@ -31,7 +33,7 @@ class WarehouseList extends Component {
               </div>
               <div className='whLi__item'>
                 <h4 className='whLi__label'>Contact Information</h4>
-                <p2 className='whLi__info'>+1 (629) 555-0129 paujla@instock.com</p2>
+                <p2 className='whLi__info'>+1 (629) 555-0129 <br/>paujla@instock.com</p2>
               </div>
             </div>
           </div>
