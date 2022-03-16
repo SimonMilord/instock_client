@@ -11,7 +11,7 @@ class App extends Component {
       <>
         <Router>
           <div className='App'>
-            {/* <Header /> */}
+            <Header />
             <Switch>
               {/* Routing */}
               <Route path="/" exact render={(routerProps) =>

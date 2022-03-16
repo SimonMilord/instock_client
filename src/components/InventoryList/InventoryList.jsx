@@ -1,4 +1,7 @@
 import './InventoryList.scss';
+import React from 'react';
+import InventoryCard from '../InventoryCard/InventoryCard'
+
 
 
 function InventoryList () {
