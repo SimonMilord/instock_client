@@ -2,6 +2,55 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/mixins";
 
-.warehouseList {
 
+.whList {
+  // styling for individual list items
+  .whLi {
+    // margin: 1rem;
+    border-top: 1px solid $secondary-grey;
+
+    &__box {
+      display: flex;
+      margin: 0rem 1rem;
+    }
+    &__subbox {
+      width: 50%;
+
+    }
+    &__item {
+      margin: 1rem;
+      &--link {
+        color: $interactive-color;
+        font-weight: $semi-bold;
+      }
+    }
+    &__label {
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 18px;
+      color: $secondary-text-color;
+      margin-bottom: 0.25rem;
+    }
+    &__link-box {
+      display: flex;
+      align-items: center;
+    }
+    &__info {
+      line-height: 20px;
+      font-size: 13px;
+    }
+    &__link {
+      line-height: 20px;
+      font-size: 13px;
+    }
+    &__link-icon {
+
+    }
+    &__actions {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 2rem;
+      margin: 0rem 2rem;
+    }
+  }
 }
