@@ -7,6 +7,13 @@
   margin: 1rem;
   border-radius: 4px;
   box-shadow: 1px 1px 15px 1px $secondary-grey;
+  @include tablet {
+    margin: 2rem;
+  }
+  @include desktop {
+    // max-width: 1020px;
+    margin: 2rem 10rem;
+  }
 }
 
 // HEADER SECTION
@@ -21,8 +28,7 @@
   .warehousePage-subhead__right {
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
-    // border-bottom: 1px solid $secondary-grey;
+    margin-top: 1.5rem;
     @include tablet {
       flex-direction: row;
       align-items: center;
@@ -69,6 +75,9 @@
         height: 2.375rem;
         margin-top: 0;
         margin-left: 1rem;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 600;
       }
       &:hover {
         background-color: $CTA-hover-color;

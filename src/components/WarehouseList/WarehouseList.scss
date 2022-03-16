@@ -6,22 +6,44 @@
 .whList {
   // styling for individual list items
   .whLi {
-    // margin: 1rem;
     border-top: 1px solid $secondary-grey;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      padding: 0rem 1rem;
+      border-top: none;
+      border-bottom: 1px solid $secondary-grey;
+    }
 
     &__box {
       display: flex;
       margin: 0rem 1rem;
+      @include tablet {
+        margin: 0;
+        width: 80%;
+      }
     }
     &__subbox {
       width: 50%;
-
+      @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+      }
     }
     &__item {
       margin: 1rem;
+      @include tablet {
+        width: 50%;
+        margin-left: 0rem;
+      }
       &--link {
         color: $interactive-color;
         font-weight: $semi-bold;
+        @include tablet {
+          margin-left: 1rem;
+        }
       }
     }
     &__label {
@@ -30,6 +52,9 @@
       line-height: 18px;
       color: $secondary-text-color;
       margin-bottom: 0.25rem;
+      @include tablet {
+        display: none;
+      }
     }
     &__link-box {
       display: flex;
@@ -51,6 +76,20 @@
       justify-content: space-between;
       padding-bottom: 2rem;
       margin: 0rem 2rem;
+      @include tablet {
+        width: 20%;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+        padding: 1rem;
+      }
+      .iconBtn {
+        @include tablet {
+          height: 1.5rem;
+          margin-left: 1.5rem;
+        }
+      }
+
     }
   }
 }
