@@ -12,15 +12,15 @@ function InventoryList() {
             <div className='header'>
 
             </div>
-        <header className='inventory'>
-            <div className='inventory__container'>
-                <section className='inventory__section'>
+        <section className='inventory'>
+            <header className='inventory__container'>
+                <div className='inventory__section'>
                     <h1 className='inventory__title'>Inventory</h1>
                     <div className='inventory__actions'>
                         <input className='inventory__actions-search' type='text' name='search' placeholder='Search...' />
                         <button className='inventory__actions-btn'>+ Add New Item</button>
                     </div>
-                </section>
+                </div>
                 <ul className='inventory__list'>
                     <li className='inventory__list-item inventory__icon-1'>inventory item</li>
                     <li className='inventory__list-item inventory__icon-2'>category</li>
@@ -29,9 +29,11 @@ function InventoryList() {
                     <li className='inventory__list-item inventory__icon-5'>warehouse</li>
                     <li className='inventory__list-item inventory__icon-6'>actions</li>
                 </ul>
-            </div>  
-            {/* <InventoryCard /> */}   
-        </header>
+            </header>  
+
+            
+            
+        </section>
         </div>
 
     );
