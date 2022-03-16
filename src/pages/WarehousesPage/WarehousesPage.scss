@@ -8,23 +8,48 @@
 }
 .warehousePage-subhead {
   // background-color: red;
-}
 
-.search {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid $secondary-grey;
-  border-radius: 20px;
-  height: 2.25rem;
-  padding: 0px 1rem;
-  @include tablet {
-    height: 2.375rem;
-  }
+  .warehousePage-subhead__right {
+    display: flex;
+    flex-direction: column;
 
-  &__input {
-    border: none;
-    width: 100%;
-    outline: none;
+    .search {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid $secondary-grey;
+      border-radius: 20px;
+      height: 2.25rem;
+      padding: 0px 1rem;
+      @include tablet {
+        height: 2.375rem;
+      }
+
+      &__input {
+        border: none;
+        width: 100%;
+        outline: none;
+      }
+    }
+    .search:focus-within {
+      border-color: $interactive-color;
+    }
+
+    .newWarehouse-btn {
+      background-color: $interactive-color;
+      color: white;
+      border-radius: 20px;
+      border: none;
+      height: 2.25rem;
+      font-family: $font;
+      padding: 0rem 1rem;
+
+      @include tablet {
+        height: 2.375rem;
+      }
+      &:hover {
+        background-color: $CTA-hover-color;
+      }
+    }
   }
 }
