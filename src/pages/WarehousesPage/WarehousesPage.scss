@@ -3,15 +3,29 @@
 @import "../../styles/partials/mixins";
 
 .warehousePage {
-  // background-color: red;
-  padding: 1rem;
+  background-color: $global-white-color;
+  margin: 1rem;
+  border-radius: 4px;
+  box-shadow: 1px 1px 15px 1px $secondary-grey;
 }
 .warehousePage-subhead {
-  // background-color: red;
+  padding: 2.5rem 2rem 2rem 2rem;
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .warehousePage-subhead__right {
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
+    // border-bottom: 1px solid $secondary-grey;
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 0;
+    }
 
     .search {
       display: flex;
@@ -29,6 +43,9 @@
         border: none;
         width: 100%;
         outline: none;
+        &::placeholder {
+          font-family: $font;
+        }
       }
     }
     .search:focus-within {
@@ -43,9 +60,13 @@
       height: 2.25rem;
       font-family: $font;
       padding: 0rem 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
 
       @include tablet {
         height: 2.375rem;
+        margin-top: 0;
+        margin-left: 1rem;
       }
       &:hover {
         background-color: $CTA-hover-color;
