@@ -90,25 +90,72 @@
 
     @include tablet {
       @include display-flex(row, space-between, none);
-      background-color: $page-background-color;
+      background-color: $page-background-color; 
       opacity: 0.7;
-      padding: 0rem 2rem 0rem 2rem;
+      padding: 0rem 0rem 0rem 2rem;
     }
 
     &-item {
-      background-image: url("../../assets/Icons/sort-24px.svg");
-      background-repeat: no-repeat;
+    //   background-image: url("../../assets/Icons/sort-24px.svg");
+    //   background-repeat: no-repeat;
       // padding: 0.5rem
     }
   }
 
   &__icon-1 {
-      @include tablet {
-        padding: .725rem 2rem .825rem 0;
-        background-position: 6.25rem 0.775rem;
-        background-size: 15%;
-      }
+    @include tablet {
+        background-image: url("../../assets/Icons/sort-24px.svg");
+      background-repeat: no-repeat;
+      padding: 0.725rem 2rem 0.825rem 0;
+      background-position: 6.25rem 0.775rem;
+      background-size: 15%;
+    }
+  }
 
-        
+  &__icon-2 {
+    @include tablet {
+        background-image: url("../../assets/Icons/sort-24px.svg");
+      background-repeat: no-repeat;
+      padding: 0.725rem 2rem 0.825rem 0;
+      background-position: 3.875rem 0.775rem;
+      background-size: 21%;
+    }
+  }
+
+  &__icon-3 {
+    @include tablet {
+        background-image: url("../../assets/Icons/sort-24px.svg");
+      background-repeat: no-repeat;
+      padding: 0.725rem 2rem 0.825rem 0;
+      background-position: 2.875rem 0.775rem;
+      background-size: 26%;
+    }
+  }
+
+  &__icon-4 {
+    @include tablet {
+        background-image: url("../../assets/Icons/sort-24px.svg");
+      background-repeat: no-repeat;
+      padding: 0.725rem 2rem 0.825rem 0;
+      background-position: 1.5rem 0.775rem;
+      background-size: 35%;
+    }
+  }
+
+  &__icon-5 {
+    @include tablet {
+        background-image: url("../../assets/Icons/sort-24px.svg");
+      background-repeat: no-repeat;
+      padding: 0.725rem 2rem 0.825rem 0;
+      background-position: 4.875rem 0.775rem;
+      background-size: 18%;
+    }
+  }
+
+  &__icon-6 {
+    @include tablet {
+      padding: 0.725rem 2rem 0.825rem 0;
+      text-align: end;
+    }
   }
 }
