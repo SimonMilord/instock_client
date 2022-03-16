@@ -3,8 +3,6 @@ import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
 import "./AddNewInventoryItem.scss";
 
 class AddNewInventoryItem extends Component{
-
-
     
     render(){
         return(
@@ -33,7 +31,11 @@ class AddNewInventoryItem extends Component{
                             />
                               <label>Category</label>
                                 <Select className="" name="category" id="" placeholder="Please select">
-                                      {/* function to map category list  */}
+                                    <option value="8">Electronics</option>
+                                    <option value="9">Gear</option>
+                                    <option value="10">Apparel</option>
+                                    <option value="11">Accessories</option>
+                                    <option value="12">Health</option>
                                 </Select>
                         </div>
                         <div>
