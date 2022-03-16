@@ -31,11 +31,11 @@ class AddNewInventoryItem extends Component{
                             />
                               <label>Category</label>
                                 <Select className="" name="category" id="" placeholder="Please select">
-                                    <option value="8">Electronics</option>
-                                    <option value="9">Gear</option>
-                                    <option value="10">Apparel</option>
-                                    <option value="11">Accessories</option>
-                                    <option value="12">Health</option>
+                                    <option value="1">Electronics</option>
+                                    <option value="2">Gear</option>
+                                    <option value="3">Apparel</option>
+                                    <option value="4">Accessories</option>
+                                    <option value="5">Health</option>
                                 </Select>
                         </div>
                         <div>
@@ -57,7 +57,13 @@ class AddNewInventoryItem extends Component{
                                 />
                             <label>Warehouse</label>
                             <Select className="" name="Please select" id="">
-                             {/* function to map warehouse list  */}
+                                <option value="1">Manhattan</option>
+                                <option value="2">Washington</option>
+                                <option value="3">Jersey</option>
+                                <option value="4">San Fran</option>
+                                <option value="5">Santa Monica</option>
+                                <option value="5">Seattle</option>
+                                <option value="5">Miami</option>
                             </Select>
                         </div>
                     </div>
