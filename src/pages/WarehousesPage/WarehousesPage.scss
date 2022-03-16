@@ -1,0 +1,30 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.warehousePage {
+  // background-color: red;
+  padding: 1rem;
+}
+.warehousePage-subhead {
+  // background-color: red;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $secondary-grey;
+  border-radius: 20px;
+  height: 2.25rem;
+  padding: 0px 1rem;
+  @include tablet {
+    height: 2.375rem;
+  }
+
+  &__input {
+    border: none;
+    width: 100%;
+    outline: none;
+  }
+}
