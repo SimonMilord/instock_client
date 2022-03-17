@@ -20,10 +20,10 @@ export default function WarehouseInvCard(props) {
             <h3 className='card__title'>qty</h3>
             <p className='card__text'>{props.quantity}</p>
             <div className='card__actions'>
-                <Link to={`/warehouse/${warehousename}/inventory/${id}/delete`}>
+                <Link to={`/warehouse/inventory/delete`}>
                     <image className='card__delete' src={Delete}/>
                 </Link>
-                <Link to={`/inventory/${id}/edit`}>
+                <Link to={`/inventory/edit`}>
                     <image className='card__edit' src={Edit} alt="edit icon"/>
                 </Link>
             </div>

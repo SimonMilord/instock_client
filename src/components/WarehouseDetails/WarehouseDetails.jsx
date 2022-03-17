@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './WarehouseDetails.scss';
 import { Link } from 'react-router-dom';
-
+import WarehouseInv from '../components/WarehouseInv/WarehouseInv';
 
 
 export default class WarehouseDetails extends Component {
@@ -13,11 +13,9 @@ export default class WarehouseDetails extends Component {
         contact: []
     }
 
-    url = process.env.REACT_APP_API_URL;
-
     async fetchInventory (id) {
         try {
-            const invResponse = await axios.get(`${url}/warehouse/${id}/inventory`)
+            const invResponse = await axios.get(`${process.env.REACT_APP_API_URL}/warehouse/${id}/inventory`)
             this.setState ({
                 inventory: invResponse.data
             })
@@ -26,7 +24,7 @@ export default class WarehouseDetails extends Component {
 
     async fetchWarehouseData (id) {
         try {
-            const response = await axios.get(`${url}/warehouse/${id}`)
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/warehouse/${id}`)
             this.setState({
                 warhouseData: response.data,
             })
@@ -79,7 +77,7 @@ export default class WarehouseDetails extends Component {
                 <div className='details__inv'>
                     <WarehouseInv list = {this.state.inventory} />
                 </div>
-            </div>  
+            </div>
         )
     }
 }
