@@ -3,12 +3,17 @@ import React from 'react';
 import Delete from '../../assets/Icons/delete_outline-24px.svg';
 import Edit from '../../assets/Icons/edit-24px.svg';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 class InventoryList extends React.Component {
 
+    state = {
+        inventoryData: [],
 
+
+
+    }
 
     render() {
 

@@ -184,8 +184,8 @@
     width: 50%;
 
     @include tablet {
-      @include display-flex(row, space-between, none);
-        width: 90%;
+      @include display-flex(row, none, none);
+      width: 60%;
     }
 
     &-div {
@@ -193,6 +193,7 @@
 
       @include tablet {
         @include display-flex(row, none, none);
+        // width: 100%;
       }
     }
   }
