@@ -14,7 +14,7 @@ export default class WarehouseDetails extends Component {
 
     async fetchInventory (id) {
         try {
-            const invResponse = await axios.get(`${process.env.REACT_APP_API_URL}/warehouses/${id}/inventory`)
+            const invResponse = await axios.get(`${process.env.REACT_APP_API_URL}/warehouse/${id}/inventory`)
             this.setState ({
                 inventory: invResponse.data
             })
@@ -23,7 +23,7 @@ export default class WarehouseDetails extends Component {
 
     async fetchWarehouseData (id) {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/warehouses/${id}`)
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/warehouse/${id}`)
             this.setState({
                 warehouseData: response.data,
             })
@@ -74,9 +74,12 @@ export default class WarehouseDetails extends Component {
                     </div>
                 </div>
                 <div className='details__inv'>
-                    <WarehouseInv list = {this.state.inventory} />
+                    <WarehouseInv inventory = {this.state.inventory} />
                 </div>
             </div>
         )
     }
 }
+
+
+
