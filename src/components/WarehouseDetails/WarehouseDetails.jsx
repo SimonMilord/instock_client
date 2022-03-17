@@ -48,10 +48,10 @@ export default class WarehouseDetails extends Component {
             <>
             <div className='details'>
                 <div className='details__titlebar'>
-                    <Link className='details__link'>
+                    {/* <Link className='details__link'>
                         <img className='details__imd' alt='black arrow'/>
                         <h2 className='details__warehouse'></h2>
-                    </Link>
+                    </Link> */}
                 </div>
                 <div className='details__address'>
                     <h3 className='details__subtitles'>warehouse address:</h3>
