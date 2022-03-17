@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
-import Footer from "./components/Footer/Footer";
+import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
       <>
         <Router>
           <div className='App'>
-            <Header /> 
+            <Header />
             <Switch>
               {/* Routing */}
               <Route path="/" exact render={(routerProps) =>
@@ -28,7 +29,7 @@ class App extends Component {
               <Route
                 path="/warehouses/:id"
                 render={(routerProps) =>
-                <WarehousesPage {...routerProps} /> }
+                <WarehouseDetails {...routerProps} /> }
               />
               <Route
                 path="/inventory"
@@ -41,6 +42,7 @@ class App extends Component {
                 render={(routerProps) =>
                 <InventoryPage {...routerProps} /> }
               />
+
             </Switch>
             <Footer />
           </div>
