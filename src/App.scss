@@ -4,13 +4,14 @@
 
 * {
   box-sizing: border-box;
-  // background-color: $page-background-color;
+  
 
 }
 
 body {
   font-family: $font;
   color: $global-text-color;
+  background-color: $page-background-color;
 }
 
 h1 {
