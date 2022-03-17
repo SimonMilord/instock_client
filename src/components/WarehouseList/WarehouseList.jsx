@@ -83,17 +83,17 @@ class WarehouseList extends Component {
                     </div>
                     <div className='whLi__item'>
                       <h4 className='whLi__label'>Address</h4>
-                      <p2 className='whLi__info'>{warehouse.address}, {warehouse.city}, {warehouse.country}</p2>
+                      <p className='whLi__info'>{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
                     </div>
                   </div>
                   <div className='whLi__subbox whLi__subbox--right'>
                     <div className='whLi__item'>
                       <h4 className='whLi__label'>Contact Name</h4>
-                      <p2 className='whLi__info'>{warehouse.contact.name}</p2>
+                      <p className='whLi__info'>{warehouse.contact.name}</p>
                     </div>
                     <div className='whLi__item'>
                       <h4 className='whLi__label'>Contact Information</h4>
-                      <p2 className='whLi__info'>{warehouse.contact.phone} <br/>{warehouse.contact.email}</p2>
+                      <p className='whLi__info'>{warehouse.contact.phone} <br/>{warehouse.contact.email}</p>
                     </div>
                   </div>
                 </div>
