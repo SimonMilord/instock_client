@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./WarehouseList.scss";
+import axios from 'axios';
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import trashCan from "../../assets/Icons/delete_outline-24px.svg";
 import editPen from "../../assets/Icons/edit-24px.svg";
@@ -8,6 +9,26 @@ import searchIcon from "../../assets/Icons/search-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 
 class WarehouseList extends Component {
+  state = {
+    warehouseData: [],
+  }
+
+  // Lifecycle methods
+  componentDidMount() {
+    this.getWarehouseData();
+  }
+
+  // axios call to fetch warehouse list
+  getWarehouseData() {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/warehouses`)
+      .then((response) => {
+        this.setState({warehouseData: response.data});
+      }).catch((err) => {
+        console.log(err);
+      })
+  }
+
   render() {
     return (
       <>
@@ -46,39 +67,42 @@ class WarehouseList extends Component {
         </div>
         {/* list of warehouses */}
         <div className='whList'>
-          <div className='whLi'>
-            <div className='whLi__box'>
-              <div className='whLi__subbox whLi__subbox--left'>
-                <div className='whLi__item whLi__item--link'>
-                  <h4 className='whLi__label'>Warehouse</h4>
-                  <div className='whLi__link-box'>
-                    <Link to="/warehouse/:id">
-                      <p2 className='whLi__link'>Manhattan</p2>
-                    </Link>
-                    <img className='whLi__link-icon' src={chevron} alt="chevron"></img>
+          {this.state.warehouseData
+            .map((warehouse) => (
+              <div className='whLi' key={warehouse.id}>
+                <div className='whLi__box'>
+                  <div className='whLi__subbox whLi__subbox--left'>
+                    <div className='whLi__item whLi__item--link'>
+                      <h4 className='whLi__label'>Warehouse</h4>
+                      <div className='whLi__link-box'>
+                        <Link className="whLi__link" to="/warehouse/:id">
+                          <h3 className='whLi__link-p'>{warehouse.name}</h3>
+                        </Link>
+                        <img className='whLi__link-icon' src={chevron} alt="chevron"></img>
+                      </div>
+                    </div>
+                    <div className='whLi__item'>
+                      <h4 className='whLi__label'>Address</h4>
+                      <p2 className='whLi__info'>{warehouse.address}, {warehouse.city}, {warehouse.country}</p2>
+                    </div>
+                  </div>
+                  <div className='whLi__subbox whLi__subbox--right'>
+                    <div className='whLi__item'>
+                      <h4 className='whLi__label'>Contact Name</h4>
+                      <p2 className='whLi__info'>{warehouse.contact.name}</p2>
+                    </div>
+                    <div className='whLi__item'>
+                      <h4 className='whLi__label'>Contact Information</h4>
+                      <p2 className='whLi__info'>{warehouse.contact.phone} <br/>{warehouse.contact.email}</p2>
+                    </div>
                   </div>
                 </div>
-                <div className='whLi__item'>
-                  <h4 className='whLi__label'>Address</h4>
-                  <p2 className='whLi__info'>503 Broadway, New York, USA</p2>
+                <div className='whLi__actions'>
+                  <img className="whLi__deleteBtn iconBtn" src={trashCan} alt="trash can icon"></img>
+                  <img className="whLi__editBtn iconBtn" src={editPen} alt="edit pen icon"></img>
                 </div>
               </div>
-              <div className='whLi__subbox whLi__subbox--right'>
-                <div className='whLi__item'>
-                  <h4 className='whLi__label'>Contact Name</h4>
-                  <p2 className='whLi__info'>Parmin Aujla</p2>
-                </div>
-                <div className='whLi__item'>
-                  <h4 className='whLi__label'>Contact Information</h4>
-                  <p2 className='whLi__info'>+1 (629) 555-0129 <br/>paujla@instock.com</p2>
-                </div>
-              </div>
-            </div>
-            <div className='whLi__actions'>
-              <img className="whLi__deleteBtn iconBtn" src={trashCan} alt="trash can icon"></img>
-              <img className="whLi__editBtn iconBtn" src={editPen} alt="edit pen icon"></img>
-            </div>
-          </div>
+            ))}
         </div>
       </>
     );
