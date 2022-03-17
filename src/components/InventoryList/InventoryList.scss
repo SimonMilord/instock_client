@@ -55,7 +55,7 @@
       padding-left: 1rem;
       background-image: url("../../assets/Icons/search-24px.svg");
       background-repeat: no-repeat;
-      background-position: 12.5rem 0.35rem;
+      background-position: 95% 50%;
       margin-bottom: 1rem;
 
       @include tablet {
@@ -177,6 +177,7 @@
 
     @include tablet {
       // @include display-flex(row, none, none);
+      width: 100%;
     }
   }
 
@@ -185,7 +186,8 @@
 
     @include tablet {
       @include display-flex(row, none, none);
-      width: 60%;
+      // width: 100%;
+      
     }
 
     &-div {
@@ -193,7 +195,7 @@
 
       @include tablet {
         @include display-flex(row, none, none);
-        // width: 100%;
+        width: 100%;
       }
     }
   }
