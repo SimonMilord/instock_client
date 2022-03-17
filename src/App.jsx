@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
   render() {
@@ -41,6 +42,7 @@ class App extends Component {
                 <InventoryPage {...routerProps} /> }
               />
             </Switch>
+            <Footer />
           </div>
         </Router>
       </>
