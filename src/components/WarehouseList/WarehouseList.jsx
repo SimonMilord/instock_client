@@ -75,7 +75,7 @@ class WarehouseList extends Component {
                     <div className='whLi__item whLi__item--link'>
                       <h4 className='whLi__label'>Warehouse</h4>
                       <div className='whLi__link-box'>
-                        <Link className="whLi__link" to="/warehouse/:id">
+                        <Link className="whLi__link" to={`/warehouses/${warehouse.id}`}>
                           <h3 className='whLi__link-p'>{warehouse.name}</h3>
                         </Link>
                         <img className='whLi__link-icon' src={chevron} alt="chevron"></img>
@@ -83,23 +83,27 @@ class WarehouseList extends Component {
                     </div>
                     <div className='whLi__item'>
                       <h4 className='whLi__label'>Address</h4>
-                      <p2 className='whLi__info'>{warehouse.address}, {warehouse.city}, {warehouse.country}</p2>
+                      <p className='whLi__info'>{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
                     </div>
                   </div>
                   <div className='whLi__subbox whLi__subbox--right'>
                     <div className='whLi__item'>
                       <h4 className='whLi__label'>Contact Name</h4>
-                      <p2 className='whLi__info'>{warehouse.contact.name}</p2>
+                      <p className='whLi__info'>{warehouse.contact.name}</p>
                     </div>
                     <div className='whLi__item'>
                       <h4 className='whLi__label'>Contact Information</h4>
-                      <p2 className='whLi__info'>{warehouse.contact.phone} <br/>{warehouse.contact.email}</p2>
+                      <p className='whLi__info'>{warehouse.contact.phone} <br/>{warehouse.contact.email}</p>
                     </div>
                   </div>
                 </div>
                 <div className='whLi__actions'>
-                  <img className="whLi__deleteBtn iconBtn" src={trashCan} alt="trash can icon"></img>
-                  <img className="whLi__editBtn iconBtn" src={editPen} alt="edit pen icon"></img>
+                  <Link to="/">
+                    <img className="whLi__deleteBtn iconBtn" src={trashCan} alt="trash can icon"></img>
+                  </Link>
+                  <Link to="/">
+                    <img className="whLi__editBtn iconBtn" src={editPen} alt="edit pen icon"></img>
+                  </Link>
                 </div>
               </div>
             ))}
