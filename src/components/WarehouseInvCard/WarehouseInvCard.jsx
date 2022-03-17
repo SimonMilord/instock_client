@@ -9,7 +9,7 @@ export default function WarehouseInvCard(props) {
     return (
         <div className='card'>
             <h3 className='card__title card__title--mobile'>inventory item</h3>
-            <Link className='link' to={props.id}>
+            <Link className='link' to={''}>
                 <p className='link__text'>{props.itemName}</p>
                 <img className='link__image' src={Chevron}/>
             </Link>
@@ -20,11 +20,11 @@ export default function WarehouseInvCard(props) {
             <h3 className='card__title'>qty</h3>
             <p className='card__text'>{props.quantity}</p>
             <div className='card__actions'>
-                <Link to={`/warehouse/inventory/delete`}>
-                    <image className='card__delete' src={Delete}/>
+                <Link to={``}>
+                    <img className='card__delete' src={Delete}/>
                 </Link>
-                <Link to={`/inventory/edit`}>
-                    <image className='card__edit' src={Edit} alt="edit icon"/>
+                <Link to={``}>
+                    <img className='card__edit' src={Edit} alt="edit icon"/>
                 </Link>
             </div>
         </div>
