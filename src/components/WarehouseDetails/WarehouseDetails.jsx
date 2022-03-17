@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './WarehouseDetails.scss';
 import { Link } from 'react-router-dom';
-
+import WarehouseInv from '../WarehouseInv/WarehouseInv';
 
 
 export default class WarehouseDetails extends Component {
@@ -10,14 +10,11 @@ export default class WarehouseDetails extends Component {
     state = {
         warehouseData: {},
         inventory: [],
-        contact: []
     }
-
-    url = process.env.REACT_APP_API_URL;
 
     async fetchInventory (id) {
         try {
-            const invResponse = await axios.get(`${url}/warehouse/${id}/inventory`)
+            const invResponse = await axios.get(`${process.env.REACT_APP_API_URL}/warehouse/${id}/inventory`)
             this.setState ({
                 inventory: invResponse.data
             })
@@ -26,9 +23,9 @@ export default class WarehouseDetails extends Component {
 
     async fetchWarehouseData (id) {
         try {
-            const response = await axios.get(`${url}/warehouse/${id}`)
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/warehouse/${id}`)
             this.setState({
-                warhouseData: response.data,
+                warehouseData: response.data,
             })
             this.fetchInventory(id);
         } catch(err) {console.log(err)}
@@ -62,24 +59,27 @@ export default class WarehouseDetails extends Component {
                     <div className='details__contact--name'>
                         <h3 className='details__subtitles'>contact name:</h3>
                         <p className='details__text'>
-                            {this.state.warehouseData.contact.name}
+                            {this.state.warehouseData.contact &&this.state.warehouseData.contact.name}
                             <br />
-                            {this.state.warehouseData.contact.position}
+                            {this.state.warehouseData.contact &&this.state.warehouseData.contact.position}
                         </p>
                     </div>
                     <div className='details__contact--info'>
                     <h3 className='details__subtitles'>contact information:</h3>
                         <p className='details__text'>
-                            {this.state.warehouseData.contact.phone}
+                            {this.state.warehouseData.contact &&this.state.warehouseData.contact.phone}
                             <br />
-                            {this.state.warehouseData.contact.email}
+                            {this.state.warehouseData.contact &&this.state.warehouseData.contact.email}
                         </p>
                     </div>
                 </div>
                 <div className='details__inv'>
-                    <WarehouseInv list = {this.state.inventory} />
+                    <WarehouseInv inventory = {this.state.inventory} />
                 </div>
-            </div>  
+            </div>
         )
     }
 }
+
+
+
