@@ -2,120 +2,287 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/fonts";
 
-.card {
-    margin: -1.375rem 1rem;
+.cardList {
+    margin: -2.25rem 1rem 0 1rem;
     background-color: $global-white-color;
-    padding: 1rem 1.5rem 1.6875rem 1.5rem;
-    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    padding: 1rem 0rem 1.6875rem 0rem;
   
     @include tablet {
-      @include display-flex(row, space-between, none);
-      margin: -2rem 2rem;
-    }
-  
-    &__section {
-      @include display-flex(row, flex-start, none);
-      gap: 2.5rem;
-      // width: 100%;
-  
-      @include tablet {
-        // @include display-flex(row, none, none);
-        width: 100%;
-        margin: 0 0.75rem;
-  
+      margin: -2rem 2rem .35rem 2rem;
+      padding: 0rem 0rem 1.6875rem 0rem;
+      // border-bottom: 1px solid red;
+
+      @include desktop {
+        margin: -0.5rem 8.125rem .35rem 8.125rem;
+
       }
     }
   
-    &__content {
-      width: 50%;
+    .card {
+      border-top: 1px solid $secondary-grey;
+      // margin: -2rem 1rem;
+      // background-color: $global-white-color;
   
       @include tablet {
+        @include display-flex(row, space-between, none);
+        // margin: 0 2rem;
+        padding: 0rem 1rem;
+        border-top: none;
+        border-bottom: 1px solid $secondary-grey;
+      }
+
+      &__box {
         @include display-flex(row, none, none);
-        // width: 100%;
-        
-      }
-  
-      &-div {
-        margin-bottom: 1.75rem;
-  
+        margin: 0rem 1rem;
+
         @include tablet {
-          @include display-flex(row, none, none);
+          margin: 0;
+          width: 80%;
+        }
+      }
+
+      &__info--category {
+
+        @include tablet {
+          padding-left: 2rem;
+        }
+      }
+
+      &__info--qty {
+        
+        @include tablet {
+          padding-left: 1.25rem;
+          text-align: center;
+        }
+      }
+
+      &__info--warehouse {
+        
+        @include tablet {
+          text-align: end;
+          margin-right: -1rem;
+
+        }
+      }
+
+      &__subbox {
+        width: 50%;
+
+        @include tablet {
+          @include display-flex(row, flex-end, center);
+          width: 50%;
+        }
+      }
+
+      &__item {
+        margin: 1rem;
+        @include tablet {
+          width: 50%;
+          margin-left: 0rem;
+        }
+        &--link {
+          color: $interactive-color;
+          font-weight: $semi-bold;
+          @include tablet {
+            margin-left: 1rem;
+            
+          }
+        }
+      }
+
+      &__label {
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 18px;
+        color: $secondary-text-color;
+        margin-bottom: 0.25rem;
+
+        &--padding {
+          margin-top: 1.125rem;
+        }
+
+
+        @include tablet {
+          display: none;
+
           
         }
       }
-    }
-  
-    &__titles {
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-  
-      @include tablet {
+
+      &__link-box {
+        @include display-flex(row, none, center);
+      }
+
+      &__info {
+        line-height: 20px;
+        font-size: 13px;
+      }
+
+      &__stock--green {
+        @include display-flex(none, center, center);
+        background-color: #15846315;
+        width: 4rem;
+        height: 1.5rem;
+        color: $instock-label-color; 
+        text-transform: uppercase;
+        margin-top: 0.35rem;
+        border-radius: 0.75rem;
+
+        @include tablet {
+          width: 4.5rem;
+          height: 1.65rem;
+          font-size: 10px;
+          margin-left: 1.35rem;
+        }
+      }
+
+      &__stock--red {
+        @include display-flex(none, center, center);
         display: none;
+        background-color: #c945152a;
+        width: 4rem;
+        height: 1.5rem;
+        color: red; 
+        text-transform: uppercase;
+        margin-top: -0.35rem;
+        border-radius: 0.75rem;
       }
-  
-      &--padding {
-        padding-top: 0.29rem
-      }
-    }
-  
-    &__text {
-  
-      @include tablet {
-      }
-  
-      &-link {
-        text-decoration: none;
-  
-        @include tablet {
-          padding-right: 2rem;
-        }
-  
-        
-      }
-  
-      &-btn {
+
+      &__link {
+        line-height: 20px;
+        font-size: 13px;
         color: $interactive-color;
-        // background-image: url('../../assets/Icons/chevron_right-24px.svg');
-        // background-repeat: no-repeat;
-        // background-position: 55% 0%;
-        @include display-flex(row,none,center);
-  
-        @include tablet {
-          padding-right: 2rem;
-          background-position: 90% 0%;
-        }
         
-  
+
+        &-anchor {
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &:active {
+            color: $interactive-color;
+          }
+        }
+      }
+
+       // &__link-icon {
+
+    // }
+
+      &__actions {
+        @include display-flex(row, space-between, none);
+        padding-bottom: 2rem;
+        margin: 0rem 2rem;
+        @include tablet {
+          width: 20%;
+          @include display-flex(row, flex-end, center);
+
+          margin: 0;
+          padding: 1rem;
+        }
+        .iconBtn {
+          @include tablet {
+            height: 1.5rem;
+            margin-left: 1.5rem;
+          }
+        }
+
       }
     }
+}
   
-    &__in-stock {
-      @include display-flex(none, center, center);
-      background-color: #15846315;
-      width: 4rem;
-      height: 1.5rem;
-      color: $instock-label-color; 
-      text-transform: uppercase;
-      margin-top: -0.35rem;
-      border-radius: 0.75rem;
-    }
+  //   &__content {
+  //     width: 50%;
   
-    &__out-stock {
-      @include display-flex(none, center, center);
-      display: none;
-      background-color: #c945152a;
-      width: 4rem;
-      height: 1.5rem;
-      color: $alert-color; 
-      text-transform: uppercase;
-      margin-top: -0.35rem;
-      border-radius: 0.75rem;
-    }
+  //     @include tablet {
+  //       @include display-flex(row, none, none);
+  //       // width: 100%;
+        
+  //     }
   
-    &__content-bottom {
-      @include display-flex(row, space-between, none);
-    }
+  //     &-div {
+  //       margin-bottom: 1.75rem;
+  
+  //       @include tablet {
+  //         @include display-flex(row, none, none);
+          
+  //       }
+  //     }
+  //   }
+  
+  //   &__titles {
+  //     text-transform: uppercase;
+  //     margin-bottom: 0.75rem;
+  
+  //     @include tablet {
+  //       display: none;
+  //     }
+  
+  //     &--padding {
+  //       padding-top: 0.29rem
+  //     }
+  //   }
+  
+  //   &__text {
+  
+  //     @include tablet {
+  //     }
+  
+  //     &-link {
+  //       text-decoration: none;
+  
+  //       @include tablet {
+  //         padding-right: 2rem;
+  //       }
+  
+        
+  //     }
+  
+  //     &-btn {
+  //       color: $interactive-color;
+  //       // background-image: url('../../assets/Icons/chevron_right-24px.svg');
+  //       // background-repeat: no-repeat;
+  //       // background-position: 55% 0%;
+  //       @include display-flex(row,none,center);
+  
+  //       @include tablet {
+  //         padding-right: 2rem;
+  //         background-position: 90% 0%;
+  //       }
+        
+  
+  //     }
+  //   }
+  
+  //   &__in-stock {
+  //     @include display-flex(none, center, center);
+  //     background-color: #15846315;
+  //     width: 4rem;
+  //     height: 1.5rem;
+  //     color: $instock-label-color; 
+  //     text-transform: uppercase;
+  //     margin-top: -0.35rem;
+  //     border-radius: 0.75rem;
+  //   }
+  
+  //   &__out-stock {
+  //     @include display-flex(none, center, center);
+  //     display: none;
+  //     background-color: #c945152a;
+  //     width: 4rem;
+  //     height: 1.5rem;
+  //     color: $alert-color; 
+  //     text-transform: uppercase;
+  //     margin-top: -0.35rem;
+  //     border-radius: 0.75rem;
+  //   }
+  
+  //   &__content-bottom {
+  //     @include display-flex(row, space-between, none);
+  //   }
   
   
-  }
+  // }
   
