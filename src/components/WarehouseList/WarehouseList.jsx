@@ -7,10 +7,13 @@ import trashCan from "../../assets/Icons/delete_outline-24px.svg";
 import editPen from "../../assets/Icons/edit-24px.svg";
 import searchIcon from "../../assets/Icons/search-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
+import Modal from "../Modal/Modal";
 
 class WarehouseList extends Component {
   state = {
     warehouseData: [],
+    popUp: false,
+    deleteId: ''
   }
 
   // Lifecycle methods
@@ -29,7 +32,23 @@ class WarehouseList extends Component {
       })
   }
 
+  handlePopUp = (deleteId) => {
+    this.setState ({
+      popUp: !this.state.popUp,
+      deleteId: deleteId
+    })
+    console.log(deleteId)
+  }
+
+  handleDelete = async () => {
+    console.log('deleted');
+    const deleteHandler = await axios.delete(`${process.env.REACT_APP_API_URL}/warehouses/${this.state.deleteId}/delete`)
+    this.handlePopUp()
+    this.getWarehouseData(this.props.match.params.id);
+}
+
   render() {
+
     return (
       <>
         {/* header of the page */}
@@ -100,9 +119,13 @@ class WarehouseList extends Component {
                   </div>
                 </div>
                 <div className='whLi__actions'>
-                  <Link to="/">
-                    <img className="whLi__deleteBtn iconBtn" src={trashCan} alt="trash can icon"></img>
-                  </Link>
+                  <button onClick= {() => this.handlePopUp(warehouse.id)}>
+                    <img
+                      className="whLi__deleteBtn iconBtn"
+                      src={trashCan}
+                      alt="trash can icon">
+                    </img>
+                  </button>
                   <Link to={`/warehouses/${warehouse.id}/edit`}>
                     <img className="whLi__editBtn iconBtn" src={editPen} alt="edit pen icon"></img>
                   </Link>
@@ -110,6 +133,13 @@ class WarehouseList extends Component {
               </div>
             ))}
         </div>
+        {this.state.popUp === true ? (
+          <Modal
+          warehouseData = {this.state.warehouseData}
+          handlePopUp={this.handlePopUp}
+          deleteHandler={this.handleDelete}
+          deleteId = {this.state.deleteId}
+          />) : (console.log("no modalz"))}
       </>
     );
   }

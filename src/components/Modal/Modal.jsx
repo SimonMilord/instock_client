@@ -1,20 +1,53 @@
-import React from 'react';
+import React from "react";
+import './Modal.scss';
+import closeIcon from '../../assets/Icons/close-24px.svg';
 
-export default function Modal({deleteHandler, handlePopUp}) {
-  // if (!open) return null
+export default function Modal(props) {
+  console.log(props.deleteId)
+  console.log(props.warehouseData)
+  const newArray = props.warehouseData.find(item => item.id === props.deleteId)
 
+  console.log(newArray)
   return (
     <>
-      <div className='overlay'/>
-      <div className='modal'>
-        <h1 className='modal__title'>Delete "warehouse.name" warehouse</h1>
-        <p className='modal__text'>Please confirm that you'd like to delete the "warehouse.name" from
-        the list of warehouses. You won't be able to undo this action.</p>
-        <div className='modal__btnBox'>
-          <button className='modal__btn modal__btn--cancel' onClick={handlePopUp}>Cancel</button>
-          <button className='modal__btn modal__btn--delete'onClick={deleteHandler}>Delete </button>
+
+      <div className="overlay" />
+      <div className="modal">
+        <div className="modal__iconBox">
+          <img className="modal__closeIcon" src={closeIcon} onClick={() => props.handlePopUp(props.warehouseData.id)} alt="x"></img>
+        </div>
+        <div className="modal__core">
+          <div className="modal__content">
+            <h1 className="modal__title">
+              {newArray.name === undefined
+                ? `Delete ${newArray.itemName} inventory item?`
+                : `Delete ${newArray.name} warehouse?`}
+            </h1>
+
+            <p className="modal__text">
+              {props.warehouseData.name === ""
+                ? `Please confirm that you'd like to delete ${props.warehouseInv.itemName} from the inventory list.
+                You won't be able to undo this action.`
+                : `Please confirm that you'd like to delete the ${newArray.name} from the list of warehouses.
+                You won't be able to undo this action.`}
+            </p>
+          </div>
+          <div className="modal__btnBox">
+            <button
+              className="modal__btn modal__btn--cancel"
+              onClick={() => props.handlePopUp(props.warehouseData.id)}
+            >
+              Cancel
+            </button>
+            <button
+              className="modal__btn modal__btn--delete"
+              onClick={() =>props.deleteHandler}
+            >
+              Delete{" "}
+            </button>
+          </div>
         </div>
       </div>
     </>
-  )
+  );
 }
