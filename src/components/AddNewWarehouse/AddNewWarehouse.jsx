@@ -1,5 +1,7 @@
 import './AddNewWarehouse.scss';
 import { Component } from "react";
+import { Link } from 'react-router-dom';
+// import axios from 'axios';
 
 import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
 
@@ -60,12 +62,17 @@ function AddNewWarehouse() {
                     </div>
                 </section>
                 <div className='newWarehouse__form-btn'>
-                    <button className='newWarehouse__form-btn-cancel' type='button'>Cancel</button>
-                    <button className='newWarehouse__form-btn-add' type='submit'>+ Add Warehouse</button>
+                    <Link className='newWarehouse__form-btn-link-cancel' to='/'>
+                        <button className='newWarehouse__form-btn-cancel' type=''>Cancel</button>
+                    </Link>
+                    <Link className='newWarehouse__form-btn-link-add' to='/'>
+                        <button className='newWarehouse__form-btn-add' type='submit'>+ Add Warehouse</button>
+                    </Link>
                 </div>
             </div>
         </div>
     );
+
 }
 
 export default AddNewWarehouse;

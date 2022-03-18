@@ -121,14 +121,29 @@
         padding: 1rem 2rem;
       }
 
-      &-cancel {
+      &-link-cancel {
         width: 50%;
+
+        @include tablet {
+          width: 4.625rem;
+        }
+      }
+
+      &-cancel {
+        width: 100%;
         height: 2.25rem;
         border: 1px solid #bdc5d5;
         border-radius: 20px;
         background-color: $global-white-color;
         color: $secondary-text-color;
         font-family: 'Titillium Web';
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          border: 1px solid $interactive-color;
+          color: $interactive-color;
+        }
 
         @include tablet {
             width: 4.5rem;
@@ -136,17 +151,30 @@
 
       }
 
-      &-add {
+      &-link-add {
         width: 50%;
+
+        @include tablet {
+          width: 8.625rem;
+        }
+      }
+
+      &-add {
+        width: 100%;
         height: 2.25rem;
         border-radius: 20px;
         background-color: $interactive-color;
         border: none;
         color: $global-white-color;
         font-family: 'Titillium Web';
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $CTA-hover-color;
+        }
 
         @include tablet {
-            width: 8.625rem;
         }
       }
     }
