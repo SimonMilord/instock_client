@@ -43,7 +43,7 @@ export default class WarehouseDetails extends Component {
         this.setState ({
             popUp: !this.state.popUp,
             deleteId: deleteId
-        }) 
+        })
     }
 
     handleDelete = async () => {
@@ -101,8 +101,10 @@ export default class WarehouseDetails extends Component {
                 </div>
             </div>
             {this.state.popUp === true ? (
-            <Modal warhouseInv={this.state.inventory} 
+            <Modal
+                    warehouseData = {this.state.inventory}
                     handlePopUp={this.handlePopUp}
+                    deleteId={this.state.deleteId}
                     deleteHandler={this.handleDelete}
                     />) : (console.log("no modal"))}
             </>

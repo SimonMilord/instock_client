@@ -84,6 +84,7 @@
         padding: 1rem;
       }
       .iconBtn {
+        cursor: pointer;
         @include tablet {
           height: 1.5rem;
           margin-left: 1.5rem;
