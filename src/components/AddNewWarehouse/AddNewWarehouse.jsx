@@ -2,17 +2,25 @@ import './AddNewWarehouse.scss';
 import { Component } from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import { v4 as uuidv4 } from "uuid";
 import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
 
 class AddNewWarehouse extends Component() {
 
     state = {
-        formSubmitted: false,
+        nameError: false,
+        addressError: false,
+        cityError: false,
+        countryError: false,
+        contactNameError: false,
+        positionError: false,
+        phoneError: false,
+        emailError: false
     };
 
     handleFormSubmit = (event) => {
         event.preventDefault();
+        const id = uuidv4();
         const warehouseName = event.target.warehouseName.value;
         const warehouseAddress = event.target.streetAddress.value;
         const warehouseCity = event.target.warehouseCity.value;
@@ -22,18 +30,19 @@ class AddNewWarehouse extends Component() {
         const contactPhoneNumber = event.target.contactPhoneNumber.value;
         const contactEmail = event.target.contactEmail.value;
 
-        //post data to API
-        axios
+        if(id && warehouseName && warehouseAddress && warehouseCity && contactName && contactPosition && contactPhoneNumber && contactEmail) {
+            //post data to API
+            axios
             .post(`${process.env.REACT_APP_API_UPL}/warehouses`, {
+                
                 name: warehouseName,
                 address: warehouseAddress,
                 city: warehouseCity,
                 country: warehouseCountry,
-                //not sure if I should create an contact array
-                    name: contactName,
-                    position: contactPosition,
-                    phone: contactPhoneNumber,
-                    email: contactEmail
+                name: contactName,
+                position: contactPosition,
+                phone: contactPhoneNumber,
+                email: contactEmail
             })
             .then((res) => {
                 console.log(res);
@@ -45,15 +54,26 @@ class AddNewWarehouse extends Component() {
             .catch((err) => {
                 console.log(err);
             });
+        }   
+        else {
+            if (!warehouseName) this.setState({ nameError: true})
+            if (!warehouseAddress) this.setState({ nameError: true})
+            if (!warehouseCity) this.setState({ nameError: true})
+            if (!warehouseCountry) this.setState({ nameError: true})
+            if (!contactName) this.setState({ nameError: true})
+            if (!contactPosition) this.setState({ nameError: true})
+            if (!contactPhoneNumber) this.setState({ nameError: true})
+            if (!contactEmail) this.setState({ nameError: true})
+        }
     }
 
 
 
   render() {
 
-    if (this.state.formSubmitted) {
-        return <Redirect to='/' />
-    }
+    // if (this.state.formSubmitted) {
+    //     return <Redirect to='/' />
+    // }
 
     return (
 
@@ -69,19 +89,19 @@ class AddNewWarehouse extends Component() {
                         <form className="newWarehouse__form-details">
                             <h2 className='newWarehouse__form-title'>Warehouse Details</h2>
                             <label className='newWarehouse__form-header'>Warehouse Name
-                                <input className="newWarehouse__form-input" type="text" name="warehouseName"
+                                <input className={this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseName"
                                     placeholder="Warehouse Name" />
                             </label>
                             <label className='newWarehouse__form-header'>Street Address
-                                <input className="newWarehouse__form-input" type="text" name="warehouseAddress"
+                                <input className={this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseAddress"
                                     placeholder="Street Address" />
                             </label>
                             <label className='newWarehouse__form-header'>City
-                                <input className="newWarehouse__form-input" type="text" name="warehouseCity"
+                                <input className={this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseCity"
                                     placeholder="City" />
                             </label>
                             <label className='newWarehouse__form-header'>Country
-                                <input className="newWarehouse__form-input" type="text" name="warehouseCountry"
+                                <input className={this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseCountry"
                                     placeholder="Country" />
                             </label>
                         </form>
@@ -91,19 +111,19 @@ class AddNewWarehouse extends Component() {
                         <form className="newWarehouse__form-details">
                             <h2 className='newWarehouse__form-title'>Contact Details</h2>
                             <label className='newWarehouse__form-header'>Contact Name
-                                <input className="newWarehouse__form-input" type="text" name="contactName"
+                                <input className={this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactName"
                                     placeholder="Contact Name" />
                             </label>
                             <label className='newWarehouse__form-header'>Position
-                                <input className="newWarehouse__form-input" type="text" name="contactPosition"
+                                <input className={this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactPosition"
                                     placeholder="Position" />
                             </label>
                             <label className='newWarehouse__form-header'>Phone Number
-                                <input className="newWarehouse__form-input" type="text" name="contactPhoneNumber"
+                                <input className={this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactPhoneNumber"
                                     placeholder="City" />
                             </label>
                             <label className='newWarehouse__form-header'>Email
-                                <input className="newWarehouse__form-input" type="text" name="contactEmail"
+                                <input className={this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactEmail"
                                     placeholder="Email" />
                             </label>
                         </form>
