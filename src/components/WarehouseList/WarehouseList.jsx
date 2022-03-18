@@ -40,7 +40,9 @@ class WarehouseList extends Component {
               <input className="search__input" type="text" name="" placeholder='Search...' />
               <img className='search__icon' src={searchIcon} alt="search icon"></img>
             </div>
-            <button className='newWarehouse-btn'>+ Add New Warehouse</button>
+            <Link to={`/warehouses/add`}>
+              <button className='newWarehouse-btn'>+ Add New Warehouse</button>
+            </Link>
           </div>
         </div>
         {/* row of labels for the table on desktop and tablet */}
@@ -101,7 +103,7 @@ class WarehouseList extends Component {
                   <Link to="/">
                     <img className="whLi__deleteBtn iconBtn" src={trashCan} alt="trash can icon"></img>
                   </Link>
-                  <Link to="/">
+                  <Link to={`/warehouses/${warehouse.id}/edit`}>
                     <img className="whLi__editBtn iconBtn" src={editPen} alt="edit pen icon"></img>
                   </Link>
                 </div>
