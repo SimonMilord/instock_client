@@ -1,6 +1,7 @@
 import './InventoryList.scss';
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import InventoryCard from '../InventoryCard/InventoryCard';
 
 
@@ -46,7 +47,9 @@ class InventoryList extends React.Component {
                             <h1 className='inventory__title'>Inventory</h1>
                             <div className='inventory__actions'>
                                 <input className='inventory__actions-search' type='text' name='search' placeholder='Search...' />
-                                <button className='inventory__actions-btn'>+ Add New Item</button>
+                                <Link to=''>
+                                    <button className='inventory__actions-btn'>+ Add New Item</button>
+                                </Link>
                             </div>
                         </div>
                         <ul className='inventory__list'>
@@ -58,15 +61,15 @@ class InventoryList extends React.Component {
                             <li className='inventory__list-item inventory__icon-6'>actions</li>
                         </ul>
                     </header>
-                   { this.state.inventories.map(item => {
-            return (
-                <InventoryCard 
-                key= {item.id}
-                {...item} />
-            )
-        })}
+                    {this.state.inventories.map(item => {
+                        return (
+                            <InventoryCard
+                                key={item.id}
+                                {...item} />
+                        )
+                    })}
                 </section>
-            </div>
+            </div >
 
         );
     }
