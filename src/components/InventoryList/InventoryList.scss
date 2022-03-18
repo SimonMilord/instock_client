@@ -6,6 +6,8 @@
   width: 100%;
   height: 12.5rem;
   background-color: $nav-background-color;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
 }
 
 .inventory {
@@ -16,18 +18,18 @@
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 
     @include tablet {
-      margin: -5.875rem 2rem 2rem 2rem;
+      margin: -5.875rem 2rem 0rem 2rem;
       box-shadow: none;
 
       @include desktop {
-        margin: -5.875rem 8.125rem 0.5rem 8.125rem;
+        margin: -5.875rem 8.125rem 0rem 8.125rem;
 
       }
     }
   }
 
   &__section {
-    margin: 0rem 1.5rem 1.5rem 1.5rem;
+    margin: 0rem 1.5rem 0rem 1.5rem;
 
 
     @include tablet {
@@ -64,6 +66,7 @@
       background-repeat: no-repeat;
       background-position: 95% 50%;
       margin-bottom: 1rem;
+      outline: none;
 
       &:focus-within {
         border: 1px solid $interactive-color;
