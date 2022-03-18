@@ -17,7 +17,7 @@ function InventoryItemDetails(props) {
                     <h1 className="itemDetails__subHead-title">Television</h1>
                 </div>
                 <Link>
-                    <button className="itemDetails__subHead-btn"><img src={editPen} alt="editing icon" /></button>
+                    <button className="itemDetails__subHead-btn"><img className="itemDetails__subHead-btn-img" src={editPen} alt="editing icon" /></button>
                 </Link>
             </div>
 
