@@ -31,13 +31,13 @@ class AddNewInventoryItem extends Component{
                                 placeholder="Please enter a brief item description"
                             />
                               <label className="itemDetails__labels">Category</label>
-                                <Select className="itemDetails__select" name="category" id="" placeholder="Please select">
+                                {/* <Select className="itemDetails__select" name="category" id="" placeholder="Please select">
                                     <option className="itemDetails__select--option" value="1">Electronics</option>
                                     <option className="itemDetails__select--option" value="2">Gear</option>
                                     <option className="itemDetails__select--option" value="3">Apparel</option>
                                     <option className="itemDetails__select--option" value="4">Accessories</option>
                                     <option className="itemDetails__select--option" value="5">Health</option>
-                                </Select>
+                                </Select> */}
                         </div>
                         <div className="itemDetails">
                             <h2 className="itemDetails__heading">Item Availability</h2>
@@ -57,7 +57,7 @@ class AddNewInventoryItem extends Component{
                                     placeholder="0"
                                 />
                             <label className="itemDetails__labels">Warehouse</label>
-                            <Select className="itemDetails__select" name="Please select" id="">
+                            {/* <Select className="itemDetails__select" name="Please select" id="">
                                 <option className="itemDetails__select--option" value="1">Manhattan</option>
                                 <option className="itemDetails__select--option" value="2">Washington</option>
                                 <option className="itemDetails__select--option" value="3">Jersey</option>
@@ -65,7 +65,7 @@ class AddNewInventoryItem extends Component{
                                 <option className="itemDetails__select--option" value="5">Santa Monica</option>
                                 <option className="itemDetails__select--option" value="5">Seattle</option>
                                 <option className="itemDetails__select--option" value="5">Miami</option>
-                            </Select>
+                            </Select> */}
                         </div>
                     </div>
                     <div className="inventoryForm__box2">

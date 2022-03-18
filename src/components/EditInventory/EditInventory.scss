@@ -1,0 +1,66 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.editInventory {
+    @include component-box;
+    // margin: 2rem;
+    margin-top: -3rem;
+
+    @include tablet {
+        margin: 2rem;
+        margin-top: -5rem;
+
+    }
+
+    @include desktop {
+        margin: 2rem 10rem;
+        margin-top: -5rem;
+    }
+}
+
+.editInventoryHeader {
+    padding: 1.5rem;
+    display: flex;
+    border-bottom: 1px solid $secondary-grey;
+
+    @include tablet {
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+    }
+
+    &__heading {
+        padding-left: 0.5rem;
+        text-transform: capitalize;
+    }
+}
+
+.editInventoryForm {
+    padding: 1.5rem;
+
+
+    &__form {}
+
+    &__heading {
+        padding-bottom: 1.5rem;
+    }
+
+    &__field {
+        @include form-field
+    }
+
+    &__input {
+        @include form-input;
+        min-height: 2.25rem;
+    }
+
+    &__textarea {
+        @include form-input;
+        min-height: 9rem;
+        padding-top: .5rem;
+    }
+
+
+
+}
