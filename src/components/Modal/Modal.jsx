@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 
-export default function Modal(open, onClose) {
-  if (!open) return null
+export default function Modal({deleteHandler, handlePopUp}) {
+  // if (!open) return null
 
-  return ReactDom.createPortal(
+  return (
     <>
       <div className='overlay'/>
       <div className='modal'>
@@ -12,11 +11,10 @@ export default function Modal(open, onClose) {
         <p className='modal__text'>Please confirm that you'd like to delete the "warehouse.name" from
         the list of warehouses. You won't be able to undo this action.</p>
         <div className='modal__btnBox'>
-          <button className='modal__btn modal__btn--cancel' onClick={onClose}>Cancel</button>
-          <button className='modal__btn modal__btn--delete'>Delete onClick={onClose}</button>
+          <button className='modal__btn modal__btn--cancel' onClick={handlePopUp}>Cancel</button>
+          <button className='modal__btn modal__btn--delete'onClick={deleteHandler}>Delete </button>
         </div>
       </div>
-    </>,
-    document.getElementById('portal')
-  );
+    </>
+  )
 }

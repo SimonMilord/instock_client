@@ -3,13 +3,15 @@ import axios from 'axios';
 import './WarehouseDetails.scss';
 import { Link } from 'react-router-dom';
 import WarehouseInv from '../WarehouseInv/WarehouseInv';
-
+import Modal from '../Modal/Modal';
 
 export default class WarehouseDetails extends Component {
 
     state = {
         warehouseData: {},
         inventory: [],
+        popUp: false,
+        deleteId: ''
     }
 
     async fetchInventory (id) {
@@ -31,12 +33,30 @@ export default class WarehouseDetails extends Component {
         } catch(err) {console.log(err)}
     }
 
-    componentDidMount (){
+    componentDidMount () {
         this.fetchWarehouseData(this.props.match.params.id);
     }
 
+
+    handlePopUp = (deleteId) => {
+        console.log(this.state.popUp)
+        this.setState ({
+            popUp: !this.state.popUp,
+            deleteId: deleteId
+        }) 
+    }
+
+    handleDelete = async () => {
+        console.log('deleted');
+        const deleteHandler = await axios.delete(`${process.env.REACT_APP_API_URL}/inventory/${this.state.deleteId}/delete`)
+        this.handlePopUp()
+        this.fetchWarehouseData(this.props.match.params.id);
+    }
+
+
     render() {
         return (
+            <>
             <div className='details'>
                 <div className='details__titlebar'>
                     {/* <Link className='details__link'>
@@ -73,10 +93,19 @@ export default class WarehouseDetails extends Component {
                         </p>
                     </div>
                 </div>
+                <button onClick={this.handleDelete}>
+                    delete
+                </button>
                 <div className='details__inv'>
-                    <WarehouseInv inventory = {this.state.inventory} />
+                    <WarehouseInv inventory = {this.state.inventory} handlePopUp = {this.handlePopUp}/>
                 </div>
             </div>
+            {this.state.popUp === true ? (
+            <Modal warhouseInv={this.state.inventory} 
+                    handlePopUp={this.handlePopUp}
+                    deleteHandler={this.handleDelete}
+                    />) : (console.log("no modal"))}
+            </>
         )
     }
 }
