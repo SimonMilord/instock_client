@@ -3,9 +3,7 @@
 function AddNewWarehouse() {
 
     return (
-        <div>
-            hello
-        </div>
+      <div>hello</div>
     );
 }
 
