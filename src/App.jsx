@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails';
+import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
 
 class App extends Component {
   render() {
@@ -14,7 +15,9 @@ class App extends Component {
           <div className='App'>
             <Header />
             <Switch>
-              {/* Routing */}
+              <AddNewWarehouse />
+              
+              {/* Routing */}{/*
               <Route path="/" exact render={(routerProps) =>
                 <WarehousesPage
                   {...routerProps} />
@@ -41,7 +44,7 @@ class App extends Component {
                 render={(routerProps) =>
                 <InventoryPage {...routerProps} /> }
               />
-
+                */}
             </Switch>
           </div>
         </Router>
