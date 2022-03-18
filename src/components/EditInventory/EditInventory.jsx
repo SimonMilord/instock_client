@@ -9,6 +9,9 @@ import axios from "axios";
         state ={
             inventory: [],
             warehouseData: [],
+            id: '',
+            warehouseId: '',
+            warehouseName: '',
             name: "",
             description: "",
             category: "",
@@ -18,9 +21,9 @@ import axios from "axios";
         }
 
         getMappedWarehouses = (warehouseData) => {
-            const mapWarehouse = warehouseData.map((warehouse, index) => {
+            const mapWarehouse = warehouseData.map((warehouse) => {
                 return (
-                    <option key={warehouse.id} className="editInventoryForm__select--option" value={index}>{warehouse.name}</option>
+                    <option key={warehouse.id} id={warehouse.id} className="editInventoryForm__select--option" value={JSON.stringify({warehouseName: warehouse.name, warehouseId: warehouse.id})}>{warehouse.name}</option>
                 )
             })
             return mapWarehouse
@@ -36,7 +39,17 @@ import axios from "axios";
         componentDidMount(){
             axios.get(`${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}`)   
             .then(res => {
-                this.setState({name:res.data.itemName, description:res.data.description, category:res.data.category, status:res.data.status, quantity:res.data.quantity, warehouse:res.data.warehouse});    
+                this.setState({
+                    id: res.data.id,
+                    warehouseId: res.data.warehouseId,
+                    warehouseName: res.data.warehouseName,
+                    name: res.data.itemName, 
+                    description: res.data.description, 
+                    category: res.data.category, 
+                    status: res.data.status, 
+                    quantity: res.data.quantity, 
+                    warehouse: res.data.warehouse
+                });    
             })
             this.fetchWarhouseData()                  
         }
@@ -57,18 +70,32 @@ import axios from "axios";
             this.setState({quantity: event.target.value});
         }
        
+        editWarehouseName = event => {
+            console.log(event.target.value)
+            const optionValue = JSON.parse(event.target.value)
+            console.log(optionValue)
+            this.setState({
+                warehouseName: optionValue.warehouseName,
+                warehouseId: optionValue.warehouseId
+            })
+        }
+
         handleSubmit() {
+            const id = this.props.match.params.id;
+            const warehouseName = this.state.warehouseName;
             const itemName = this.state.name;
             const description = this.state.description;
             const category = this.state.category;
             const status = this.state.status;
             const quantity = this.state.quantity;
             const warehouse = this.state.warehouse;
-            
+
         }
 
     render(){
+        console.log(this.state.warehouseName + ' ' + this.state.warehouseId);
         return(
+           
             <div className="editInventory">
                 
                      <div className="editInventoryHeader">
@@ -138,7 +165,7 @@ import axios from "axios";
 
                         <div className="editInventoryForm__field">
                             <label className="editInventoryForm__label"><h3>Warehouse</h3></label>
-                            <select className="editInventoryForm__input">
+                            <select className="editInventoryForm__input" onInput={this.editWarehouseName}>
                                 {this.getMappedWarehouses(this.state.warehouseData)}
                             </select>
                         </div>
