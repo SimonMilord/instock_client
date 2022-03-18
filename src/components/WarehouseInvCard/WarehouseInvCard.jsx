@@ -26,7 +26,7 @@ export default class WarehouseInvCard extends Component {
                 <h3 className='card__title'>qty</h3>
                 <p className='card__text'>{this.props.quantity}</p>
                 <div className='card__actions'>
-                    <button onClick= {()=>this.props.handlePopUp(this.props.id)}>
+                    <button onClick= {()=>this.props.handlePopUp(this.props.item.id)}>
                         <img className='card__delete' src={Delete} alt="delete icon"/>
                     </button>
                     <Link to={``}>

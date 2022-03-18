@@ -12,7 +12,6 @@ export default function WarehouseInv(props) {
         return(
             <WarehouseInvCard
                 key={item.id}
-                
                 handlePopUp={props.handlePopUp}
                 {...item}
             />
