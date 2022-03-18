@@ -76,7 +76,7 @@
 
 @mixin form-input {
     outline: none !important;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     padding: 0 1rem;
     border: solid .0625rem $secondary-grey;
     cursor: pointer;

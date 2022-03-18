@@ -24,6 +24,7 @@
     display: flex;
     border-bottom: 1px solid $secondary-grey;
 
+
     @include tablet {
         display: flex;
         // justify-content: space-between;
@@ -37,8 +38,9 @@
 }
 
 .editInventoryForm {
-    padding: 1.5rem;
-
+    &__fields-container {
+        padding: 1.5rem;
+    }
 
     &__form {}
 
@@ -46,21 +48,55 @@
         padding-bottom: 1.5rem;
     }
 
-    &__field {
-        @include form-field
-    }
+    &__field {}
 
     &__input {
         @include form-input;
         min-height: 2.25rem;
+        width: 100%;
     }
+
+
 
     &__textarea {
         @include form-input;
         min-height: 9rem;
         padding-top: .5rem;
+        width: 100%
+    }
+}
+
+.button {
+    background-color: $interactive-color;
+    height: 2.25rem;
+    border-radius: 1.25rem;
+    padding: 0 1rem;
+    outline: none;
+    color: $global-white-color;
+    border: none;
+    @include font-size($h3-font-sizes);
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+        outline: none !important;
+        background-color: $CTA-hover-color;
     }
 
+    @include tablet;
+    height: 2.375rem;
 
+
+
+    &__container {
+        display: flex;
+        gap: 1rem;
+        background-color: $page-background-color;
+        height: 5rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 1.5rem;
+    }
 
 }
