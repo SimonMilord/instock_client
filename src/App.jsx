@@ -6,6 +6,7 @@ import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails';
 import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
   render() {
@@ -46,6 +47,7 @@ class App extends Component {
               />
                 */}
             </Switch>
+            <Footer />
           </div>
         </Router>
       </>
