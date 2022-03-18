@@ -10,7 +10,8 @@ export default class WarehouseDetails extends Component {
     state = {
         warehouseData: {},
         inventory: [],
-        popUp: false
+        popUp: false,
+        deleteId: ''
     }
 
     async fetchInventory (id) {
@@ -37,16 +38,18 @@ export default class WarehouseDetails extends Component {
     }
 
 
-    handlePopUp() {
+    handlePopUp = (deleteId) => {
+        console.log(this.state.popUp)
         this.setState ({
-            popUp: !this.state.popUp
+            popUp: !this.state.popUp,
+            deleteId: deleteId
         }) 
     }
 
     handleDelete = async () => {
-        let id = '1'
         console.log('deleted');
-        const deleteHandler = await axios.delete(`${process.env.REACT_APP_API_URL}/inventory/${id}/delete`)
+        const deleteHandler = await axios.delete(`${process.env.REACT_APP_API_URL}/inventory/${this.state.deleteId}/delete`)
+        this.handlePopUp()
         this.fetchWarehouseData(this.props.match.params.id);
     }
 
@@ -94,13 +97,13 @@ export default class WarehouseDetails extends Component {
                     delete
                 </button>
                 <div className='details__inv'>
-                    <WarehouseInv inventory = {this.state.inventory} handlePopUp = {this.state.popUp}/>
+                    <WarehouseInv inventory = {this.state.inventory} handlePopUp = {this.handlePopUp}/>
                 </div>
             </div>
             {this.state.popUp === true ? (
             <Modal warhouseInv={this.state.inventory} 
                     handlePopUp={this.handlePopUp}
-                    
+                    deleteHandler={this.handleDelete}
                     />) : (console.log("no modal"))}
             </>
         )
