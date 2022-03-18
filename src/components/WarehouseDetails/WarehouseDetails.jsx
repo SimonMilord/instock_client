@@ -43,6 +43,11 @@ export default class WarehouseDetails extends Component {
         }) 
     }
 
+    handleDelete = async () => {
+        const deleteHandler = await axios.delete(`${process.env.REACT_APP_API_URL}/inventory/${id}`)
+    }
+
+
     render() {
         return (
             <>
