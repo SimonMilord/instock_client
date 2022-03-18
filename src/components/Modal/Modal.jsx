@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export default function Modal({deleteHandler, handlePopUp}) {
   // if (!open) return null
 
