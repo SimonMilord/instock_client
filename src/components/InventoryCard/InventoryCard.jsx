@@ -29,12 +29,7 @@ function InventoryCard(props) {
                     <section className='card__subbox card__subbox--right'>
                         <div className='card__item'>
                             <h4 className='card__label'>status</h4>
-                            <div className='card__stock--green active'>
-                                <h3 className='card__stock--in'>{props.status}</h3>
-                            </div>
-                            <div className='card__stock--red active'>
-                                <h3 className='card__stock--out'>{props.status}</h3>
-                            </div>
+                            <h3 className={props.status === 'In Stock' ? 'card__status': 'card__status card__status--out'}>{props.status}</h3>     
                         </div>
                         <div className='card__item'>
                             <h4 className='card__label'>qty</h4>
