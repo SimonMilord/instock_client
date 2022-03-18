@@ -44,7 +44,10 @@ export default class WarehouseDetails extends Component {
     }
 
     handleDelete = async () => {
-        const deleteHandler = await axios.delete(`${process.env.REACT_APP_API_URL}/inventory/${id}`)
+        let id = '1'
+        console.log('deleted');
+        const deleteHandler = await axios.delete(`${process.env.REACT_APP_API_URL}/inventory/${id}/delete`)
+        this.fetchWarehouseData(this.props.match.params.id);
     }
 
 
@@ -87,11 +90,18 @@ export default class WarehouseDetails extends Component {
                         </p>
                     </div>
                 </div>
+                <button onClick={this.handleDelete}>
+                    delete
+                </button>
                 <div className='details__inv'>
-                    <WarehouseInv inventory = {this.state.inventory} />
+                    <WarehouseInv inventory = {this.state.inventory} handlePopUp = {this.state.popUp}/>
                 </div>
             </div>
-            {this.state.popUp === true ? (<Modal warhouseInv={this.state.inventory}/>) : (console.log("no modal"))}
+            {this.state.popUp === true ? (
+            <Modal warhouseInv={this.state.inventory} 
+                    handlePopUp={this.handlePopUp}
+                    
+                    />) : (console.log("no modal"))}
             </>
         )
     }

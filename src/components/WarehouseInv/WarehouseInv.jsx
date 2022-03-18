@@ -1,3 +1,4 @@
+
 import WarehouseInvCard from '../WarehouseInvCard/WarehouseInvCard';
 import './WarehouseInv.scss';
 
@@ -6,7 +7,7 @@ import './WarehouseInv.scss';
 export default function WarehouseInv(props) {
 
 
-    console.log(props.inventory);
+    console.log(props.handlePopUp);
     const mappedInventory = props.inventory &&props.inventory.map(item => {
         return(
             <WarehouseInvCard
@@ -14,11 +15,11 @@ export default function WarehouseInv(props) {
                 {...item}
             />
         )
-    })
-
-    return(
+        })
+ 
+    return (
         <div className='warehouse'>
             {mappedInventory}
         </div>
-    )
+    ) 
 }
