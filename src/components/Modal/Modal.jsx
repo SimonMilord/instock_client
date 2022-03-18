@@ -1,20 +1,23 @@
 import React from "react";
-import './Modal.scss';
-import closeIcon from '../../assets/Icons/close-24px.svg';
+import "./Modal.scss";
+import closeIcon from "../../assets/Icons/close-24px.svg";
 
 export default function Modal(props) {
-  console.log(props.deleteId)
-  console.log(props.warehouseData)
-  const newArray = props.warehouseData.find(item => item.id === props.deleteId)
+  const newArray = props.warehouseData.find(
+    (item) => item.id === props.deleteId
+  );
 
-  console.log(newArray)
   return (
     <>
-
       <div className="overlay" />
       <div className="modal">
         <div className="modal__iconBox">
-          <img className="modal__closeIcon" src={closeIcon} onClick={() => props.handlePopUp(props.warehouseData.id)} alt="x"></img>
+          <img
+            className="modal__closeIcon"
+            src={closeIcon}
+            onClick={() => props.handlePopUp(props.warehouseData.id)}
+            alt="x"
+          ></img>
         </div>
         <div className="modal__core">
           <div className="modal__content">
@@ -41,7 +44,7 @@ export default function Modal(props) {
             </button>
             <button
               className="modal__btn modal__btn--delete"
-              onClick={() =>props.deleteHandler}
+              onClick={() => props.deleteHandler}
             >
               Delete{" "}
             </button>
