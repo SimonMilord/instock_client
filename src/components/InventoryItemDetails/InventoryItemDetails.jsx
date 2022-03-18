@@ -13,23 +13,31 @@ function InventoryItemDetails(props) {
         <div className="itemDetails">
             <div className="itemDetails__subHead">
                 <div className="itemDetails__subHead-left">
-                    <img className="itemDetails__subHead-arrow" src={arrowBack} alt="back arrow" />
+                    <Link to="/inventory:id">
+                        <img className="itemDetails__subHead-arrow" src={arrowBack} alt="back arrow" />
+                    </Link>
                     <h1 className="itemDetails__subHead-title">Television</h1>
+                    {/* <h1 className="itemDetails__subHead-title">{props.itemName</h1> */}
                 </div>
+                <div>
                 <Link>
-                    <button className="itemDetails__subHead-btn"><img className="itemDetails__subHead-btn-img" src={editPen} alt="editing icon" /></button>
+                    <button className="itemDetails__subHead-btn--mobile"><img className="itemDetails__subHead-btn--mobile-img" src={editPen} alt="editing icon" /></button>
                 </Link>
+                <Link>
+                    <button className="itemDetails__subHead-btn--tabDesk"><img className="itemDetails__subHead-btn--tabDesk-img" src={editPen} alt="editing icon" />Edit</button>
+                </Link>
+                </div>
             </div>
 
             <div className="itemDetails__content">
                 <div className="itemDetails__contentBox itemDetails__contentBox--left">
                     <div className="itemDetails__contentBox-data">
-                        <h4 className="itemDetails__lable">item description</h4>
-                        <p>blblblblblblblblblblblblbl</p>
+                        <h4 className="itemDetails__label">item description:</h4>
+                        <p className="itemDetails__data">blblblblblblblblblblblblbl</p>
                         {/* <p>{props.description}</p> */}
                     </div>
                     <div className="itemDetails__contentBox-data">
-                        <h4 className="itemDetails__lable">category</h4>
+                        <h4 className="itemDetails__label">category:</h4>
                         <p className="itemDetails__data">bla vlala</p>
                         {/* <p className="itemDetails__data">{props.category}</p> */}
                     </div>
@@ -38,20 +46,20 @@ function InventoryItemDetails(props) {
                 <div className="itemDetails__contentBox itemDetails__contentBox--right">
                     <div className="itemDetails__contentSubBox">
                         <div className="itemDetails__contentBox-data">
-                            <h4 className="itemDetails__lable">status</h4>
-                            <h4 className='card__status card__status--out'>In Stock</h4>
-                            {/* <h4 className={props.status === 'In Stock' ? 'card__status': 'card__status card__status--out'}>{props.status}</h4> */}
+                            <h4 className="itemDetails__label">status:</h4>
+                            <h4 className='itemDetails__status itemDetails__status--out'>In Stock</h4>
+                            {/* <h4 className={props.status === 'In Stock' ? 'itemDetails__status': 'itemDetail__status itemDetail__status--out'}>{props.status}</h4> */}
                         </div>
                         <div className="itemDetails__contentBox-data">
-                            <h4 className="itemDetails__lable">warehouse</h4>
+                            <h4 className="itemDetails__label">warehouse:</h4>
                             <p className="itemDetails__data">Manplatan</p>
                             {/* <p className="itemDetails__data">{props.warehouseName}</p> */}
                         </div>
                     </div>
                     <div className="itemDetails__contentSubBox">
                         <div className="itemDetails__contentBox-data">
-                            <h4 className="itemDetails__lable">quantity</h4>
-                            <p className="itemDetails__data">blbblabla fdubi dubi</p>
+                            <h4 className="itemDetails__label">quantity:</h4>
+                            <p className="itemDetails__data">dubi</p>
                             {/* <p className="itemDetails__data">{props.quantity}</p> */}
                         </div>
 
