@@ -54,7 +54,6 @@ class App extends Component {
                 path="/inventory/:id"
                 render={(routerProps) =>
                 <InventoryPage {...routerProps} /> }
-              />
             </Switch>
             <Footer />
           </div>
