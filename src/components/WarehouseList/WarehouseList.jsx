@@ -173,16 +173,6 @@ class WarehouseList extends Component {
             </div>
           ))}
         </div>
-        {/* {this.state.popUp === true ? (
-          <Modal
-            warehouseData={this.state.warehouseData}
-            handlePopUp={this.handlePopUp}
-            deleteHandler={this.handleDelete}
-            deleteId={this.state.deleteId}
-          />
-        ) : (
-          console.log("no modal")
-        )} */}
         {this.state.popUp &&this.state.popUp === true ? (
           <Modal
             warehouseData={this.state.warehouseData}
