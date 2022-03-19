@@ -15,7 +15,7 @@ function InventoryItemDetails(props) {
                 <div className="itemDetails__subHead-left">
                     <Link to="/inventory:id">
                         <img className="itemDetails__subHead-arrow" src={arrowBack} alt="back arrow" />
-                    </Link>
+                    </Link >
                     <h1 className="itemDetails__subHead-title">Television</h1>
                     {/* <h1 className="itemDetails__subHead-title">{props.itemName</h1> */}
                 </div>
@@ -23,11 +23,11 @@ function InventoryItemDetails(props) {
                 <Link>
                     <button className="itemDetails__subHead-btn--mobile"><img className="itemDetails__subHead-btn--mobile-img" src={editPen} alt="editing icon" /></button>
                 </Link>
-                <Link>
+                <Link className="itemDetails__subHead-btn--tabDesk-link">
                     <button className="itemDetails__subHead-btn--tabDesk"><img className="itemDetails__subHead-btn--tabDesk-img" src={editPen} alt="editing icon" />Edit</button>
                 </Link>
                 </div>
-            </div>
+            </div>y
 
             <div className="itemDetails__content">
                 <div className="itemDetails__contentBox itemDetails__contentBox--left">

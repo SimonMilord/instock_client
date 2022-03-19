@@ -12,6 +12,10 @@
     @include tablet {
         margin: -6rem 2rem 0 2rem;
 
+        @include desktop {
+            margin: -6rem 8.125rem 0 8.125rem;
+        }
+
     }
 
     &__subHead {
@@ -21,11 +25,16 @@
 
         @include tablet {
             padding: 2rem 2rem 1.5rem 2rem;
+
+            @include desktop {
+                padding: 2rem 2.75rem 1.5rem 2.75rem;
+            }
         }
 
 
         &-left {
             @include display-flex(row, space-between,center);
+
         }
 
         &-arrow {
@@ -65,15 +74,19 @@
             border: none;
             background-color: $interactive-color;
             color: $global-white-color;
-            padding: .75rem 0 0 1rem; 
+            padding: .675rem 0 0 1.125rem; 
             font-size: .75rem;
-            text-decoration: none;
+            
+
+            &-link {
+                text-decoration: none;
+            }
 
             &-img {
                 filter: brightness(100);
                 margin-bottom: -1rem;
                 height: 1rem;
-                object-position: 10% 50%;
+                object-position: -0.2rem 0;
                 
                 
 
@@ -92,7 +105,8 @@
         padding-bottom: 0.5rem;
 
         @include tablet {
-            @include display-flex(row, flex-start, none)
+            @include display-flex(row, flex-start, none);
+
         }
 
     }
@@ -101,16 +115,38 @@
 
         @include tablet {
             width: 50%;
+            margin: 1.5rem 1rem;
+
+            @include desktop {
+                margin: 1rem 1.5rem;
+            }
         }
 
 
         &--right {
             @include display-flex(row, none, none);
+
+            @include tablet {
+                border-left: .0625rem solid $secondary-grey;
+                padding-left: 2.5rem;
+                gap: 3rem;
+            }
+        }
+
+        &--left {
+
+            @include desktop {
+                width: 45%;
+            }
         }
 
 
         &-data {
             margin-bottom: 1.25rem;
+
+            @include tablet {
+                margin-bottom: 1.5rem;
+            }
 
         }
     }
@@ -124,6 +160,11 @@
         margin-bottom: .875rem;
         text-transform: uppercase;
         color: $secondary-text-color;
+
+        @include tablet {
+            margin-bottom: 0.5rem;;
+        }
+
     }
 
     &__data {
@@ -145,9 +186,8 @@
         @include tablet {
           width: 4.5rem;
           height: 1.65rem;
-          font-size: 12px;
-          margin-left: 1rem;
-          margin-right: 0.125rem;
+          font-size: .675rem;
+          margin-right: 0.1rem;
         }
       }
 
@@ -165,8 +205,8 @@
         @include tablet {
           height: 1.65rem;
           width: 5.125rem;
-          margin-left: 0.875rem;
           font-size: .675rem;
+          margin-top: 0.1rem;
         }
       }
 }
