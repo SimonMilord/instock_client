@@ -6,6 +6,7 @@ import WarehouseInv from "../WarehouseInv/WarehouseInv";
 import Modal from "../Modal/Modal";
 import penIcon from "../../assets/Icons/edit-24px.svg";
 import arrow from "../../assets/Icons/arrow_back-24px.svg";
+import sortIcon from "../../assets/Icons/sort-24px.svg";
 
 export default class WarehouseDetails extends Component {
   state = {
@@ -73,12 +74,13 @@ export default class WarehouseDetails extends Component {
                 </Link>
                 <div className="details-top__iconBox">
                     <img className="details-top__icon"src={penIcon} alt='pen'></img>
+                    <p className="details-top__edit">Edit</p>
                 </div>
             </div>
 
             <div className="warehouse-info">
                 <div className="details__address">
-                    <h3 className="details__subtitles label">warehouse address:</h3>
+                    <h3 className="details__subtitles labelT">warehouse address:</h3>
                     <p className="details__text">
                     {this.state.warehouseData.address}
                     {", "}
@@ -90,7 +92,7 @@ export default class WarehouseDetails extends Component {
 
                 <div className="details__contacts">
                     <div className="details__contact details__contact--name">
-                        <h3 className="details__subtitles label">contact name:</h3>
+                        <h3 className="details__subtitles labelT">contact name:</h3>
                         <p className="details__text">
                             {this.state.warehouseData.contact &&
                             this.state.warehouseData.contact.name}
@@ -100,7 +102,7 @@ export default class WarehouseDetails extends Component {
                         </p>
                     </div>
                     <div className="details__contactdetails__contact--info">
-                        <h3 className="details__subtitles label">contact information:</h3>
+                        <h3 className="details__subtitles labelT">contact information:</h3>
                         <p className="details__text">
                             {this.state.warehouseData.contact &&
                             this.state.warehouseData.contact.phone}
@@ -111,6 +113,45 @@ export default class WarehouseDetails extends Component {
                     </div>
                 </div>
             </div>
+
+        {/* row of labels for the table on desktop and tablet */}
+        <div className="labelsRow">
+          <div className="labelsRow__item">
+            <h4 className="labelsRow__label">Inventory item</h4>
+            <img
+              className="labelsRow__icon"
+              src={sortIcon}
+              alt="sorting icon"
+            ></img>
+          </div>
+          <div className="labelsRow__item">
+            <h4 className="labelsRow__label">Category</h4>
+            <img
+              className="labelsRow__icon"
+              src={sortIcon}
+              alt="sorting icon"
+            ></img>
+          </div>
+          <div className="labelsRow__item">
+            <h4 className="labelsRow__label">Status</h4>
+            <img
+              className="labelsRow__icon"
+              src={sortIcon}
+              alt="sorting icon"
+            ></img>
+          </div>
+          <div className="labelsRow__item">
+            <h4 className="labelsRow__label">Quantity</h4>
+            <img
+              className="labelsRow__icon"
+              src={sortIcon}
+              alt="sorting icon"
+            ></img>
+          </div>
+          <div className="labelsRow__item labelsRow__item--action">
+            <h4 className="labelsRow__label">Actions</h4>
+          </div>
+        </div>
 
           <div className="details__inv">
             <WarehouseInv
