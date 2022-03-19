@@ -3,18 +3,13 @@
 @import "../../styles/partials/mixins";
 
 .warehousePage {
-  background-color: $global-white-color;
-  margin: 1rem;
-  border-radius: 4px;
-  box-shadow: 1px 1px 10px 1px $secondary-grey; // to modify!!!!
-  margin-top: -5rem;
+  @include component-box;
   @include tablet {
     margin: 2rem;
     margin-top: -5rem;
 
   }
   @include desktop {
-    // max-width: 1020px;
     margin: 2rem 10rem;
     margin-top: -5rem;
   }

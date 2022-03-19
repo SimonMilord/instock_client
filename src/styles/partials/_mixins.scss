@@ -54,4 +54,51 @@
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
-  }
+}
+
+
+//   box shadow
+@mixin component-box {
+    background-color: $global-white-color;
+    margin: 1rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 #13182c10;
+    margin-top: -5rem;
+}
+
+// form fields
+@mixin form-field {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    padding-bottom: 16px;
+}
+
+@mixin form-input {
+    outline: none !important;
+    border-radius: 1.25rem;
+    padding: 0 1rem;
+    border: solid .0625rem $secondary-grey;
+    cursor: pointer;
+    resize: none;
+
+    &:focus {
+        border: $interactive-color solid .0625rem;
+        outline: none !important;
+    }
+
+    &:invalid {
+        outline: none !important;
+        border: $alert-color solid .0625rem;
+    }
+
+    &::placeholder {
+        color: $secondary-text-color;
+        opacity: 1;
+    }
+
+    @include tablet {
+        min-height: 38px;
+    }
+
+}

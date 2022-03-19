@@ -19,11 +19,10 @@
         padding: 1.6875rem 2rem 0 2rem;
 
         @include desktop {
-            width: 1280px;
+            width: 80rem;
             margin: 0 auto;
-            // padding: 1.6875rem 5.625rem 0 5.625rem;
+            padding: 1.6875rem 8.125rem 0 8.125rem;
         }
-    }
     }
 
 
@@ -35,7 +34,7 @@
         }
     }
 
-    &__logo-img{
+    &__logo-img {
         width: 8.0369rem;
         height: 1.75rem;
         margin: auto;
@@ -87,4 +86,5 @@
             text-align: center;
         }
     }
+}
 }
