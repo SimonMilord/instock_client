@@ -74,7 +74,7 @@ export default class WarehouseDetails extends Component {
                 </Link>
                 <div className="details-top__iconBox">
                     <img className="details-top__icon"src={penIcon} alt='pen'></img>
-                    <p className="details-top__edit">Edit</p>
+                    <h3 className="details-top__edit">Edit</h3>
                 </div>
             </div>
 
