@@ -4,6 +4,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
+import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails';
+import Footer from './components/Footer/Footer';
+import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
+import EditWarehouse from './components/EditWarehouse/EditWarehouse';
+import EditInventory from './components/EditInventory/EditInventory'
+import InventoryItemDetails from './components/InventoryItemDetails/InventoryItemDetails';
 
 class App extends Component {
   render() {
@@ -11,7 +17,7 @@ class App extends Component {
       <>
         <Router>
           <div className='App'>
-            <Header /> 
+            <Header />
             <Switch>
               {/* Routing */}
               <Route path="/" exact render={(routerProps) =>
@@ -27,7 +33,17 @@ class App extends Component {
               <Route
                 path="/warehouses/:id"
                 render={(routerProps) =>
-                <WarehousesPage {...routerProps} /> }
+                <WarehouseDetails {...routerProps} /> }
+              />
+              <Route
+                path="/warehouses/add"
+                render={(routerProps) =>
+                <AddNewWarehouse {...routerProps} /> }
+              />
+              <Route
+                path="/warehouses/:id/edit"
+                render={(routerProps) =>
+                <EditWarehouse {...routerProps} /> }
               />
               <Route
                 path="/inventory"
@@ -37,10 +53,17 @@ class App extends Component {
               />
               <Route
                 path="/inventory/:id"
+                exact
                 render={(routerProps) =>
-                <InventoryPage {...routerProps} /> }
+                <InventoryItemDetails {...routerProps} /> }
+              />
+               <Route
+                path="/inventory/:id/edit"
+                render={(routerProps) =>
+                <EditInventory {...routerProps} /> }
               />
             </Switch>
+            <Footer />
           </div>
         </Router>
       </>
