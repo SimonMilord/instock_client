@@ -1,0 +1,77 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.label {
+  text-transform: uppercase;
+  @include tablet {
+    display: none;
+  }
+}
+
+.card {
+  border-top: 1px solid $secondary-grey;
+  padding: 2rem;
+  @include tablet {
+    display: flex;
+  }
+
+  .link {
+    text-decoration: none;
+    color: $interactive-color;
+    display: flex;
+
+    &__text {
+      font-weight: 600;
+    }
+  }
+
+  &__top {
+    display: flex;
+    @include tablet {
+      width: 80%;
+    }
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    @include tablet {
+      flex-direction: row;
+
+    }
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet {
+      width: 20%;
+      justify-content: flex-end;
+    }
+
+    .card__delete {
+      cursor: pointer;
+    }
+  }
+  &__content {
+    margin-bottom: 1rem;
+    @include tablet {
+      width: 50%;
+      margin-bottom: 0;
+    }
+  }
+  &__edit {
+    @include tablet {
+      margin-left: 1.5rem;
+    }
+  }
+}

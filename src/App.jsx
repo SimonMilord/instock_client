@@ -5,7 +5,10 @@ import Header from "./components/Header/Header";
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails';
-import InventoryItemDetails from './components/InventoryItemDetails/InventoryItemDetails'
+import Footer from './components/Footer/Footer';
+import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
+import EditWarehouse from './components/EditWarehouse/EditWarehouse';
+
 
 class App extends Component {
   render() {
@@ -32,6 +35,16 @@ class App extends Component {
                 <WarehouseDetails {...routerProps} /> }
               />
               <Route
+                path="/warehouses/add"
+                render={(routerProps) =>
+                <AddNewWarehouse {...routerProps} /> }
+              />
+              <Route
+                path="/warehouses/:id/edit"
+                render={(routerProps) =>
+                <EditWarehouse {...routerProps} /> }
+              />
+              <Route
                 path="/inventory"
                 exact
                 render={(routerProps) =>
@@ -41,9 +54,8 @@ class App extends Component {
                 path="/inventory/:id"
                 render={(routerProps) =>
                 <InventoryPage {...routerProps} /> }
-              /> 
-              <InventoryItemDetails />
             </Switch>
+            <Footer />
           </div>
         </Router>
       </>
