@@ -74,4 +74,45 @@
       margin-left: 1.5rem;
     }
   }
+
+  &__status {
+    @include display-flex(none, center, center);
+    background-color: #15846315;
+    width: 4rem;
+    height: 1.5rem;
+    color: $instock-label-color; 
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-top: 0.125rem;
+    border-radius: 0.75rem;
+
+    @include tablet {
+      width: 4.5rem;
+      height: 1.65rem;
+      font-size: 12px;
+      margin-left: 1rem;
+      margin-right: 0.125rem;
+    }
+  }
+
+  &__status--out {
+    @include display-flex(none, center, center);
+    background-color: #c945152a;
+    width: 5.625rem;
+    height: 1.5rem;
+    color: $alert-color; 
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-top: 0.125rem;
+    border-radius: 0.75rem;
+
+    @include tablet {
+      height: 1.65rem;
+      width: 5.125rem;
+      margin-left: 0.875rem;
+      font-size: .675rem;
+    }
+  }
+
+
 }
