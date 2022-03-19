@@ -16,7 +16,7 @@ class App extends Component {
             <Header />
             <Switch>
               {/* Routing */}
-        {/*  <Route path="/" exact render={(routerProps) =>
+              <Route path="/" exact render={(routerProps) =>
                 <WarehousesPage
                   {...routerProps} />
                 } />
@@ -41,7 +41,7 @@ class App extends Component {
                 path="/inventory/:id"
                 render={(routerProps) =>
                 <InventoryPage {...routerProps} /> }
-              />  */}
+              /> 
               <InventoryItemDetails />
             </Switch>
           </div>

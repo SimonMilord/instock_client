@@ -13,7 +13,7 @@ function InventoryItemDetails(props) {
         <div className="itemDetails">
             <div className="itemDetails__subHead">
                 <div className="itemDetails__subHead-left">
-                    <Link to="/inventory:id">
+                    <Link to="/inventory/:id">
                         <img className="itemDetails__subHead-arrow" src={arrowBack} alt="back arrow" />
                     </Link >
                     {/* <h1 className="itemDetails__subHead-title">Television</h1> */}
