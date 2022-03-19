@@ -37,27 +37,27 @@ import axios from "axios";
         }
 
         componentDidMount(){
-            axios.get(`${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}`)   
+            axios.get(`${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}`)
             .then(res => {
                 this.setState({
                     id: res.data.id,
                     warehouseId: res.data.warehouseId,
                     warehouseName: res.data.warehouseName,
-                    name: res.data.itemName, 
-                    description: res.data.description, 
-                    category: res.data.category, 
-                    status: res.data.status, 
-                    quantity: res.data.quantity, 
+                    name: res.data.itemName,
+                    description: res.data.description,
+                    category: res.data.category,
+                    status: res.data.status,
+                    quantity: res.data.quantity,
                     warehouse: res.data.warehouse
-                });    
+                });
             })
-            this.fetchWarhouseData()                  
+            this.fetchWarhouseData()
         }
-    
+
         editName = event =>{
             this.setState({name: event.target.value});
         }
-    
+
         editDescription = event => {
             this.setState({description: event.target.value});
         }
@@ -69,7 +69,7 @@ import axios from "axios";
         editQuantity = event => {
             this.setState({quantity: event.target.value});
         }
-       
+
         editWarehouseName = event => {
             console.log(event.target.value)
             const optionValue = JSON.parse(event.target.value)
@@ -95,15 +95,15 @@ import axios from "axios";
     render(){
         console.log(this.state.warehouseName + ' ' + this.state.warehouseId);
         return(
-           
+
             <div className="editInventory">
-                
+
                      <div className="editInventoryHeader">
-            <img className="editInventoryHeader__icon" src={arrowBack} alt="arrow back"></img>
+            <img className="editInventoryHeader__icon" src={arrowBack} onClick={(event) => (window.location.href = `/inventory/${this.state.id}`)} alt="arrow back"></img>
             <h1 className="editInventoryHeader__heading">edit inventory item</h1>
         </div>
         <div className="editInventoryForm">
-            
+
             <form className="editInventoryForm__form" action="" onSubmit={this.handleSubmit}>
                 <div className="editInventoryForm__fields-container">
                         <h2 className="editInventoryForm__heading">Item Details</h2>
@@ -118,7 +118,7 @@ import axios from "axios";
                                 value={this.state.name}
                                 onInput={this.editName}
                                 required
-                            ></input> 
+                            ></input>
                         </div>
                         <div className="editInventoryForm__field">
                             <label className="editInventoryForm__label"><h3>Description</h3></label>
@@ -129,7 +129,7 @@ import axios from "axios";
                                 value={this.state.description}
                                 onInput={this.editDescription}
                                 required
-                            ></textarea> 
+                            ></textarea>
                         </div>
                         <div className="editInventoryForm__field">
                             <label className="editInventoryForm__label"><h3>Category</h3></label>
@@ -142,24 +142,24 @@ import axios from "axios";
                             </select>
                         </div>
                         <h2 className="editInventoryForm__heading">Item Availability</h2>
-                        
-                        
+
+
                         <div className="editInventoryForm__statusField">
                             <h3>Status</h3>
 
                             <div className="editInventoryForm__statusContainer">
-                               
+
                                 <div className="editInventoryForm__statusRadio" >
                                 <input  type="radio" id="radio-1" name="stock_status" value='In Stock' checked={this.state.status === "In Stock"} onChange={this.editStatus}/>
                                 <label>In Stock</label>
                                 </div>
-                              
+
                                 <div className="editInventoryForm__statusRadio">
                                 <input  type="radio" id="radio-2" name="stock_status" value='Out of Stock' checked={this.state.status === "Out of Stock"} onChange={this.editStatus}/>
                                 <label >Out of Stock</label>
                                 </div>
                             </div>
-                            
+
                         </div>
 
 
@@ -172,7 +172,7 @@ import axios from "axios";
                                 value={this.state.quantity}
                                 onInput={this.editQuantity}
                                 required
-                            ></input> 
+                            ></input>
                         </div>
 
                         <div className="editInventoryForm__field">
@@ -183,13 +183,13 @@ import axios from "axios";
                         </div>
                 </div>
                 <div className="buttonContainer">
-                <button className="buttonSecondary" type="button" onClick={(event) => (window.location.href = "/inventory")}>
+                <button className="buttonSecondary" type="button" onClick={(event) => (window.location.href = `/inventory/${this.state.id}`)}>
                     Cancel
                     </button>
                 <button className="buttonPrimary" type="submit" >
                     Save
                 </button>
-                </div>                     
+                </div>
 
 
                     </form>

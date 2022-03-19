@@ -38,9 +38,6 @@ class InventoryList extends React.Component {
         return (
 
             <div>
-                <div className='header'>
-
-                </div>
                 <section className='inventory'>
                     <header className='inventory__container'>
                         <div className='inventory__section'>
