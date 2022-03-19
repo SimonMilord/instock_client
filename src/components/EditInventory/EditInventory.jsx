@@ -133,7 +133,7 @@ import axios from "axios";
                         </div>
                         <div className="editInventoryForm__field">
                             <label className="editInventoryForm__label"><h3>Category</h3></label>
-                            <select className="editInventoryForm__input" name="Category" id="" placeholder="Please select">
+                            <select className="editInventoryForm__dropdown" name="Category" id="" placeholder="Please select">
                                 <option className="editInventoryForm__select--option" value="1">Electronics</option>
                                 <option className="editInventoryForm__select--option" value="2">Gear</option>
                                 <option className="editInventoryForm__select--option" value="3">Apparel</option>
@@ -142,15 +142,27 @@ import axios from "axios";
                             </select>
                         </div>
                         <h2 className="editInventoryForm__heading">Item Availability</h2>
-                        <div className="editInventoryForm__field">
+                        
+                        
+                        <div className="editInventoryForm__statusField">
                             <h3>Status</h3>
-                            <div className="editInventoryForm__status">
-                                <input className="editInventoryForm__status--radio" type="radio" id="" name="stock_status" value='In Stock' checked={this.state.status === "In Stock"} onChange={this.editStatus}/>
-                                <label className="editInventoryForm__labels">In Stock</label>
-                                <input className="editInventoryForm__status--radio" type="radio" id="" name="stock_status" value='Out of Stock' checked={this.state.status === "Out of Stock"} onChange={this.editStatus}/>
-                                <label className="editInventoryForm__labels">Out Of Stock</label>
+
+                            <div className="editInventoryForm__statusContainer">
+                               
+                                <div className="editInventoryForm__statusRadio" >
+                                <input  type="radio" id="radio-1" name="stock_status" value='In Stock' checked={this.state.status === "In Stock"} onChange={this.editStatus}/>
+                                <label>In Stock</label>
+                                </div>
+                              
+                                <div className="editInventoryForm__statusRadio">
+                                <input  type="radio" id="radio-2" name="stock_status" value='Out of Stock' checked={this.state.status === "Out of Stock"} onChange={this.editStatus}/>
+                                <label >Out of Stock</label>
+                                </div>
                             </div>
+                            
                         </div>
+
+
                         <div className="editInventoryForm__field" style={{display: this.state.status === 'In Stock' ? "flex": "none", flexDirection: "column"}}>
                             <label className="editInventoryForm__label"><h3>Quantity</h3></label>
                             <input
@@ -165,16 +177,16 @@ import axios from "axios";
 
                         <div className="editInventoryForm__field">
                             <label className="editInventoryForm__label"><h3>Warehouse</h3></label>
-                            <select className="editInventoryForm__input" onInput={this.editWarehouseName}>
+                            <select className="editInventoryForm__dropdown" onInput={this.editWarehouseName}>
                                 {this.getMappedWarehouses(this.state.warehouseData)}
                             </select>
                         </div>
                 </div>
-                <div className="button__container">
-                <button className="button" type="button" onClick={(event) => (window.location.href = "/inventory")}>
+                <div className="buttonContainer">
+                <button className="buttonSecondary" type="button" onClick={(event) => (window.location.href = "/inventory")}>
                     Cancel
                     </button>
-                    <button className="button" type="submit" >
+                <button className="buttonPrimary" type="submit" >
                     Save
                 </button>
                 </div>                     
