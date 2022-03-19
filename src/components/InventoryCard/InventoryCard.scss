@@ -3,18 +3,17 @@
 @import "../../styles/partials/fonts";
 
 .cardList {
-    margin: 0rem 1rem 0rem 1rem;
+    margin: -1.5rem 1rem 0 1rem;
     background-color: $global-white-color;
+    padding: -1rem 0rem 1.6875rem 0rem;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
   
     @include tablet {
-      margin: 0rem 2rem 0rem 2rem;
-      padding: 1rem 0rem -1rem 0rem;
-      // border-bottom: 1px solid red;
+      margin: -2rem 2rem .35rem 2rem;
+      padding: 0rem 0rem 1.6875rem 0rem;
 
       @include desktop {
-        margin: 0rem 8.125rem 0rem 8.125rem;
-
+        margin: -0.5rem 8.125rem .35rem 8.125rem;
       }
     }
   
@@ -211,97 +210,3 @@
       }
     }
 }
-  
-  //   &__content {
-  //     width: 50%;
-  
-  //     @include tablet {
-  //       @include display-flex(row, none, none);
-  //       // width: 100%;
-        
-  //     }
-  
-  //     &-div {
-  //       margin-bottom: 1.75rem;
-  
-  //       @include tablet {
-  //         @include display-flex(row, none, none);
-          
-  //       }
-  //     }
-  //   }
-  
-  //   &__titles {
-  //     text-transform: uppercase;
-  //     margin-bottom: 0.75rem;
-  
-  //     @include tablet {
-  //       display: none;
-  //     }
-  
-  //     &--padding {
-  //       padding-top: 0.29rem
-  //     }
-  //   }
-  
-  //   &__text {
-  
-  //     @include tablet {
-  //     }
-  
-  //     &-link {
-  //       text-decoration: none;
-  
-  //       @include tablet {
-  //         padding-right: 2rem;
-  //       }
-  
-        
-  //     }
-  
-  //     &-btn {
-  //       color: $interactive-color;
-  //       // background-image: url('../../assets/Icons/chevron_right-24px.svg');
-  //       // background-repeat: no-repeat;
-  //       // background-position: 55% 0%;
-  //       @include display-flex(row,none,center);
-  
-  //       @include tablet {
-  //         padding-right: 2rem;
-  //         background-position: 90% 0%;
-  //       }
-        
-  
-  //     }
-  //   }
-  
-  //   &__in-stock {
-  //     @include display-flex(none, center, center);
-  //     background-color: #15846315;
-  //     width: 4rem;
-  //     height: 1.5rem;
-  //     color: $instock-label-color; 
-  //     text-transform: uppercase;
-  //     margin-top: -0.35rem;
-  //     border-radius: 0.75rem;
-  //   }
-  
-  //   &__out-stock {
-  //     @include display-flex(none, center, center);
-  //     display: none;
-  //     background-color: #c945152a;
-  //     width: 4rem;
-  //     height: 1.5rem;
-  //     color: $alert-color; 
-  //     text-transform: uppercase;
-  //     margin-top: -0.35rem;
-  //     border-radius: 0.75rem;
-  //   }
-  
-  //   &__content-bottom {
-  //     @include display-flex(row, space-between, none);
-  //   }
-  
-  
-  // }
-  

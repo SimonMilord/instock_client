@@ -13,16 +13,15 @@
         width: 100%;
         padding: 1.5rem 1rem 0 1rem;
 
-        @include tablet {
-            height: 11.625rem;
-            @include display-flex(row, space-between, flex-start);
-            padding: 1.6875rem 2rem 0 2rem;
+    @include tablet {
+        height: 11.625rem;
+        @include display-flex(row, space-between, flex-start);
+        padding: 1.6875rem 2rem 0 2rem;
 
-            @include desktop {
-                width: 1280px;
-                margin: 0 auto;
-                // padding: 1.6875rem 5.625rem 0 5.625rem;
-            }
+        @include desktop {
+            width: 80rem;
+            margin: 0 auto;
+            padding: 1.6875rem 8.125rem 0 8.125rem;
         }
     }
 
