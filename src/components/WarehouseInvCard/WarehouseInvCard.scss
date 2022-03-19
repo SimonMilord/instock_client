@@ -1,0 +1,12 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.label {
+  text-transform: uppercase;
+}
+
+.card {
+  border-top: 1px solid $secondary-grey;
+  padding: 2rem;
+}
