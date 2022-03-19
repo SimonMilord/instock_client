@@ -4,13 +4,16 @@
 
 .warehousePage {
   @include component-box;
-  @include tablet {
-    margin: 2rem;
-    margin-top: -5rem;
+    margin-top: -4.75rem;
 
-  }
-  @include desktop {
-    margin: 2rem 10rem;
-    margin-top: -5rem;
-  }
+    @include tablet {
+        margin: 2rem;
+        margin-top: -5rem;
+
+    }
+
+    @include desktop {
+        margin: 2rem 10rem;
+        margin-top: -5rem;
+    }
 }
