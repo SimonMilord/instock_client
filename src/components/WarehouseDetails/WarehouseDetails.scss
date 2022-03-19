@@ -4,11 +4,11 @@
 
 
 
-.label {
+.labelT {
   text-transform: uppercase;
   color: $secondary-text-color;
-  margin-bottom: 0.5rem;
 }
+
 // TOP section
 .details {
   background-color: $global-white-color;
@@ -49,9 +49,28 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      @include tablet {
+        height: 38px;
+        width: 81px;
+        border-radius: 20px;
+      }
       .details-top__icon {
         height: 24px;
         filter: brightness(100);
+        @include tablet {
+          height: 18px;
+        }
+      }
+      .details-top__edit {
+        display: none;
+        color: $global-white-color;
+        @include tablet {
+          display: flex;
+          margin-left: 5px;
+        }
+      }
+      &:hover {
+        background-color: $CTA-hover-color;
       }
     }
   }
@@ -62,14 +81,27 @@
 .warehouse-info {
   border-top: 1px solid $secondary-grey;
   padding: 2rem;
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .details__address {
     margin-bottom: 3rem;
+    @include tablet {
+      width: 50%;
+      margin-bottom: 0;
+      border-right: 1px solid $secondary-grey;
+    }
   }
 
 
   .details__contacts {
     display: flex;
+    @include tablet {
+      width: 60%;
+      margin-left: 3rem;
+    }
 
     .details__contact {
       width:50%;
