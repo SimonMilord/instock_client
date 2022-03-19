@@ -16,8 +16,8 @@ function InventoryItemDetails(props) {
                     <Link to="/inventory:id">
                         <img className="itemDetails__subHead-arrow" src={arrowBack} alt="back arrow" />
                     </Link >
-                    <h1 className="itemDetails__subHead-title">Television</h1>
-                    {/* <h1 className="itemDetails__subHead-title">{props.itemName</h1> */}
+                    {/* <h1 className="itemDetails__subHead-title">Television</h1> */}
+                    <h1 className="itemDetails__subHead-title">{props.itemName}</h1>
                 </div>
                 <div>
                 <Link>
