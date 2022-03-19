@@ -103,7 +103,6 @@ export default class EditInventory extends Component {
         window.alert("updates have been saved")
     }
 
- 
     render() {
         return(
         <div className="editInventory">
