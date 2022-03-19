@@ -135,6 +135,10 @@
 
         &--left {
 
+            @include tablet {
+                width: 45%;
+            }
+
             @include desktop {
                 width: 45%;
             }

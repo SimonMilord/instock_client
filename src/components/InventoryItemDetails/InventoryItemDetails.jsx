@@ -27,7 +27,7 @@ function InventoryItemDetails(props) {
                     <button className="itemDetails__subHead-btn--tabDesk"><img className="itemDetails__subHead-btn--tabDesk-img" src={editPen} alt="editing icon" />Edit</button>
                 </Link>
                 </div>
-            </div>y
+            </div>
 
             <div className="itemDetails__content">
                 <div className="itemDetails__contentBox itemDetails__contentBox--left">
