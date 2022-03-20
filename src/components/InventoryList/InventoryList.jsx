@@ -1,15 +1,16 @@
 import './InventoryList.scss';
-import React from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import InventoryCard from '../InventoryCard/InventoryCard';
+import Modal from '../Modal/Modal';
 
 
-
-class InventoryList extends React.Component {
-
+class InventoryList extends Component {
     state = {
         inventories: [],
+        popUp: false,
+        deleteId: "",
     };
 
     componentDidMount() {
@@ -20,7 +21,6 @@ class InventoryList extends React.Component {
         axios
             .get(`${process.env.REACT_APP_API_URL}/inventory`)
             .then((res) => {
-                // console.log(res);
                 this.setState({
                     inventories: res.data
                 });
@@ -30,13 +30,26 @@ class InventoryList extends React.Component {
             });
     }
 
+    handlePopUp = (deleteId) => {
+        this.setState({
+            popUp: !this.state.popUp,
+            deleteId: deleteId,
+        });
+    };
+
+    handleDelete = async () => {
+        console.log("deleted");
+        await axios.delete(
+          `${process.env.REACT_APP_API_URL}/inventory/${this.state.deleteId}/delete`
+        );
+        this.handlePopUp();
+        this.getAllInventories();
+      };
+
 
     render() {
-
-        const { inventories } = this.state;
-
         return (
-
+            <>
             <div>
                 <section className='inventory'>
                     <header className='inventory__container'>
@@ -62,12 +75,21 @@ class InventoryList extends React.Component {
                         return (
                             <InventoryCard
                                 key={item.id}
+                                handlePopUp={this.handlePopUp}
+                                deleteHandler={this.handleDelete}
                                 {...item} />
                         )
                     })}
                 </section>
             </div >
-
+            {this.state.popUp &&this.state.popUp === true ? (
+                <Modal
+                    deleteId = {this.state.deleteId}
+                    handlePopUp={this.handlePopUp}
+                    deleteHandler={this.handleDelete}
+                    warehouseData = {this.state.inventories}
+                />) : <></>}
+            </>
         );
     }
 }

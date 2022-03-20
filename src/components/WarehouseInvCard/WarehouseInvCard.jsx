@@ -47,7 +47,7 @@ export default class WarehouseInvCard extends Component {
         <div className="card__actions">
             <img onClick={() => this.props.handlePopUp(this.props.id)}
             className="card__delete" src={Delete} alt="delete icon" />
-          <Link to={``}>
+          <Link to={`/inventory/${this.props.id}/edit`}>
             <img className="card__edit" src={Edit} alt="edit icon" />
           </Link>
         </div>

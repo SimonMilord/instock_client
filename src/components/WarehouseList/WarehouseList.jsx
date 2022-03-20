@@ -50,6 +50,7 @@ class WarehouseList extends Component {
   };
 
   render() {
+    console.log(this.state.warehouseData);
     return (
       <>
         {/* header of the page */}
