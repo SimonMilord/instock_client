@@ -194,5 +194,5 @@ export default class AddNewWarehouse extends Component {
             </form>
         </div>
     );
-}
+    }
 }
