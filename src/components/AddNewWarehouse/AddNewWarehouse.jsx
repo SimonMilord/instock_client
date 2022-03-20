@@ -29,55 +29,62 @@ export default class AddNewWarehouse extends Component {
 
     handleWarehouseName = (event) => {
         this.setState ({
-            warehouseName: event.target.value
+            warehouseName: event.target.value,
+            nameError: false
         })
     }
 
     handleStreetAddress = event => {
         this.setState ({
-            streetAddress: event.target.value
+            streetAddress: event.target.value,
+            addressError: false
         })
     }
 
     handleWarehouseCity = event => {
         this.setState ({
-            warehouseCity: event.target.value
+            warehouseCity: event.target.value,
+            cityError: false
         })
     }
 
     handleWarehouseCountry = event => {
         this.setState ({
-            warehouseCountry: event.target.value
+            warehouseCountry: event.target.value,
+            countryError: false
         })
     }
     
     handleContactName = event => {
         this.setState ({
-            contactName: event.target.value
+            contactName: event.target.value,
+            contactNameError: false
         })
     }
 
     handlePhoneNumber = event => {
         this.setState ({
-            contactPhoneNumber: event.target.value
+            contactPhoneNumber: event.target.value,
+            phoneError: false
         })
     }
 
     handlecontactPosition = event => {
         this.setState ({
-            contactPosition: event.target.value
+            contactPosition: event.target.value,
+            positionError: false
         })
     }
 
     handleContactEmail = event => {
         this.setState ({
-            contactEmail: event.target.value
+            contactEmail: event.target.value,
+            emailError: false
         })
     }
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log('click')
         const warehouseName = this.state.warehouseName;
         const warehouseAddress = this.state.streetAddress;
         const warehouseCity = this.state.warehouseCity;
@@ -88,7 +95,6 @@ export default class AddNewWarehouse extends Component {
         const contactEmail = this.state.contactEmail;
         if(warehouseName && warehouseAddress && warehouseCity && warehouseCountry && contactName && contactPosition && contactPhoneNumber && contactEmail) {
             // post data to API
-            console.log('submit')
             axios
             .post(`${process.env.REACT_APP_API_URL}/warehouses/add`, {
                 name: warehouseName,
@@ -104,9 +110,6 @@ export default class AddNewWarehouse extends Component {
             })
             .then((res) => {
                 console.log(res);
-                this.setState({
-                    formSubmitted: true,
-                });
                 alert('Your form was succesfully submited!');
             })
             .catch((err) => {
@@ -114,24 +117,27 @@ export default class AddNewWarehouse extends Component {
             });
         } else {
             if (!warehouseName) {this.setState({ nameError: true}); console.log('in here')}
-            if (!warehouseAddress) this.setState({ nameError: true})
-            if (!warehouseCity) this.setState({ nameError: true})
-            if (!warehouseCountry) this.setState({ nameError: true})
-            if (!contactName) this.setState({ nameError: true})
-            if (!contactPosition) this.setState({ nameError: true})
-            if (!contactPhoneNumber) this.setState({ nameError: true})
-            if (!contactEmail) this.setState({ nameError: true})
+            if (!warehouseAddress) this.setState({ addressError: true})
+            if (!warehouseCity) this.setState({ cityError: true})
+            if (!warehouseCountry) this.setState({ countryError: true})
+            if (!contactName) this.setState({ contactNameError: true})
+            if (!contactPosition) this.setState({ positionError: true})
+            if (!contactPhoneNumber) this.setState({ phoneError: true})
+            if (!contactEmail) this.setState({ emailError: true})
         }     
     }
 
 
   render() {
-
+    console.log("nameError" + " " + this.state.nameError);
+    console.log("addError" + " " + this.state.addressError);
     return (
         <div className='newWarehouse'>
-            <form onSubmit={this.handleFormSubmit} className='newWarehouse__container' autoComplete='off'>
+            <form onSubmit={this.handleFormSubmit} className='newWarehouse__container' autoComplete='off'> 
                 <div className='newWarehouse__header'>
-                    <img className='newWarehouse__header-img' src={arrowBack} alt="arrow back"></img>
+                    <Link className='newWarehouse__header' to={'/warehouses'}>
+                            <img className='newWarehouse__header-img' src={arrowBack} alt="arrow back"/>
+                    </Link>
                     <h1 className='newWarehouse__header-title'>Add New Warehouse</h1>
                 </div>
                 <section className="newWarehouse__form">
