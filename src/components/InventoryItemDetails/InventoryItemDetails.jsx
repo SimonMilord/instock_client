@@ -37,7 +37,7 @@ export default class InventoryItemDetails extends Component {
                         <Link to={`/warehouses/${item.warehouseID}`}>
                             <img className="itemDetails__subHead-arrow" src={arrowBack} alt="back arrow" />
                         </Link >
-                        <h1 className="itemDetails__subHead-title">{}</h1>
+                        <h1 className="itemDetails__subHead-title">{item.itemName}</h1>
                     </div>
                     <div>
                     <Link className="itemDetails__subHead-btn--tabDesk-link" to={`/inventory/${item.id}/edit`}>

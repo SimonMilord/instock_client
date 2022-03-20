@@ -3,6 +3,7 @@ import "./Modal.scss";
 import closeIcon from "../../assets/Icons/close-24px.svg";
 
 export default function Modal(props) {
+  console.log(props);
   const newArray = props.warehouseData.find(
     (item) => item.id === props.deleteId
   );
@@ -28,8 +29,8 @@ export default function Modal(props) {
             </h1>
 
             <p className="modal__text">
-              {props.warehouseData.name === ""
-                ? `Please confirm that you'd like to delete ${props.warehouseInv.itemName} from the inventory list.
+              {newArray.name === undefined
+                ? `Please confirm that you'd like to delete ${newArray.itemName} from the inventory list.
                 You won't be able to undo this action.`
                 : `Please confirm that you'd like to delete the ${newArray.name} from the list of warehouses.
                 You won't be able to undo this action.`}
