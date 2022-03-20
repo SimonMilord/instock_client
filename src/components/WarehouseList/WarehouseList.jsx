@@ -46,7 +46,7 @@ class WarehouseList extends Component {
       `${process.env.REACT_APP_API_URL}/warehouses/${this.state.deleteId}/delete`
     );
     this.handlePopUp();
-    this.getWarehouseData(this.props.match.params.id);
+    this.getWarehouseData();
   };
 
   render() {
