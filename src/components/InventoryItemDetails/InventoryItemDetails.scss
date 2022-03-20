@@ -1,0 +1,216 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+
+.itemDetails {
+    margin: -4rem 1rem 10.375rem;
+    background-color: $global-white-color;
+    border-radius: .1875rem;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+    @include tablet {
+        margin: -6rem 2rem 0 2rem;
+
+        @include desktop {
+            margin: -6rem 8.125rem 0 8.125rem;
+        }
+
+    }
+
+    &__subHead {
+        @include display-flex(row, space-between, center);
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+        border-bottom: .0625rem solid $secondary-grey;
+
+        @include tablet {
+            padding: 2rem 2rem 1.5rem 2rem;
+
+            @include desktop {
+                padding: 2rem 2.75rem 1.5rem 2.75rem;
+            }
+        }
+
+
+        &-left {
+            @include display-flex(row, space-between,center);
+
+        }
+
+        &-arrow {
+            padding: 0.25rem .75rem 0 .25rem;
+
+        }
+
+        &-title {
+            
+        }
+
+        &-btn--mobile {
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 1.125rem;
+            border: none;
+            background-color: $interactive-color;
+            color: $global-white-color;
+
+            &-img {
+            filter: brightness(100);
+            }
+
+            @include tablet {
+                display: none;
+            }
+
+        }
+
+        
+
+        &-btn--tabDesk {
+            display: none;
+            width: 5.0625rem;
+            height: 2.25rem;
+            border-radius: 1.125rem;
+            border: none;
+            background-color: $interactive-color;
+            color: $global-white-color;
+            padding: .675rem 0 0 1.125rem; 
+            font-size: .75rem;
+            
+
+            &-link {
+                text-decoration: none;
+            }
+
+            &-img {
+                filter: brightness(100);
+                margin-bottom: -1rem;
+                height: 1rem;
+                object-position: -0.2rem 0;
+                
+                
+
+            }
+
+            @include tablet {
+                display: flex;
+            }
+
+        }
+    }
+
+    &__content {
+
+        margin: 1rem 1.5rem;
+        padding-bottom: 0.5rem;
+
+        @include tablet {
+            @include display-flex(row, flex-start, none);
+
+        }
+
+    }
+
+    &__contentBox {
+
+        @include tablet {
+            width: 50%;
+            margin: 1.5rem 1rem;
+
+            @include desktop {
+                margin: 1rem 1.5rem;
+            }
+        }
+
+
+        &--right {
+            @include display-flex(row, none, none);
+
+            @include tablet {
+                border-left: .0625rem solid $secondary-grey;
+                padding-left: 2.5rem;
+                gap: 3rem;
+            }
+        }
+
+        &--left {
+
+            @include tablet {
+                width: 45%;
+            }
+
+            @include desktop {
+                width: 45%;
+            }
+        }
+
+
+        &-data {
+            margin-bottom: 1.25rem;
+
+            @include tablet {
+                margin-bottom: 1.5rem;
+            }
+
+        }
+    }
+
+    &__contentSubBox {
+        width: 50%;
+
+    }
+
+    &__label {
+        margin-bottom: .875rem;
+        text-transform: uppercase;
+        color: $secondary-text-color;
+
+        @include tablet {
+            margin-bottom: 0.5rem;;
+        }
+
+    }
+
+    &__data {
+        font-size: .8125rem;
+
+    }
+
+    &__status {
+        @include display-flex(none, center, center);
+        background-color: #15846315;
+        width: 4rem;
+        height: 1.5rem;
+        color: $instock-label-color; 
+        text-transform: uppercase;
+        font-size: 11px;
+        margin-top: 0.35rem;
+        border-radius: 0.75rem;
+
+        @include tablet {
+          width: 4.5rem;
+          height: 1.65rem;
+          font-size: .675rem;
+          margin-right: 0.1rem;
+        }
+      }
+
+      &__status--out {
+        @include display-flex(none, center, center);
+        background-color: #c945152a;
+        width: 5.625rem;
+        height: 1.5rem;
+        color: $alert-color; 
+        text-transform: uppercase;
+        font-size: 11px;
+        margin-top: -0.25rem;
+        border-radius: 0.75rem;
+
+        @include tablet {
+          height: 1.65rem;
+          width: 5.125rem;
+          font-size: .675rem;
+          margin-top: 0.1rem;
+        }
+      }
+}

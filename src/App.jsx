@@ -7,6 +7,10 @@ import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails';
 import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
 import Footer from './components/Footer/Footer';
+import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
+import EditWarehouse from './components/EditWarehouse/EditWarehouse';
+import EditInventory from './components/EditInventory/EditInventory'
+import InventoryItemDetails from './components/InventoryItemDetails/InventoryItemDetails';
 
 class App extends Component {
   render() {
@@ -35,6 +39,16 @@ class App extends Component {
                 <WarehouseDetails {...routerProps} /> }
               />
               <Route
+                path="/warehouses/add"
+                render={(routerProps) =>
+                <AddNewWarehouse {...routerProps} /> }
+              />
+              <Route
+                path="/warehouses/:id/edit"
+                render={(routerProps) =>
+                <EditWarehouse {...routerProps} /> }
+              />
+              <Route
                 path="/inventory"
                 exact
                 render={(routerProps) =>
@@ -42,10 +56,15 @@ class App extends Component {
               />
               <Route
                 path="/inventory/:id"
+                exact
                 render={(routerProps) =>
-                <InventoryPage {...routerProps} /> }
+                <InventoryItemDetails {...routerProps} /> }
               />
-                */}
+               <Route
+                path="/inventory/:id/edit"
+                render={(routerProps) =>
+                <EditInventory {...routerProps} /> }
+              />
             </Switch>
             <Footer />
           </div>

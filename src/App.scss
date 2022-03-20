@@ -46,3 +46,9 @@ p {
   @include font-size($p3-font-sizes);
   font-weight: $regular;
 }
+
+form,
+input,
+textarea {
+  font-family: $font;
+}
