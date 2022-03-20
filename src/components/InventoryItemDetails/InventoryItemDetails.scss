@@ -4,17 +4,19 @@
 
 
 .itemDetails {
-    margin: -4rem 1rem 10.375rem;
-    background-color: $global-white-color;
-    border-radius: .1875rem;
-    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    @include component-box;
+    margin-top: -3rem;
 
     @include tablet {
-        margin: -6rem 2rem 0 2rem;
+        margin: 2rem;
+        margin-top: -6rem;
 
-        @include desktop {
-            margin: -6rem 8.125rem 0 8.125rem;
-        }
+    }
+
+    @include desktop {
+        margin: 2rem 10rem;
+        margin-top: -6rem;
+
 
     }
 
@@ -22,6 +24,7 @@
         @include display-flex(row, space-between, center);
         padding: 2rem 1.5rem 1.5rem 1.5rem;
         border-bottom: .0625rem solid $secondary-grey;
+
 
         @include tablet {
             padding: 2rem 2rem 1.5rem 2rem;
@@ -33,7 +36,7 @@
 
 
         &-left {
-            @include display-flex(row, space-between,center);
+            @include display-flex(row, space-between, center);
 
         }
 
@@ -42,9 +45,7 @@
 
         }
 
-        &-title {
-            
-        }
+        &-title {}
 
         &-btn--mobile {
             width: 2.25rem;
@@ -55,7 +56,7 @@
             color: $global-white-color;
 
             &-img {
-            filter: brightness(100);
+                filter: brightness(100);
             }
 
             @include tablet {
@@ -64,7 +65,7 @@
 
         }
 
-        
+
 
         &-btn--tabDesk {
             display: none;
@@ -74,9 +75,9 @@
             border: none;
             background-color: $interactive-color;
             color: $global-white-color;
-            padding: .675rem 0 0 1.125rem; 
+            padding: .675rem 0 0 1.125rem;
             font-size: .75rem;
-            
+
 
             &-link {
                 text-decoration: none;
@@ -87,8 +88,8 @@
                 margin-bottom: -1rem;
                 height: 1rem;
                 object-position: -0.2rem 0;
-                
-                
+
+
 
             }
 
@@ -166,7 +167,8 @@
         color: $secondary-text-color;
 
         @include tablet {
-            margin-bottom: 0.5rem;;
+            margin-bottom: 0.5rem;
+            ;
         }
 
     }
@@ -181,36 +183,36 @@
         background-color: #15846315;
         width: 4rem;
         height: 1.5rem;
-        color: $instock-label-color; 
+        color: $instock-label-color;
         text-transform: uppercase;
         font-size: 11px;
         margin-top: 0.35rem;
         border-radius: 0.75rem;
 
         @include tablet {
-          width: 4.5rem;
-          height: 1.65rem;
-          font-size: .675rem;
-          margin-right: 0.1rem;
+            width: 4.5rem;
+            height: 1.65rem;
+            font-size: .675rem;
+            margin-right: 0.1rem;
         }
-      }
+    }
 
-      &__status--out {
+    &__status--out {
         @include display-flex(none, center, center);
         background-color: #c945152a;
         width: 5.625rem;
         height: 1.5rem;
-        color: $alert-color; 
+        color: $alert-color;
         text-transform: uppercase;
         font-size: 11px;
         margin-top: -0.25rem;
         border-radius: 0.75rem;
 
         @include tablet {
-          height: 1.65rem;
-          width: 5.125rem;
-          font-size: .675rem;
-          margin-top: 0.1rem;
+            height: 1.65rem;
+            width: 5.125rem;
+            font-size: .675rem;
+            margin-top: 0.1rem;
         }
-      }
+    }
 }
