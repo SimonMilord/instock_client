@@ -1,122 +1,127 @@
 import "./EditInventory.scss";
 import { Component } from "react";
-import InventoryList from "../InventoryList/InventoryList";
 import arrowBack from "../../assets/Icons/arrow_back-24px.svg"
 import axios from "axios";
 
 
-    class EditInventory extends Component {
-        state ={
-            inventory: [],
-            warehouseData: [],
-            id: '',
-            warehouseId: '',
-            warehouseName: '',
-            name: "",
-            description: "",
-            category: "",
-            status: "",
-            quantity: 0,
-            warehouse: "",
-        }
+export default class EditInventory extends Component {
 
-        getMappedWarehouses = (warehouseData) => {
-            const mapWarehouse = warehouseData.map((warehouse) => {
-                return (
-                    <option key={warehouse.id} id={warehouse.id} className="editInventoryForm__select--option" value={JSON.stringify({warehouseName: warehouse.name, warehouseId: warehouse.id})}>{warehouse.name}</option>
-                )
-            })
-            return mapWarehouse
-        }
+    state ={
+        warehouseData: [],
+        id: '',
+        warehouseId: '',
+        warehouseName: '',
+        name: "",
+        description: "",
+        category: "",
+        status: "",
+        quantity: 0,
+        warehouse: "", 
+    }
+ 
+    getMappedWarehouses = (warehouseData) => {
+        const mapWarehouse = warehouseData.map((warehouse) => {
+            return (
+                <option key={warehouse.id} id={warehouse.id} className="editInventoryForm__select--option" value={JSON.stringify({warehouseName: warehouse.name, warehouseId: warehouse.id})}>{warehouse.name}</option>
+            )
+        })
+        return mapWarehouse
+    }
 
-        async fetchWarhouseData () {
-            const allWarehouses = await axios.get(`${process.env.REACT_APP_API_URL}/warehouses`)
+    async fetchWarhouseData () {
+        const allWarehouses = await axios.get(`${process.env.REACT_APP_API_URL}/warehouses`)
+        this.setState({
+            warehouseData: allWarehouses.data
+        })
+    }
+
+    componentDidMount(){
+        axios.get(`${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}`)
+        .then(res => {
             this.setState({
-                warehouseData: allWarehouses.data
-            })
-        }
+                id: res.data.id,
+                warehouseId: res.data.warehouseId,
+                warehouseName: res.data.warehouseName,
+                name: res.data.itemName,
+                description: res.data.description,
+                category: res.data.category,
+                status: res.data.status,
+                quantity: res.data.quantity,
+                warehouse: res.data.warehouse
+            });
+        })
+        this.fetchWarhouseData()
+    }
 
-        componentDidMount(){
-            axios.get(`${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}`)
-            .then(res => {
-                this.setState({
-                    id: res.data.id,
-                    warehouseId: res.data.warehouseId,
-                    warehouseName: res.data.warehouseName,
-                    name: res.data.itemName,
-                    description: res.data.description,
-                    category: res.data.category,
-                    status: res.data.status,
-                    quantity: res.data.quantity,
-                    warehouse: res.data.warehouse
-                });
-            })
-            this.fetchWarhouseData()
-        }
+    editName = event =>{
+        this.setState({name: event.target.value});
+        return event.target.value
+    }
 
-        editName = event =>{
-            this.setState({name: event.target.value});
-        }
+    editDescription = event => {
+        this.setState({description: event.target.value});
+    }
 
-        editDescription = event => {
-            this.setState({description: event.target.value});
-        }
+    editStatus = event => {
+        this.setState({status: event.target.value});
+    }
 
-        editStatus = event => {
-            this.setState({status: event.target.value});
-        }
+    editQuantity = event => {
+        this.setState({quantity: event.target.value});
+    }
 
-        editQuantity = event => {
-            this.setState({quantity: event.target.value});
-        }
+    editWarehouseName = event => {
+        const optionValue = JSON.parse(event.target.value)
+        this.setState({
+            warehouseName: optionValue.warehouseName,
+            warehouseId: optionValue.warehouseId
+        })
+    }
 
-        editWarehouseName = event => {
-            console.log(event.target.value)
-            const optionValue = JSON.parse(event.target.value)
-            console.log(optionValue)
-            this.setState({
-                warehouseName: optionValue.warehouseName,
-                warehouseId: optionValue.warehouseId
-            })
-        }
+    handleSubmit = async (event) => {
+        event.preventDefault();
 
-        handleSubmit() {
-            const id = this.props.match.params.id;
-            const warehouseName = this.state.warehouseName;
-            const itemName = this.state.name;
-            const description = this.state.description;
-            const category = this.state.category;
-            const status = this.state.status;
-            const quantity = this.state.quantity;
-            const warehouse = this.state.warehouse;
+        const id = this.props.match.params.id;
+        const warehouseName = this.state.warehouseName;
+        const warehouseId = this.state.warehouseId;
+        const itemName = this.state.name;
+        const description = this.state.description;
+        const category = this.state.category;
+        const status = this.state.status;
+        const quantity = status === 'Out of Stock'? 0 : this.state.quantity;
+        
+        const patch = await axios.patch(`${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}/edit`, {
+        id,
+        warehouseName,
+        warehouseId,
+        itemName,
+        description,
+        category,
+        status,
+        quantity
+        })
+        window.alert("updates have been saved")
+    }
 
-        }
-
-    render(){
-        console.log(this.state.warehouseName + ' ' + this.state.warehouseId);
+    render() {
         return(
-
-            <div className="editInventory">
-
-                     <div className="editInventoryHeader">
-            <img className="editInventoryHeader__icon" src={arrowBack} onClick={(event) => (window.location.href = `/inventory/${this.state.id}`)} alt="arrow back"></img>
-            <h1 className="editInventoryHeader__heading">edit inventory item</h1>
-        </div>
-        <div className="editInventoryForm">
-
-            <form className="editInventoryForm__form" action="" onSubmit={this.handleSubmit}>
-                <div className="editInventoryForm__fields-container">
+        <div className="editInventory">
+            <div className="editInventoryHeader">
+                <img className="editInventoryHeader__icon" src={arrowBack} onClick={(event) => (window.location.href = `/inventory/${this.state.id}`)} alt="arrow back"></img>
+                <h1 className="editInventoryHeader__heading">edit inventory item</h1>
+            </div>
+            <div className="editInventoryForm">
+                <form className="editInventoryForm__form" action="" onSubmit={this.handleSubmit}>
+                    <div className="editInventoryForm__fields-container">
                         <h2 className="editInventoryForm__heading">Item Details</h2>
-                    {/* onSubmit={handleFormSubmit} */}
                         <div className="editInventoryForm__field">
                             <label className="editInventoryForm__label"><h3>Item Name</h3></label>
                             <input
                                 className="editInventoryForm__input"
                                 type="text"
-                                // placeholder={this.state.name.value}
                                 name="Item Name"
                                 value={this.state.name}
-                                onInput={this.editName}
+                                onChange={this.editName}
                                 required
                             ></input>
                         </div>
@@ -127,7 +132,7 @@ import axios from "axios";
                                 placeholder="description"
                                 name="Description"
                                 value={this.state.description}
-                                onInput={this.editDescription}
+                                onChange={this.editDescription}
                                 required
                             ></textarea>
                         </div>
@@ -142,27 +147,19 @@ import axios from "axios";
                             </select>
                         </div>
                         <h2 className="editInventoryForm__heading">Item Availability</h2>
-
-
                         <div className="editInventoryForm__statusField">
                             <h3>Status</h3>
-
                             <div className="editInventoryForm__statusContainer">
-
                                 <div className="editInventoryForm__statusRadio" >
                                 <input  type="radio" id="radio-1" name="stock_status" value='In Stock' checked={this.state.status === "In Stock"} onChange={this.editStatus}/>
                                 <label>In Stock</label>
                                 </div>
-
                                 <div className="editInventoryForm__statusRadio">
                                 <input  type="radio" id="radio-2" name="stock_status" value='Out of Stock' checked={this.state.status === "Out of Stock"} onChange={this.editStatus}/>
                                 <label >Out of Stock</label>
                                 </div>
                             </div>
-
                         </div>
-
-
                         <div className="editInventoryForm__field" style={{display: this.state.status === 'In Stock' ? "flex": "none", flexDirection: "column"}}>
                             <label className="editInventoryForm__label"><h3>Quantity</h3></label>
                             <input
@@ -170,37 +167,28 @@ import axios from "axios";
                                 type="text"
                                 name="Item Name"
                                 value={this.state.quantity}
-                                onInput={this.editQuantity}
+                                onChange={this.editQuantity}
                                 required
                             ></input>
                         </div>
-
                         <div className="editInventoryForm__field">
                             <label className="editInventoryForm__label"><h3>Warehouse</h3></label>
-                            <select className="editInventoryForm__dropdown" onInput={this.editWarehouseName}>
+                            <select className="editInventoryForm__dropdown" onChange={this.editWarehouseName}>
                                 {this.getMappedWarehouses(this.state.warehouseData)}
                             </select>
                         </div>
-                </div>
-                <div className="buttonContainer">
-                <button className="buttonSecondary" type="button" onClick={(event) => (window.location.href = `/inventory/${this.state.id}`)}>
-                    Cancel
+                    </div>
+                    <div className="buttonContainer">
+                    <button className="buttonSecondary" type="button" onClick={(event) => (window.location.href = `/inventory/${this.state.id}`)}>
+                        Cancel
                     </button>
-                <button className="buttonPrimary" type="submit" >
-                    Save
-                </button>
-                </div>
-
-
-                    </form>
-                </div></div>
+                    <button className="buttonPrimary" type="submit" >
+                        Save
+                    </button>
+                    </div>
+                </form>
+            </div>
+        </div>
         )
     }
 }
-
-
-
-
-
-
-export default EditInventory;
