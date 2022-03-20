@@ -56,3 +56,4 @@ export default class InventoryCard extends Component {
         )
     }
 }
+

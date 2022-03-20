@@ -100,6 +100,7 @@
 .warehousePage-subhead {
   padding: 2.5rem 2rem 2rem 2rem;
   @include tablet {
+    padding: 2rem 3rem 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;

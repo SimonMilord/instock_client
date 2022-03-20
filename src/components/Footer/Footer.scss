@@ -4,7 +4,7 @@
 
 
 .footer {
-    margin: 2.5rem 0 2.5rem 0;
+    margin: 5.5rem 0 2.5rem 0;
 
     @include tablet {
         margin: 4.375rem 0 2.5rem 0;
@@ -19,6 +19,10 @@
     &__text {
         text-align: center;
         color: $secondary-text-color;
-        // font-size: $p3-font-sizes;
-    }
+        // font-size: .6875rem;
+
+        @include tablet {
+            // font-size: .75rem;
+        }
+    }   
 }
