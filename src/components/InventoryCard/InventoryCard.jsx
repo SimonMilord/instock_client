@@ -6,10 +6,12 @@ import { Link } from 'react-router-dom';
 import { Component } from 'react';
 
 export default class InventoryCard extends Component {
+
+
     render() {
         return (
 
-            <body className='cardList'>
+            <div className='cardList'>
                 <div className='card '>
                     <div className='card__box'>
                         <section className='card__subbox card__subbox--left'>
@@ -43,15 +45,13 @@ export default class InventoryCard extends Component {
                         </section>
                     </div>
                     <section className='card__actions'>
-                        <Link to=''>
-                            <img className='card__deleteBtn iconBtn' src={Delete} alt='delete Icon' />
-                        </Link>
-                        <Link to=''>
+                        <img onClick={() => this.props.handlePopUp(this.props.id)} className='card__deleteBtn iconBtn' src={Delete} alt='delete Icon' />
+                        <Link to={`/inventory/${this.props.id}/edit`}>
                             <img className='card__editBtn iconBtn' src={Edit} alt='Edit Icon' />
                         </Link>
                     </section>
                 </div>
-            </body>
+            </div>
 
         )
     }
