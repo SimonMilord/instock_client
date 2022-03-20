@@ -11,7 +11,7 @@
 
 .inventory {
   &__container {
-    margin: -4rem 1rem 0rem 1rem;
+    margin: -5rem 1rem 0rem 1rem;
     background-color: $global-white-color;
     border-radius: 0.1875rem 0.1875rem 0 0;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
@@ -27,7 +27,7 @@
   }
 
   &__section {
-    margin: 0rem 1.5rem 1.5rem 1.5rem;
+    margin: 0rem 1.875rem 1.5rem 1.875rem;
 
     @include tablet {
       @include display-flex(row, space-between, none);
@@ -36,9 +36,9 @@
   }
 
   &__title {
-    color: global-text-color;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
+    color: $global-text-color;
+    padding-top: 2.5rem;
+    padding-bottom: 1.6rem;
 
     @include tablet {
       padding-top: 2rem;
@@ -95,7 +95,7 @@
       color: $global-white-color;
       border-radius: 1.25rem;
       border-style: none;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.95rem;
 
       &:hover {
         background-color: $nav-background-color;
