@@ -56,7 +56,7 @@ export default class WarehouseDetails extends Component {
 
   handleDelete = async () => {
     console.log("deleted");
-    const deleteHandler = await axios.delete(
+    await axios.delete(
       `${process.env.REACT_APP_API_URL}/inventory/${this.state.deleteId}/delete`
     );
     this.handlePopUp();

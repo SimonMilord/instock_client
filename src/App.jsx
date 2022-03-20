@@ -6,7 +6,7 @@ import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails';
 import Footer from './components/Footer/Footer';
-// import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
+import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
 import EditWarehouse from './components/EditWarehouse/EditWarehouse';
 import EditInventory from './components/EditInventory/EditInventory'
 import InventoryItemDetails from './components/InventoryItemDetails/InventoryItemDetails';
@@ -31,14 +31,14 @@ class App extends Component {
                 <WarehousesPage {...routerProps} /> }
               />
               <Route
-                path="/warehouses/:id"
-                render={(routerProps) =>
-                <WarehouseDetails {...routerProps} /> }
-              />
-              <Route
-                path="/warehouses/add"
+                exact path="/warehouses/add"
                 render={(routerProps) =>
                 <AddNewWarehouse {...routerProps} /> }
+              />
+              <Route
+                exact path="/warehouses/:id"
+                render={(routerProps) =>
+                <WarehouseDetails {...routerProps} /> }
               />
               <Route
                 path="/warehouses/:id/edit"

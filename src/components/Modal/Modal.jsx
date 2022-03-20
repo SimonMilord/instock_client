@@ -45,7 +45,7 @@ export default function Modal(props) {
             </button>
             <button
               className="modal__btn modal__btn--delete"
-              onClick={() => props.deleteHandler}
+              onClick={() => props.deleteHandler()}
             >
               Delete{" "}
             </button>
