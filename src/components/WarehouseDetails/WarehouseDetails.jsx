@@ -64,6 +64,7 @@ export default class WarehouseDetails extends Component {
   };
 
   render() {
+    // console.log(this.state.inventory);
     return (
       <>
         <div className="details">
@@ -72,10 +73,10 @@ export default class WarehouseDetails extends Component {
                     <img className="details-top__arrow" src={arrow} alt="arrow"></img>
                     <h1 className="details-top__title">{this.state.warehouseData.name}</h1>
                 </Link>
-                <div className="details-top__iconBox">
+                <Link to={`/inventory/${this.state.warehouseData.id}/edit`}className="details-top__iconBox">
                     <img className="details-top__icon"src={penIcon} alt='pen'></img>
                     <h3 className="details-top__edit">Edit</h3>
-                </div>
+                </Link>
             </div>
 
             <div className="warehouse-info">
