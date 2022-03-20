@@ -135,7 +135,7 @@ export default class AddNewWarehouse extends Component {
         <div className='newWarehouse'>
             <form onSubmit={this.handleFormSubmit} className='newWarehouse__container' autoComplete='off'> 
                 <div className='newWarehouse__header'>
-                    <Link className='newWarehouse__header' to={'/warehouses'}>
+                    <Link className='newWarehouse__header-link' to={'/warehouses'}>
                             <img className='newWarehouse__header-img' src={arrowBack} alt="arrow back"/>
                     </Link>
                     <h1 className='newWarehouse__header-title'>Add New Warehouse</h1>
