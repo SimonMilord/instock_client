@@ -31,14 +31,14 @@ class App extends Component {
                 <WarehousesPage {...routerProps} /> }
               />
               <Route
-                path="/warehouses/:id"
-                render={(routerProps) =>
-                <WarehouseDetails {...routerProps} /> }
-              />
-              <Route
-                path="/warehouses/add"
+                exact path="/warehouses/add"
                 render={(routerProps) =>
                 <AddNewWarehouse {...routerProps} /> }
+              />
+              <Route
+                exact path="/warehouses/:id"
+                render={(routerProps) =>
+                <WarehouseDetails {...routerProps} /> }
               />
               <Route
                 path="/warehouses/:id/edit"

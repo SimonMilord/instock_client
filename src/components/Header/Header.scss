@@ -31,7 +31,7 @@
         text-decoration: none;
 
         @include tablet {
-            margin-top: 0.5rem;
+            margin-top: 0.5rem;  
         }
     }
 
@@ -49,6 +49,7 @@
 
         @include tablet {
             margin-top: 0;
+
         }
 
 
