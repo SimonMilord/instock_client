@@ -131,7 +131,7 @@ class AddNewWarehouse extends Component() {
                 </section>
                 <div className='newWarehouse__form-btn'>
                     <Link className='newWarehouse__form-btn-link-cancel' to='/'>
-                        <button className='newWarehouse__form-btn-cancel' type=''>Cancel</button>
+                        <button className='newWarehouse__form-btn-cancel' type='' onClick={(event) => (window.location.href = `/warehouses/${this.state.id}`)}>Cancel</button>
                     </Link>
                     <Link className='newWarehouse__form-btn-link-add' to='/'>
                         <button className='newWarehouse__form-btn-add' type='submit'>+ Add Warehouse</button>
