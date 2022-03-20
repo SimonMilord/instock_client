@@ -20,7 +20,7 @@ class InventoryList extends React.Component {
         axios
             .get(`${process.env.REACT_APP_API_URL}/inventory`)
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 this.setState({
                     inventories: res.data
                 });
