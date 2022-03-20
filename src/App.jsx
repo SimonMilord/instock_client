@@ -5,9 +5,8 @@ import Header from "./components/Header/Header";
 import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import WarehouseDetails from './components/WarehouseDetails/WarehouseDetails';
-import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
 import Footer from './components/Footer/Footer';
-// import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
+import AddNewWarehouse from './components/AddNewWarehouse/AddNewWarehouse';
 import EditWarehouse from './components/EditWarehouse/EditWarehouse';
 import EditInventory from './components/EditInventory/EditInventory'
 import InventoryItemDetails from './components/InventoryItemDetails/InventoryItemDetails';
@@ -20,10 +19,7 @@ class App extends Component {
           <div className='App'>
             <Header />
             <Switch>
-              <AddNewWarehouse />
-              
               {/* Routing */}
-              {/*
               <Route path="/" exact render={(routerProps) =>
                 <WarehousesPage
                   {...routerProps} />
@@ -65,7 +61,7 @@ class App extends Component {
                 path="/inventory/:id/edit"
                 render={(routerProps) =>
                 <EditInventory {...routerProps} /> }
-                />*/}
+              />
             </Switch>
             <Footer />
           </div>

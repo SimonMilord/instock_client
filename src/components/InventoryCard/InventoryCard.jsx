@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 import './InventoryCard.scss';
 import Delete from '../../assets/Icons/delete_outline-24px.svg';
 import Edit from '../../assets/Icons/edit-24px.svg';
@@ -59,4 +56,3 @@ function InventoryCard(props) {
 }
 
 export default InventoryCard;
->>>>>>> develop
