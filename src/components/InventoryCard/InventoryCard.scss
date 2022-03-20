@@ -28,7 +28,7 @@
       }
 
       &__box {
-        @include display-flex(row, flex-start, center);
+        @include display-flex(row, flex-start, none);
         margin: 0rem 0rem;
 
         @include tablet {
