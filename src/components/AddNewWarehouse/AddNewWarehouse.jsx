@@ -26,7 +26,7 @@ export default class AddNewWarehouse extends Component {
             contactEmail: '',
         } 
     };
-
+ 
     handleWarehouseName = (event) => {
         this.setState ({
             warehouseName: event.target.value,
@@ -155,7 +155,7 @@ export default class AddNewWarehouse extends Component {
                                     placeholder="City" value={this.state.warehouseCity} onChange={this.handleWarehouseCity}/>
                             </label>
                             <label className='newWarehouse__form-header'>Country
-                                <input className={!this.state.contactNameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseCountry"
+                                <input className={!this.state.countryError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseCountry"
                                     placeholder="Country" value={this.state.warehouseCountry} onChange={this.handleWarehouseCountry}/>
                             </label>
                         </div>
