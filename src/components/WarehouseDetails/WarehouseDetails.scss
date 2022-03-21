@@ -12,7 +12,7 @@
 // TOP section
 .details {
   @include component-box;
-  margin-top: -3rem;
+  margin-top: -4.85rem;
 
   @include tablet {
     margin: 2rem;
@@ -28,7 +28,11 @@
   .details-top {
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+
+    @include tablet {
+      padding: 2rem 2.25rem 1.5rem 2.25rem;
+    }
 
     &__link {
       text-decoration: none;

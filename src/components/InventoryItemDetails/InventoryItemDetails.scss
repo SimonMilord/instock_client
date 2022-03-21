@@ -5,7 +5,7 @@
 
 .itemDetails {
     @include component-box;
-    margin-top: -3rem;
+    margin-top: -4.85rem;
 
     @include tablet {
         margin: 2rem;
@@ -45,59 +45,46 @@
 
         }
 
-        &-title {}
-
-        &-btn--mobile {
+        &-btn-link {
+            background-color: $interactive-color;
+            border-radius: 100%;
             width: 2.25rem;
             height: 2.25rem;
-            border-radius: 1.125rem;
-            border: none;
-            background-color: $interactive-color;
-            color: $global-white-color;
+            @include display-flex(row, center, center);
+            text-decoration: none;
 
-            &-img {
-                filter: brightness(100);
+            &:hover {
+                background-color: $CTA-hover-color;
             }
 
             @include tablet {
-                display: none;
+                width: 5.0625rem;
+                height: 2.25rem;
+                border-radius: 1.25rem;
             }
-
         }
 
+        &-btn-icon {
+            filter: brightness(100);
+            height: 1.5rem;    
 
+            @include tablet {
+                height: 1.125rem;
+            }
+        }
 
-        &-btn--tabDesk {
+        &-btn-text {
             display: none;
-            width: 5.0625rem;
-            height: 2.25rem;
-            border-radius: 1.125rem;
-            border: none;
-            background-color: $interactive-color;
             color: $global-white-color;
-            padding: .675rem 0 0 1.125rem;
-            font-size: .75rem;
-
-
-            &-link {
-                text-decoration: none;
-            }
-
-            &-img {
-                filter: brightness(100);
-                margin-bottom: -1rem;
-                height: 1rem;
-                object-position: -0.2rem 0;
-
-
-
-            }
 
             @include tablet {
                 display: flex;
+                margin-left: .3125rem;
             }
-
         }
+
+
+
     }
 
     &__content {
