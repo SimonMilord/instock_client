@@ -16,8 +16,7 @@ export default class InventoryItemDetails extends Component {
             const response = await axios.get(`${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}`)
             this.setState({
                 inventoryItem: response.data,
-            }
-            )
+            })
         } catch (error) {
             console.log(error);
         }
@@ -29,7 +28,6 @@ export default class InventoryItemDetails extends Component {
 
     render() {
         const item = this.state.inventoryItem;
-
         return (
             <div className="itemDetails">
                 <div className="itemDetails__subHead">
@@ -46,7 +44,6 @@ export default class InventoryItemDetails extends Component {
                     </Link>
                     </div>
                 </div>
-
                 <div className="itemDetails__content">
                     <div className="itemDetails__contentBox itemDetails__contentBox--left">
                         <div className="itemDetails__contentBox-data">
@@ -58,7 +55,6 @@ export default class InventoryItemDetails extends Component {
                             <p className="itemDetails__data">{item.category}</p>
                         </div>
                     </div>
-
                     <div className="itemDetails__contentBox itemDetails__contentBox--right">
                         <div className="itemDetails__contentSubBox">
                             <div className="itemDetails__contentBox-data">

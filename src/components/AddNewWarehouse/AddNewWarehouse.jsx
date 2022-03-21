@@ -26,7 +26,7 @@ export default class AddNewWarehouse extends Component {
             contactEmail: '',
         } 
     };
-
+ 
     handleWarehouseName = (event) => {
         this.setState ({
             warehouseName: event.target.value,
@@ -129,8 +129,6 @@ export default class AddNewWarehouse extends Component {
 
 
   render() {
-    console.log("nameError" + " " + this.state.nameError);
-    console.log("addError" + " " + this.state.addressError);
     return (
         <div className='newWarehouse'>
             <form onSubmit={this.handleFormSubmit} className='newWarehouse__container' autoComplete='off'> 
@@ -149,15 +147,15 @@ export default class AddNewWarehouse extends Component {
                                     placeholder="Warehouse Name" value={this.state.warehouseName} onChange={this.handleWarehouseName}/>
                             </label>
                             <label className='newWarehouse__form-header'>Street Address
-                                <input className={!this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseAddress"
+                                <input className={!this.state.addressError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseAddress"
                                     placeholder="Street Address" value={this.state.streetAddress} onChange={this.handleStreetAddress}/>
                             </label>
                             <label className='newWarehouse__form-header'>City
-                                <input className={!this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseCity"
+                                <input className={!this.state.cityError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseCity"
                                     placeholder="City" value={this.state.warehouseCity} onChange={this.handleWarehouseCity}/>
                             </label>
                             <label className='newWarehouse__form-header'>Country
-                                <input className={!this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseCountry"
+                                <input className={!this.state.countryError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="warehouseCountry"
                                     placeholder="Country" value={this.state.warehouseCountry} onChange={this.handleWarehouseCountry}/>
                             </label>
                         </div>
@@ -167,19 +165,19 @@ export default class AddNewWarehouse extends Component {
                         <div className="newWarehouse__form-details">
                             <h2 className='newWarehouse__form-title'>Contact Details</h2>
                             <label className='newWarehouse__form-header'>Contact Name
-                                <input className={!this.state.nameError? "newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactName"
+                                <input className={!this.state.contactNameError? "newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactName"
                                     placeholder="Contact Name" value={this.state.contactName} onChange={this.handleContactName}/>
                             </label>
                             <label className='newWarehouse__form-header'>Position
-                                <input className={!this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactPosition"
+                                <input className={!this.state.positionError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactPosition"
                                     placeholder="Position" value={this.state.contactPosition} onChange={this.handlecontactPosition}/>
                             </label>
                             <label className='newWarehouse__form-header'>Phone Number
-                                <input className={!this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactPhoneNumber"
+                                <input className={!this.state.phoneError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactPhoneNumber"
                                     placeholder="City" value={this.state.contactPhoneNumber} onChange={this.handlePhoneNumber}/>
                             </label>
                             <label className='newWarehouse__form-header'>Email
-                                <input className={!this.state.nameError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactEmail"
+                                <input className={!this.state.emailError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactEmail"
                                     placeholder="Email" value={this.state.contactEmail} onChange={this.handleContactEmail}/>
                             </label>
                         </div>
