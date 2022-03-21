@@ -174,7 +174,7 @@ export default class AddNewWarehouse extends Component {
                             </label>
                             <label className='newWarehouse__form-header'>Phone Number
                                 <input className={!this.state.phoneError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactPhoneNumber"
-                                    placeholder="City" value={this.state.contactPhoneNumber} onChange={this.handlePhoneNumber}/>
+                                    placeholder="Phone Number" value={this.state.contactPhoneNumber} onChange={this.handlePhoneNumber}/>
                             </label>
                             <label className='newWarehouse__form-header'>Email
                                 <input className={!this.state.emailError?"newWarehouse__form-input": "newWarehouse__form-input error"} type="text" name="contactEmail"
