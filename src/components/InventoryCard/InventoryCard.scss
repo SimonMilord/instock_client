@@ -3,17 +3,17 @@
 @import "../../styles/partials/fonts";
 
 .cardList {
-    margin: -1.5rem 1rem 0 1rem;
+    margin: 0rem 1rem 0 1rem;
     background-color: $global-white-color;
     // padding: -5rem 0rem 1.6875rem 0rem;
-    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    // box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
   
     @include tablet {
-      margin: -2rem 2rem .35rem 2rem;
-      padding: 0rem 0rem 1.6875rem 0rem;
+      margin: 0rem 2rem 0rem 2rem;
+      padding: 1rem 0rem 0rem 0rem;
 
       @include desktop {
-        margin: -0.5rem 8.125rem .35rem 8.125rem;
+        margin: 0rem 8.125rem 0rem 8.125rem;
       }
     }
   
@@ -21,7 +21,7 @@
       border-top: 1px solid $secondary-grey;
   
       @include tablet {
-        @include display-flex(row, space-between, none);
+        @include display-flex(row, space-between, center);
         padding: 0rem 1rem;
         border-top: none;
         border-bottom: 1px solid $secondary-grey;
@@ -186,14 +186,13 @@
 
       &__actions {
         @include display-flex(row, space-between, none);
-        padding-bottom: 2rem;
+        padding-bottom: .5rem;
         @include tablet {
           width: 20%;
           @include display-flex(row, flex-end, center);
-
-          margin: 0;
-          padding: 1rem;
+          margin-bottom: 0.5rem;
         }
+
         .iconBtn {
           @include tablet {
             height: 1.5rem;
