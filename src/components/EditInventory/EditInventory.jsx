@@ -90,7 +90,7 @@ export default class EditInventory extends Component {
         const status = this.state.status;
         const quantity = status === 'Out of Stock'? 0 : this.state.quantity;
         
-        const patch = await axios.patch(`${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}/edit`, {
+        await axios.patch(`${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}/edit`, {
         id,
         warehouseName,
         warehouseId,

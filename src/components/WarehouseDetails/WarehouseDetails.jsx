@@ -55,7 +55,6 @@ export default class WarehouseDetails extends Component {
   };
 
   handleDelete = async () => {
-    console.log("deleted");
     await axios.delete(
       `${process.env.REACT_APP_API_URL}/inventory/${this.state.deleteId}/delete`
     );
@@ -65,7 +64,6 @@ export default class WarehouseDetails extends Component {
 
 
   render() {
-    // console.log(this.state.inventory);
     return (
       <>
         <div className="details">

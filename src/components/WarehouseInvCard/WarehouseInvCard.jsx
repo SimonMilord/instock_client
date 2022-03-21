@@ -23,7 +23,6 @@ export default class WarehouseInvCard extends Component {
               <p className="card__text">{this.props.category}</p>
             </div>
           </div>
-
           <div className="card__right">
             <div className="card__content card__content--status">
               <h3 className="card__title label">status</h3>
@@ -43,7 +42,6 @@ export default class WarehouseInvCard extends Component {
             </div>
           </div>
         </div>
-
         <div className="card__actions">
             <img onClick={() => this.props.handlePopUp(this.props.id)}
             className="card__delete" src={Delete} alt="delete icon" />

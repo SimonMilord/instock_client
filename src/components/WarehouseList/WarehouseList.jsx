@@ -9,7 +9,7 @@ import searchIcon from "../../assets/Icons/search-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 import Modal from "../Modal/Modal";
 
-class WarehouseList extends Component {
+export default class WarehouseList extends Component {
   state = {
     warehouseData: [],
     popUp: false,
@@ -41,8 +41,7 @@ class WarehouseList extends Component {
   };
 
   handleDelete = async () => {
-    console.log("deleted");
-    const deleteHandler = await axios.delete(
+    await axios.delete(
       `${process.env.REACT_APP_API_URL}/warehouses/${this.state.deleteId}/delete`
     );
     this.handlePopUp();
@@ -50,7 +49,6 @@ class WarehouseList extends Component {
   };
 
   render() {
-    console.log(this.state.warehouseData);
     return (
       <>
         {/* header of the page */}
@@ -186,5 +184,3 @@ class WarehouseList extends Component {
     );
   }
 }
-
-export default WarehouseList;

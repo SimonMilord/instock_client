@@ -129,8 +129,6 @@ export default class AddNewWarehouse extends Component {
 
 
   render() {
-    console.log("nameError" + " " + this.state.nameError);
-    console.log("addError" + " " + this.state.addressError);
     return (
         <div className='newWarehouse'>
             <form onSubmit={this.handleFormSubmit} className='newWarehouse__container' autoComplete='off'> 
