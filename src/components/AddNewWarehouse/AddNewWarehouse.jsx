@@ -26,7 +26,7 @@ export default class AddNewWarehouse extends Component {
             contactEmail: '',
         } 
     };
-
+ 
     handleWarehouseName = (event) => {
         this.setState ({
             warehouseName: event.target.value,
