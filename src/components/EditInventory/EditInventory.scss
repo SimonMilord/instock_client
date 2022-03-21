@@ -4,11 +4,11 @@
 
 .editInventory {
     @include component-box;
-    margin-top: -3rem;
+    margin-top: -4.85rem;
 
     @include tablet {
         margin: 2rem;
-        margin-top: -6.55rem;
+        margin-top: -6rem;
 
     }
 
@@ -19,13 +19,14 @@
 }
 
 .editInventoryHeader {
-    padding: 1.5rem;
+    padding: 1.65rem 1.5rem 0.825rem 1.5rem;
     display: flex;
     border-bottom: 1px solid $secondary-grey;
 
     @include tablet {
         display: flex;
         align-items: center;
+        padding: 1.65rem 2rem 0.825rem 2rem;
     }
 
     &__heading {
@@ -41,6 +42,7 @@
 
         @include tablet {
             display: flex;
+            padding: 2rem;
         }
 
     }

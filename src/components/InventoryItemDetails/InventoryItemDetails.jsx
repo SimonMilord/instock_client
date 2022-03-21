@@ -40,9 +40,9 @@ export default class InventoryItemDetails extends Component {
                         <h1 className="itemDetails__subHead-title">{item.itemName}</h1>
                     </div>
                     <div>
-                    <Link className="itemDetails__subHead-btn--tabDesk-link" to={`/inventory/${item.id}/edit`}>
-                        <img className="itemDetails__subHead-btn--tabDesk-img" src={editPen} alt="editing icon" />
-                        <p>Edit</p>
+                    <Link className="itemDetails__subHead-btn-link" to={`/inventory/${item.id}/edit`}>
+                        <img className="itemDetails__subHead-btn-icon" src={editPen} alt="editing icon" />
+                        <p className="itemDetails__subHead-btn-text">Edit</p>
                     </Link>
                     </div>
                 </div>
