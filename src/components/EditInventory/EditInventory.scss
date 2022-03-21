@@ -23,7 +23,6 @@
     display: flex;
     border-bottom: 1px solid $secondary-grey;
 
-
     @include tablet {
         display: flex;
         align-items: center;
@@ -40,6 +39,29 @@
     &__fields-container {
         padding: 1.5rem;
 
+        @include tablet {
+            display: flex;
+        }
+
+    }
+
+    &__fields-container-left {
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            border-right: 1px solid $secondary-grey;
+            padding-right: 2rem;
+        }
+    }
+
+    &__fields-container-right {
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            padding-left: 2rem;
+        }
     }
 
     &__dropdown {
@@ -76,13 +98,19 @@
         width: 100%;
     }
 
-
+    &__label-text {
+        padding-bottom: .25rem;
+    }
 
     &__textarea {
         @include form-input;
         min-height: 9rem;
         padding-top: .5rem;
-        width: 100%
+        width: 100%;
+
+        @include tablet {
+            min-height: 12.5rem;
+        }
     }
 
     &__status {
@@ -93,14 +121,8 @@
         justify-content: space-between;
     }
 
-    &__statusInput {}
-
-    &__statusField {}
-
     &__statusContainer {
-
         display: flex;
-
         gap: 0.5rem;
         @include font-size($h3-font-sizes);
     }
@@ -113,7 +135,6 @@
 
     &__statusRadio input[type="radio"] {
         cursor: pointer;
-        ;
     }
 
     &__statusRadio label {
@@ -139,39 +160,52 @@
     height: 5rem;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    // width: 100%;
     padding: 1.5rem;
+
+    @include tablet {
+        display: flex;
+        margin-left: auto;
+        justify-content: right;
+
+    }
+
 }
 
 .buttonPrimary {
     background-color: $interactive-color;
+    color: $global-white-color;
+    border: none;
     height: 2.25rem;
     border-radius: 1.25rem;
     padding: 0 1rem;
     outline: none;
-    color: $global-white-color;
-    border: none;
     @include font-size($h3-font-sizes);
     width: 100%;
     cursor: pointer;
+
 
     &:hover {
         outline: none !important;
         background-color: $CTA-hover-color;
     }
 
-    @include tablet;
-    height: 2.375rem;
+    @include tablet {
+        height: 2.375rem;
+        order: 2;
+        flex-basis: auto;
+        width: auto;
+    }
 }
 
 .buttonSecondary {
     background-color: $global-white-color;
+    color: $secondary-text-color;
+    border: $secondary-grey solid .0625rem;
     height: 2.25rem;
     border-radius: 1.25rem;
     padding: 0 1rem;
     outline: none;
-    color: $secondary-text-color;
-    border: $secondary-grey solid .0625rem;
     @include font-size($h3-font-sizes);
     width: 100%;
     cursor: pointer;
@@ -182,6 +216,9 @@
         border: $interactive-color solid .0625rem;
     }
 
-    @include tablet;
-    height: 2.375rem;
+    @include tablet {
+        height: 2.375rem;
+        order: 1;
+        width: auto;
+    }
 }

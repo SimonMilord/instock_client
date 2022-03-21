@@ -113,9 +113,12 @@ export default class EditInventory extends Component {
             <div className="editInventoryForm">
                 <form className="editInventoryForm__form" action="" onSubmit={this.handleSubmit}>
                     <div className="editInventoryForm__fields-container">
+                        <div className="editInventoryForm__fields-container-left">
                         <h2 className="editInventoryForm__heading">Item Details</h2>
                         <div className="editInventoryForm__field">
-                            <label className="editInventoryForm__label"><h3>Item Name</h3></label>
+                            <label  className="editInventoryForm__label">
+                                <h3 className="editInventoryForm__label-text">Item Name</h3>
+                            </label>
                             <input
                                 className="editInventoryForm__input"
                                 type="text"
@@ -126,7 +129,9 @@ export default class EditInventory extends Component {
                             ></input>
                         </div>
                         <div className="editInventoryForm__field">
-                            <label className="editInventoryForm__label"><h3>Description</h3></label>
+                            <label  className="editInventoryForm__label">
+                                <h3 className="editInventoryForm__label-text">Description</h3>
+                            </label>
                             <textarea className="editInventoryForm__textarea"
                                 type="text"
                                 placeholder="description"
@@ -137,7 +142,9 @@ export default class EditInventory extends Component {
                             ></textarea>
                         </div>
                         <div className="editInventoryForm__field">
-                            <label className="editInventoryForm__label"><h3>Category</h3></label>
+                            <label  className="editInventoryForm__label">
+                                <h3  className="editInventoryForm__label-text">Category</h3>
+                            </label>
                             <select className="editInventoryForm__dropdown" name="Category" id="" placeholder="Please select">
                                 <option className="editInventoryForm__select--option" value="1">Electronics</option>
                                 <option className="editInventoryForm__select--option" value="2">Gear</option>
@@ -146,6 +153,8 @@ export default class EditInventory extends Component {
                                 <option className="editInventoryForm__select--option" value="5">Health</option>
                             </select>
                         </div>
+                        </div>
+                        <div className="editInventoryForm__fields-container-right">
                         <h2 className="editInventoryForm__heading">Item Availability</h2>
                         <div className="editInventoryForm__statusField">
                             <h3>Status</h3>
@@ -161,7 +170,9 @@ export default class EditInventory extends Component {
                             </div>
                         </div>
                         <div className="editInventoryForm__field" style={{display: this.state.status === 'In Stock' ? "flex": "none", flexDirection: "column"}}>
-                            <label className="editInventoryForm__label"><h3>Quantity</h3></label>
+                            <label className="editInventoryForm__label">
+                                <h3 className="editInventoryForm__label-text">Quantity</h3>
+                            </label>
                             <input
                                 className="editInventoryForm__input"
                                 type="text"
@@ -172,12 +183,14 @@ export default class EditInventory extends Component {
                             ></input>
                         </div>
                         <div className="editInventoryForm__field">
-                            <label className="editInventoryForm__label"><h3>Warehouse</h3></label>
+                            <label className="editInventoryForm__label">
+                                <h3  className="editInventoryForm__label-text">Warehouse</h3>
+                            </label>
                             <select className="editInventoryForm__dropdown" onChange={this.editWarehouseName}>
                                 {this.getMappedWarehouses(this.state.warehouseData)}
                             </select>
                         </div>
-                    </div>
+                    </div></div>
                     <div className="buttonContainer">
                     <button className="buttonSecondary" type="button" onClick={(event) => (window.location.href = `/inventory/${this.state.id}`)}>
                         Cancel
