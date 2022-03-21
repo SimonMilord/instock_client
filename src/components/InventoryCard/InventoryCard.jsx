@@ -10,7 +10,6 @@ export default class InventoryCard extends Component {
 
     render() {
         return (
-
             <div className='cardList'>
                 <div className='card '>
                     <div className='card__box'>
