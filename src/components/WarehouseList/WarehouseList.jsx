@@ -25,8 +25,10 @@ export default class WarehouseList extends Component {
   getWarehouseData() {
     axios
       .get(`${process.env.REACT_APP_API_URL}/warehouses`)
-      .then((response) => {
-        this.setState({ warehouseData: response.data });
+      .then((res) => {
+        this.setState({
+          warehouseData: res.data
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -51,7 +53,6 @@ export default class WarehouseList extends Component {
   render() {
     return (
       <>
-        {/* header of the page */}
         <div className="warehousePage-subhead">
           <h1 className="warehousePage-title">Warehouses</h1>
           <div className="warehousePage-subhead__right">
@@ -113,7 +114,7 @@ export default class WarehouseList extends Component {
         </div>
         {/* list of warehouses */}
         <div className="whList">
-          {this.state.warehouseData.map((warehouse) => (
+          {this.state.warehouseData && this.state.warehouseData.map((warehouse) => (
             <div className="whLi" key={warehouse.id}>
               <div className="whLi__box">
                 <div className="whLi__subbox whLi__subbox--left">
