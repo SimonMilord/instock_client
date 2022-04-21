@@ -24,9 +24,9 @@ export default class AddNewWarehouse extends Component {
             contactPosition: '',
             contactPhoneNumber: '',
             contactEmail: '',
-        } 
+        }
     };
- 
+
     handleWarehouseName = (event) => {
         this.setState ({
             warehouseName: event.target.value,
@@ -54,7 +54,7 @@ export default class AddNewWarehouse extends Component {
             countryError: false
         })
     }
-    
+
     handleContactName = event => {
         this.setState ({
             contactName: event.target.value,
@@ -109,14 +109,13 @@ export default class AddNewWarehouse extends Component {
                 }
             })
             .then((res) => {
-                console.log(res);
                 alert('Your form was succesfully submited!');
             })
             .catch((err) => {
                 console.log(err);
             });
         } else {
-            if (!warehouseName) {this.setState({ nameError: true}); console.log('in here')}
+            if (!warehouseName) {this.setState({ nameError: true});}
             if (!warehouseAddress) this.setState({ addressError: true})
             if (!warehouseCity) this.setState({ cityError: true})
             if (!warehouseCountry) this.setState({ countryError: true})
@@ -124,14 +123,14 @@ export default class AddNewWarehouse extends Component {
             if (!contactPosition) this.setState({ positionError: true})
             if (!contactPhoneNumber) this.setState({ phoneError: true})
             if (!contactEmail) this.setState({ emailError: true})
-        }     
+        }
     }
 
 
   render() {
     return (
         <div className='newWarehouse'>
-            <form onSubmit={this.handleFormSubmit} className='newWarehouse__container' autoComplete='off'> 
+            <form onSubmit={this.handleFormSubmit} className='newWarehouse__container' autoComplete='off'>
                 <div className='newWarehouse__header'>
                     <Link className='newWarehouse__header-link' to={'/warehouses'}>
                             <img className='newWarehouse__header-img' src={arrowBack} alt="arrow back"/>

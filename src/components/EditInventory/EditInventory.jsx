@@ -1,5 +1,6 @@
 import "./EditInventory.scss";
 import { Component } from "react";
+import {Link} from 'react-router-dom';
 import arrowBack from "../../assets/Icons/arrow_back-24px.svg"
 import axios from "axios";
 
@@ -16,9 +17,9 @@ export default class EditInventory extends Component {
         category: "",
         status: "",
         quantity: 0,
-        warehouse: "", 
+        warehouse: "",
     }
- 
+
     getMappedWarehouses = (warehouseData) => {
         const mapWarehouse = warehouseData.map((warehouse) => {
             return (
@@ -89,7 +90,7 @@ export default class EditInventory extends Component {
         const category = this.state.category;
         const status = this.state.status;
         const quantity = status === 'Out of Stock'? 0 : this.state.quantity;
-        
+
         await axios.patch(`${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}/edit`, {
         id,
         warehouseName,
@@ -192,9 +193,11 @@ export default class EditInventory extends Component {
                         </div>
                     </div></div>
                     <div className="buttonContainer">
-                    <button className="buttonSecondary" type="button" onClick={(event) => (window.location.href = `/inventory/${this.state.id}`)}>
-                        Cancel
-                    </button>
+                    <Link to='/inventory' className="editInventoryForm__link">
+                        <button className="buttonSecondary" type="button">
+                            Cancel
+                        </button>
+                    </Link>
                     <button className="buttonPrimary" type="submit" >
                         Save
                     </button>

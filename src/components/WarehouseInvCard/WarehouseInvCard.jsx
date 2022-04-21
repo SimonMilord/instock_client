@@ -15,7 +15,7 @@ export default class WarehouseInvCard extends Component {
               <h3 className="card__title card__title--mobile label">inventory item</h3>
               <Link className="link" to={`/inventory/${this.props.id}`}>
                 <p className="link__text">{this.props.itemName}</p>
-                <img className="link__image" src={Chevron} />
+                <img className="link__image" src={Chevron} alt="arrowback"/>
               </Link>
             </div>
             <div className="card__content card__content--category">
