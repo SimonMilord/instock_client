@@ -1,11 +1,11 @@
 import "./EditInventory.scss";
 import { Component } from "react";
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import arrowBack from "../../assets/Icons/arrow_back-24px.svg"
 import axios from "axios";
 
 
-export default class EditInventory extends Component {
+class EditInventory extends Component {
 
     state ={
         warehouseData: [],
@@ -41,7 +41,7 @@ export default class EditInventory extends Component {
         .then(res => {
             this.setState({
                 id: res.data.id,
-                warehouseId: res.data.warehouseId,
+                warehouseId: res.data.warehouseID,
                 warehouseName: res.data.warehouseName,
                 name: res.data.itemName,
                 description: res.data.description,
@@ -83,8 +83,8 @@ export default class EditInventory extends Component {
         event.preventDefault();
 
         const id = this.props.match.params.id;
+        const warehouseID = this.state.warehouseId;
         const warehouseName = this.state.warehouseName;
-        const warehouseId = this.state.warehouseId;
         const itemName = this.state.name;
         const description = this.state.description;
         const category = this.state.category;
@@ -93,15 +93,20 @@ export default class EditInventory extends Component {
 
         await axios.patch(`${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}/edit`, {
         id,
+        warehouseID,
         warehouseName,
-        warehouseId,
         itemName,
         description,
         category,
         status,
         quantity
-        })
-        window.alert("updates have been saved")
+        }).then((res) => {
+            console.log("Inventory item edited successfully");
+            // this.props.history.goBack();
+            this.props.history.push('/warehouses');
+        }).catch((err) => {
+            console.log(err);
+        });
     }
 
     render() {
@@ -112,7 +117,7 @@ export default class EditInventory extends Component {
                 <h1 className="editInventoryHeader__heading">edit inventory item</h1>
             </div>
             <div className="editInventoryForm">
-                <form className="editInventoryForm__form" action="" onSubmit={this.handleSubmit}>
+                <form className="editInventoryForm__form" action="" onSubmit={this.handleSubmit.bind(this)}>
                     <div className="editInventoryForm__fields-container">
                         <div className="editInventoryForm__fields-container-left">
                         <h2 className="editInventoryForm__heading">Item Details</h2>
@@ -208,3 +213,5 @@ export default class EditInventory extends Component {
         )
     }
 }
+
+export default withRouter(EditInventory);

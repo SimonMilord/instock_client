@@ -1,10 +1,10 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./EditWarehouse.scss";
 import axios from 'axios';
 import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
 
-export default class EditWarehouse extends Component {
+class EditWarehouse extends Component {
 
   state = {
     id: '',
@@ -125,7 +125,7 @@ handleFormSubmit = (event) => {
             }
         })
         .then((res) => {
-            alert('Your form was succesfully submited!');
+            alert('Warehouse edited successfully');
         })
         .catch((err) => {
             console.log(err);
@@ -140,7 +140,7 @@ handleFormSubmit = (event) => {
         if (!contactPhoneNumber) this.setState({ phoneError: true})
         if (!contactEmail) this.setState({ emailError: true})
     }
-    this.props.history.push('/');
+    this.props.history.goBack();
 }
 
 
@@ -210,3 +210,5 @@ return (
 );
 }
 }
+
+export default withRouter(EditWarehouse);

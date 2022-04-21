@@ -110,6 +110,7 @@ export default class AddNewWarehouse extends Component {
             })
             .then((res) => {
                 alert('Your form was succesfully submited!');
+                this.props.history.push('/warehouses');
             })
             .catch((err) => {
                 console.log(err);

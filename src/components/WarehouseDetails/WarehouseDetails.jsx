@@ -25,8 +25,7 @@ export default class WarehouseDetails extends Component {
         inventory: invResponse.data,
       });
     } catch (err) {
-      // console.log(err.message);
-      alert("This warehouse has no current inventory");
+      console.log(err.message);
     }
   }
 
