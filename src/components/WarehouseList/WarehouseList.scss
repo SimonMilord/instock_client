@@ -70,9 +70,13 @@
       color: $interactive-color;
       text-decoration: none;
     }
-    // &__link-icon {
 
-    // }
+    &__link-box:hover img {
+      transform: translateX(8px);
+    }
+    &__link-icon {
+      transition: 0.3s;
+    }
     &__actions {
       display: flex;
       justify-content: space-between;

@@ -77,6 +77,15 @@
 
     &__link-box {
       @include display-flex(row, none, center);
+
+    }
+
+    &__link-icon {
+      transition: 0.3s;
+    }
+
+    &__link-box:hover img {
+      transform: translateX(8px);
     }
 
     &__info {
