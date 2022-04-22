@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# InStock Inventory management web application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+InStock is a responsive inventory management application that allows users to keep track of inventories spread across multiple warehouses. Users can add, edit, delete both warehouses and inventory items. The app itself was built with React and SASS on the frontend and Node and Express on the backend.
 
-## Available Scripts
+## The Context
 
-In the project directory, you can run:
+InStock was built as a week-long team project for the Brainstation program where we got to collaborate in an agile development environment using Jira Software. We got to work with both frontend and backend technologies as well as exposure working with Figma wireframes.
+My contributions range from backend routing, to React logic, to building some React components for the frontend including styling with SASS. I was also acting project manager, responsible for deadlines and tasks attribution on Jira.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Click here](https://instock-demo.netlify.app/) to see the live demo
+<br>
+(might take a few seconds for Heroku server to load)
 
-### `npm test`
+## Team
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project was built with the collaboration of : <br>
+[Brodie Snelling](https://github.com/bsnelling9)<br>
+[Lucy Wightwick](https://github.com/lwightwick)<br>
+[Cristian Aróstegui](https://github.com/carosteguig)<br>
+[Jagjot Singh Manoor](https://github.com/Ramgarhia007)<br>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshots
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="" width=50% height=50%>
+<img src="" width=50% height=50%>
+<img src="" width=50% height=50%>
+<img src="" width=50% height=50%>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Tech Stack
+Client:
+[React.js](https://reactjs.org/),
+[Sass](https://sass-lang.com/),
+[Axios](https://axios-http.com/),
+[Material UI](https://mui.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Server:
+[Express](https://expressjs.com/),
+[Node.js](https://nodejs.org/en/),
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Deployment & tools:
+[Figma](https://www.figma.com/),
+[Jira](https://www.atlassian.com/software/jira),
+[Netlify](https://www.netlify.com/),
+[Heroku](https://id.heroku.com/login)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Environment Variables
+Add the following variables in client .ENV file
 
-## Learn More
+Client: 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+REACT_APP_API_URL=https://instock-app-server.herokuapp.com/
+  
+Server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+PORT = 8080
 
-### Code Splitting
+## Usage
+To run this project locally, follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Clone the server repository
+##### `$ git clone https://github.com/SimonMilord/instock_server.git`
 
-### Analyzing the Bundle Size
+Install server dependencies
+##### `$ npm install`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Start the server
+##### `$ node index.js`
 
-### Making a Progressive Web App
+Clone the server repository
+##### `$ git clone https://github.com/SimonMilord/instock_client.git`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Install server dependencies
+##### `$ npm install`
 
-### Advanced Configuration
+Start the client
+##### `$ npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Next Steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Here are some additional features that consider adding in the future:
 
-### `npm run build` fails to minify
+- Adding search functionality to the search bar
+- Adding sorting functionality to table columns (warehouse and inventory)
+- Migrating the server data from JSON files to actual Database
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Contact
+
+Feel free to follow me on [Github](https://github.com/SimonMilord) or [LinkedIn](https://www.linkedin.com/in/simonmilord/)
