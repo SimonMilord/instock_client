@@ -13,7 +13,7 @@ export default class InventoryItemDetails extends Component {
   getInventoryID = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}`
+        `${process.env.REACT_APP_API_URL}inventory/${this.props.match.params.id}`
       );
       this.setState({
         inventoryItem: response.data,

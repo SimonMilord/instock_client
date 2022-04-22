@@ -19,7 +19,7 @@ export default class WarehouseDetails extends Component {
   async fetchInventory(id) {
     try {
       const invResponse = await axios.get(
-        `${process.env.REACT_APP_API_URL}/warehouses/${id}/inventory`
+        `${process.env.REACT_APP_API_URL}warehouses/${id}/inventory`
       );
       this.setState({
         inventory: invResponse.data,
@@ -32,7 +32,7 @@ export default class WarehouseDetails extends Component {
   async fetchWarehouseData(id) {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/warehouses/${id}`
+        `${process.env.REACT_APP_API_URL}warehouses/${id}`
       );
       this.setState({
         warehouseData: response.data,
@@ -56,7 +56,7 @@ export default class WarehouseDetails extends Component {
 
   handleDelete = async () => {
     await axios.delete(
-      `${process.env.REACT_APP_API_URL}/inventory/${this.state.deleteId}/delete`
+      `${process.env.REACT_APP_API_URL}inventory/${this.state.deleteId}/delete`
     );
     this.handlePopUp();
     this.fetchWarehouseData(this.props.match.params.id);

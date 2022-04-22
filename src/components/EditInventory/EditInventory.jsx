@@ -39,7 +39,7 @@ class EditInventory extends Component {
 
   async fetchWarhouseData() {
     const allWarehouses = await axios.get(
-      `${process.env.REACT_APP_API_URL}/warehouses`
+      `${process.env.REACT_APP_API_URL}warehouses`
     );
     this.setState({
       warehouseData: allWarehouses.data,
@@ -49,7 +49,7 @@ class EditInventory extends Component {
   componentDidMount() {
     axios
       .get(
-        `${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}`
+        `${process.env.REACT_APP_API_URL}inventory/${this.props.match.params.id}`
       )
       .then((res) => {
         this.setState({

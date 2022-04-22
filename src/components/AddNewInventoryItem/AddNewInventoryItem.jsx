@@ -42,7 +42,7 @@ class AddNewInventoryItem extends Component {
 
   async fetchWarhouseData() {
     const allWarehouses = await axios.get(
-      `${process.env.REACT_APP_API_URL}/warehouses`
+      `${process.env.REACT_APP_API_URL}warehouses`
     );
     this.setState({
       warehouseData: allWarehouses.data,
@@ -107,7 +107,7 @@ class AddNewInventoryItem extends Component {
 
     if (itemName && description && category && status) {
       axios
-        .post(`${process.env.REACT_APP_API_URL}/inventory/add`, {
+        .post(`${process.env.REACT_APP_API_URL}inventory/add`, {
           warehouseName,
           warehouseID,
           itemName,

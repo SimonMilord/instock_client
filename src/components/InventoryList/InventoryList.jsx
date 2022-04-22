@@ -18,7 +18,7 @@ class InventoryList extends Component {
 
   getAllInventories() {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/inventory`)
+      .get(`${process.env.REACT_APP_API_URL}inventory`)
       .then((res) => {
         this.setState({
           inventories: res.data,
@@ -38,7 +38,7 @@ class InventoryList extends Component {
 
   handleDelete = async () => {
     await axios.delete(
-      `${process.env.REACT_APP_API_URL}/inventory/${this.state.deleteId}/delete`
+      `${process.env.REACT_APP_API_URL}inventory/${this.state.deleteId}/delete`
     );
     this.handlePopUp();
     this.getAllInventories();

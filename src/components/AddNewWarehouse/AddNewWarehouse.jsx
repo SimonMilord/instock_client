@@ -104,7 +104,7 @@ class AddNewWarehouse extends Component {
     ) {
       // post data to API
       axios
-        .post(`${process.env.REACT_APP_API_URL}/warehouses/add`, {
+        .post(`${process.env.REACT_APP_API_URL}warehouses/add`, {
           name: warehouseName,
           address: warehouseAddress,
           city: warehouseCity,

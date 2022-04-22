@@ -22,7 +22,7 @@ class EditWarehouse extends Component {
   componentDidMount() {
     axios
       .get(
-        `${process.env.REACT_APP_API_URL}/warehouses/${this.props.match.params.id}`
+        `${process.env.REACT_APP_API_URL}warehouses/${this.props.match.params.id}`
       )
       .then((res) => {
         this.setState({
@@ -45,49 +45,42 @@ class EditWarehouse extends Component {
   handleWarehouseName = (event) => {
     this.setState({
       warehouseName: event.target.value,
-      // nameError: false
     });
   };
 
   handleStreetAddress = (event) => {
     this.setState({
       streetAddress: event.target.value,
-      // addressError: false
     });
   };
 
   handleWarehouseCity = (event) => {
     this.setState({
       warehouseCity: event.target.value,
-      // cityError: false
     });
   };
 
   handleWarehouseCountry = (event) => {
     this.setState({
       warehouseCountry: event.target.value,
-      // countryError: false
     });
   };
 
   handleContactName = (event) => {
     this.setState({
       contactName: event.target.value,
-      // contactNameError: false
     });
   };
 
   handlePhoneNumber = (event) => {
     this.setState({
       contactPhoneNumber: event.target.value,
-      // phoneError: false
     });
   };
 
   handlecontactPosition = (event) => {
     this.setState({
       contactPosition: event.target.value,
-      // positionError: false
     });
   };
 

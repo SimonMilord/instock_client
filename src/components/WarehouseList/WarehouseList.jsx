@@ -19,12 +19,13 @@ export default class WarehouseList extends Component {
   // Lifecycle methods
   componentDidMount() {
     this.getWarehouseData();
+    console.log(process.env.REACT_APP_API_URL);
   }
 
   // axios call to fetch warehouse list
   getWarehouseData() {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/warehouses`)
+      .get(`${process.env.REACT_APP_API_URL}warehouses`)
       .then((res) => {
         this.setState({
           warehouseData: res.data,
@@ -44,7 +45,7 @@ export default class WarehouseList extends Component {
 
   handleDelete = async () => {
     await axios.delete(
-      `${process.env.REACT_APP_API_URL}/warehouses/${this.state.deleteId}/delete`
+      `${process.env.REACT_APP_API_URL}warehouses/${this.state.deleteId}/delete`
     );
     this.handlePopUp();
     this.getWarehouseData();
