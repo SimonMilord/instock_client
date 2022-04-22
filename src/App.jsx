@@ -20,7 +20,6 @@ class App extends Component {
           <div className="App">
             <Header />
             <Switch>
-              {/* Routing */}
               <Route
                 path="/"
                 exact
@@ -53,7 +52,9 @@ class App extends Component {
               <Route
                 path="/inventory/add"
                 exact
-                render={(routerProps) => <AddNewInventoryItem {...routerProps} />}
+                render={(routerProps) => (
+                  <AddNewInventoryItem {...routerProps} />
+                )}
               />
               <Route
                 path="/inventory/:id"

@@ -20,11 +20,9 @@
     padding: 2.5rem 0 0rem 0;
 
     @include tablet {
-      //don't delete this. This is cancelling the padding from mobile view
-      padding: 0; 
+      padding: 0;
     }
     @include desktop {
-
     }
   }
 

@@ -2,8 +2,6 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/mixins";
 
-
-
 .labelT {
   text-transform: uppercase;
   color: $secondary-text-color;
@@ -17,7 +15,6 @@
   @include tablet {
     margin: 2rem;
     margin-top: -6rem;
-
   }
 
   @include desktop {
@@ -108,7 +105,6 @@
     }
   }
 
-
   .details__contacts {
     display: flex;
 
@@ -121,5 +117,4 @@
       width: 50%;
     }
   }
-
 }

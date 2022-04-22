@@ -62,96 +62,102 @@ export default class WarehouseDetails extends Component {
     this.fetchWarehouseData(this.props.match.params.id);
   };
 
-
   render() {
     return (
       <>
         <div className="details">
-            <div className="details-top">
-                <Link to="/" className="details-top__link">
-                    <img className="details-top__arrow" src={arrow} alt="arrow"></img>
-                    <h1 className="details-top__title">{this.state.warehouseData.name}</h1>
-                </Link>
-                <Link to={`/warehouses/${this.props.match.params.id}/edit`}className="details-top__iconBox">
-                    <img className="details-top__icon"src={penIcon} alt='pen'></img>
-                    <h3 className="details-top__edit">Edit</h3>
-                </Link>
+          <div className="details-top">
+            <Link to="/" className="details-top__link">
+              <img className="details-top__arrow" src={arrow} alt="arrow"></img>
+              <h1 className="details-top__title">
+                {this.state.warehouseData.name}
+              </h1>
+            </Link>
+            <Link
+              to={`/warehouses/${this.props.match.params.id}/edit`}
+              className="details-top__iconBox"
+            >
+              <img className="details-top__icon" src={penIcon} alt="pen"></img>
+              <h3 className="details-top__edit">Edit</h3>
+            </Link>
+          </div>
+
+          <div className="warehouse-info">
+            <div className="details__address">
+              <h3 className="details__subtitles labelT">warehouse address:</h3>
+              <p className="details__text">
+                {this.state.warehouseData.address}
+                {", "}
+                {this.state.warehouseData.city}
+                {", "}
+                {this.state.warehouseData.country}
+              </p>
             </div>
 
-            <div className="warehouse-info">
-                <div className="details__address">
-                    <h3 className="details__subtitles labelT">warehouse address:</h3>
-                    <p className="details__text">
-                    {this.state.warehouseData.address}
-                    {", "}
-                    {this.state.warehouseData.city}
-                    {", "}
-                    {this.state.warehouseData.country}
-                    </p>
-                </div>
-
-                <div className="details__contacts">
-                    <div className="details__contact details__contact--name">
-                        <h3 className="details__subtitles labelT">contact name:</h3>
-                        <p className="details__text">
-                            {this.state.warehouseData.contact &&
-                            this.state.warehouseData.contact.name}
-                            <br />
-                            {this.state.warehouseData.contact &&
-                            this.state.warehouseData.contact.position}
-                        </p>
-                    </div>
-                    <div className="details__contactdetails__contact--info">
-                        <h3 className="details__subtitles labelT">contact information:</h3>
-                        <p className="details__text">
-                            {this.state.warehouseData.contact &&
-                            this.state.warehouseData.contact.phone}
-                            <br />
-                            {this.state.warehouseData.contact &&
-                            this.state.warehouseData.contact.email}
-                        </p>
-                    </div>
-                </div>
+            <div className="details__contacts">
+              <div className="details__contact details__contact--name">
+                <h3 className="details__subtitles labelT">contact name:</h3>
+                <p className="details__text">
+                  {this.state.warehouseData.contact &&
+                    this.state.warehouseData.contact.name}
+                  <br />
+                  {this.state.warehouseData.contact &&
+                    this.state.warehouseData.contact.position}
+                </p>
+              </div>
+              <div className="details__contactdetails__contact--info">
+                <h3 className="details__subtitles labelT">
+                  contact information:
+                </h3>
+                <p className="details__text">
+                  {this.state.warehouseData.contact &&
+                    this.state.warehouseData.contact.phone}
+                  <br />
+                  {this.state.warehouseData.contact &&
+                    this.state.warehouseData.contact.email}
+                </p>
+              </div>
             </div>
+          </div>
 
-        {/* row of labels for the table on desktop and tablet */}
-        <div className="labelsRow">
-          <div className="labelsRow__item">
-            <h4 className="labelsRow__label">Inventory item</h4>
-            <img
-              className="labelsRow__icon"
-              src={sortIcon}
-              alt="sorting icon"
-            ></img>
+          {/* row of labels for the table on desktop and tablet */}
+          <div className="labelsRow">
+            <div className="labelsRow__item">
+              <h4 className="labelsRow__label">Inventory item</h4>
+              <img
+                className="labelsRow__icon"
+                src={sortIcon}
+                alt="sorting icon"
+              ></img>
+            </div>
+            <div className="labelsRow__item">
+              <h4 className="labelsRow__label">Category</h4>
+              <img
+                className="labelsRow__icon"
+                src={sortIcon}
+                alt="sorting icon"
+              ></img>
+            </div>
+            <div className="labelsRow__item">
+              <h4 className="labelsRow__label">Status</h4>
+              <img
+                className="labelsRow__icon"
+                src={sortIcon}
+                alt="sorting icon"
+              ></img>
+            </div>
+            <div className="labelsRow__item">
+              <h4 className="labelsRow__label">Quantity</h4>
+              <img
+                className="labelsRow__icon"
+                src={sortIcon}
+                alt="sorting icon"
+              ></img>
+            </div>
+            <div className="labelsRow__item labelsRow__item--action">
+              <h4 className="labelsRow__label">Actions</h4>
+            </div>
           </div>
-          <div className="labelsRow__item">
-            <h4 className="labelsRow__label">Category</h4>
-            <img
-              className="labelsRow__icon"
-              src={sortIcon}
-              alt="sorting icon"
-            ></img>
-          </div>
-          <div className="labelsRow__item">
-            <h4 className="labelsRow__label">Status</h4>
-            <img
-              className="labelsRow__icon"
-              src={sortIcon}
-              alt="sorting icon"
-            ></img>
-          </div>
-          <div className="labelsRow__item">
-            <h4 className="labelsRow__label">Quantity</h4>
-            <img
-              className="labelsRow__icon"
-              src={sortIcon}
-              alt="sorting icon"
-            ></img>
-          </div>
-          <div className="labelsRow__item labelsRow__item--action">
-            <h4 className="labelsRow__label">Actions</h4>
-          </div>
-        </div>
 
           <div className="details__inv">
             <WarehouseInv
@@ -167,7 +173,9 @@ export default class WarehouseDetails extends Component {
             deleteId={this.state.deleteId}
             deleteHandler={this.handleDelete}
           />
-        ) : <></>}
+        ) : (
+          <></>
+        )}
       </>
     );
   }

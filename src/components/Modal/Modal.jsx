@@ -3,7 +3,6 @@ import "./Modal.scss";
 import closeIcon from "../../assets/Icons/close-24px.svg";
 
 export default function Modal(props) {
-  console.log(props);
   const newArray = props.warehouseData.find(
     (item) => item.id === props.deleteId
   );

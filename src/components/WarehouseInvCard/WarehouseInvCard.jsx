@@ -12,10 +12,12 @@ export default class WarehouseInvCard extends Component {
         <div className="card__top">
           <div className="card__left">
             <div className="card__content card__content--invItem">
-              <h3 className="card__title card__title--mobile label">inventory item</h3>
+              <h3 className="card__title card__title--mobile label">
+                inventory item
+              </h3>
               <Link className="link" to={`/inventory/${this.props.id}`}>
                 <p className="link__text">{this.props.itemName}</p>
-                <img className="link__image" src={Chevron} alt="arrowback"/>
+                <img className="link__image" src={Chevron} alt="arrowback" />
               </Link>
             </div>
             <div className="card__content card__content--category">
@@ -43,8 +45,12 @@ export default class WarehouseInvCard extends Component {
           </div>
         </div>
         <div className="card__actions">
-            <img onClick={() => this.props.handlePopUp(this.props.id)}
-            className="card__delete" src={Delete} alt="delete icon" />
+          <img
+            onClick={() => this.props.handlePopUp(this.props.id)}
+            className="card__delete"
+            src={Delete}
+            alt="delete icon"
+          />
           <Link to={`/inventory/${this.props.id}/edit`}>
             <img className="card__edit" src={Edit} alt="edit icon" />
           </Link>

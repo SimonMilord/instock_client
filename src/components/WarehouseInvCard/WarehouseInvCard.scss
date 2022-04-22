@@ -38,7 +38,6 @@
     width: 50%;
     @include tablet {
       flex-direction: row;
-
     }
   }
   &__right {
@@ -80,7 +79,7 @@
     background-color: #15846315;
     width: 4rem;
     height: 1.5rem;
-    color: $instock-label-color; 
+    color: $instock-label-color;
     text-transform: uppercase;
     font-size: 11px;
     margin-top: 0.125rem;
@@ -100,7 +99,7 @@
     background-color: #c945152a;
     width: 5.625rem;
     height: 1.5rem;
-    color: $alert-color; 
+    color: $alert-color;
     text-transform: uppercase;
     font-size: 11px;
     margin-top: 0.125rem;
@@ -110,9 +109,7 @@
       height: 1.65rem;
       width: 5.125rem;
       margin-left: 0.875rem;
-      font-size: .675rem;
+      font-size: 0.675rem;
     }
   }
-
-
 }

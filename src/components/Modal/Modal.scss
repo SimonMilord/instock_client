@@ -2,9 +2,7 @@
 @import "../../styles/partials/variables";
 @import "../../styles/partials/mixins";
 
-
 .overlay {
-  // display: none;
   @include tablet {
     display: flex;
   }
@@ -18,8 +16,8 @@
 }
 
 .modal {
-  height: 90vh; // NOT SURE HERE
-  width: 90vw; // NOT SURE HERE
+  height: 90vh;
+  width: 90vw;
   position: fixed;
   z-index: 9001;
   background-color: white;
@@ -97,7 +95,6 @@
           background-color: $nav-background-color;
         }
       }
-
     }
   }
 }
