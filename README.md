@@ -25,10 +25,7 @@ This project was built with the collaboration of : <br>
 
 ## Screenshots
 
-<img src="" width=50% height=50%>
-<img src="" width=50% height=50%>
-<img src="" width=50% height=50%>
-<img src="" width=50% height=50%>
+<img src="https://github.com/SimonMilord/instock_client/blob/production/Screenshots/warehouselist.png" width=50% height=50%><img src="https://github.com/SimonMilord/instock_client/blob/production/Screenshots/warehouseinfo.png" width=50% height=50%><img src="https://github.com/SimonMilord/instock_client/blob/production/Screenshots/editwarehouse.png" width=50% height=50%><img src="https://github.com/SimonMilord/instock_client/blob/production/Screenshots/inventorylist.png" width=50% height=50%>
 
 
 ## Tech Stack
