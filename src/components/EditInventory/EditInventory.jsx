@@ -131,14 +131,13 @@ class EditInventory extends Component {
     return (
       <div className="editInventory">
         <div className="editInventoryHeader">
+          <Link className="editInventory__header-link" to={"/inventory"}>
           <img
             className="editInventoryHeader__icon"
             src={arrowBack}
-            onClick={(event) =>
-              (window.location.href = `/inventory/${this.state.id}`)
-            }
             alt="arrow back"
           ></img>
+          </Link>
           <h1 className="editInventoryHeader__heading">edit inventory item</h1>
         </div>
         <div className="editInventoryForm">
