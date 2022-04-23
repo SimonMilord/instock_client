@@ -19,7 +19,6 @@ export default class WarehouseList extends Component {
   // Lifecycle methods
   componentDidMount() {
     this.getWarehouseData();
-    console.log(process.env.REACT_APP_API_URL);
   }
 
   // axios call to fetch warehouse list

@@ -106,7 +106,7 @@ class EditInventory extends Component {
 
     await axios
       .patch(
-        `${process.env.REACT_APP_API_URL}/inventory/${this.props.match.params.id}/edit`,
+        `${process.env.REACT_APP_API_URL}inventory/${this.props.match.params.id}/edit`,
         {
           id,
           warehouseID,

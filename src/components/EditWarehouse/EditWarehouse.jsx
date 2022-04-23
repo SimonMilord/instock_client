@@ -115,7 +115,7 @@ class EditWarehouse extends Component {
     ) {
       // patch data to API
       axios
-        .patch(`${process.env.REACT_APP_API_URL}/warehouses/${id}/edit`, {
+        .patch(`${process.env.REACT_APP_API_URL}warehouses/${id}/edit`, {
           id: id,
           name: warehouseName,
           address: warehouseAddress,
